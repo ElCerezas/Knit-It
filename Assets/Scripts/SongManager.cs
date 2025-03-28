@@ -16,6 +16,7 @@ public class SongManager : MonoBehaviour
     public string fileLocation;
     public static MidiFile midiFile;
 
+    public LaneLogic[] lanes;
     public float noteTime; //Tiempo hasta la zona de hit
     public float noteSpawnY; //Altura del Spawn
     public float noteTapY; //Altura de la barra de tap
@@ -37,7 +38,11 @@ public class SongManager : MonoBehaviour
         Debug.Log(notes.GetType());
         var array = new Note[notes.Count];
         notes.CopyTo(array, 0);
-
+        
+        foreach (LaneLogic lane in lanes)
+        {
+            lane.SetTimeStamps(array);
+        }
         Invoke(nameof(StartSong), songDelaySeconds);
     }
     public void StartSong()
@@ -47,5 +52,15 @@ public class SongManager : MonoBehaviour
     public static double GetAudioSourceTime()
     {
         return (double) (instance.audioSource.timeSamples / instance.audioSource.clip.frequency);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawLine(new Vector2(-1000, noteSpawnY), new Vector2(1000, noteSpawnY));
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector2(-1000, noteDespawnY), new Vector2(1000, noteDespawnY));
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(new Vector2(-1000, noteTapY), new Vector2(1000, noteTapY));
     }
 }
