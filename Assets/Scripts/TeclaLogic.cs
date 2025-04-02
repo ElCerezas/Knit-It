@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TeclaLogic : MonoBehaviour
 {
@@ -10,16 +11,19 @@ public class TeclaLogic : MonoBehaviour
     {
         ScoreSongManager = ScoreSongManager.instance;
     }
-    public void TeclaPulsada()
+    public void TeclaPulsada(InputAction.CallbackContext Context)
     {
-        if (nota == null)
+        if (Context.performed)
         {
-            ScoreSongManager.NoteMiss();
-        }
-        else
-        {
-            ScoreSongManager.NoteHit();
-            Destroy(nota);
+            if (nota == null)
+            {
+                ScoreSongManager.NoteMiss();
+            }
+            else
+            {
+                ScoreSongManager.NoteHit(false);
+                Destroy(nota);
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

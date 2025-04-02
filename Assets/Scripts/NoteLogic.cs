@@ -12,7 +12,6 @@ public class NoteLogic : MonoBehaviour
     {
         timeInstantiated = SongManager.GetAudioSourceTime();
         ScoreSongManager = ScoreSongManager.instance;
-        ScoreSongManager.papa.Add(gameObject);
     }
 
     private void Update()
