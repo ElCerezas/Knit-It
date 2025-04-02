@@ -24,6 +24,9 @@ public class GameplayUI : MonoBehaviour
         if(c > 1)
         {
             combo.text = $"x{c}";
+            Debug.Log(combo.gameObject.GetComponent<RectTransform>().rotation);
+            combo.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, Random.Range(-10f, 10f));
+
         }
         else
         {
