@@ -861,8 +861,8 @@ MonoBehaviour:
   - {fileID: 338484411}
   - {fileID: 1588824918}
   - {fileID: 1343252587}
-  noteTime: 10
-  noteSpawnY: 20
+  noteTime: 5
+  noteSpawnY: 6
   noteTapY: -2
   noteDespawnY: -6
 --- !u!82 &706480422
