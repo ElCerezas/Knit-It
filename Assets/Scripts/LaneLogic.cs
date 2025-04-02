@@ -13,7 +13,7 @@ public class LaneLogic : MonoBehaviour
     public List<double> timeStamps = new List<double>();
 
     int spawnIndex = 0;
-    public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
+    public void SetTimeStamps(Note[] array)
     {
         foreach (var note in array)
         {

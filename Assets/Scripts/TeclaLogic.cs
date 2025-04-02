@@ -14,12 +14,10 @@ public class TeclaLogic : MonoBehaviour
     {
         if (nota == null)
         {
-            Debug.LogWarning("No note found");
             ScoreSongManager.NoteMiss();
         }
         else
         {
-            Debug.LogWarning("Note Hit");
             ScoreSongManager.NoteHit();
             Destroy(nota);
         }
@@ -27,11 +25,9 @@ public class TeclaLogic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         nota = collision.gameObject;
-        Debug.Log("NoteEnter");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         nota = null;
-        Debug.Log("NoteExit");
     }
 }

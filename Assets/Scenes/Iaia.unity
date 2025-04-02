@@ -369,6 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitSFX: {fileID: 154648368}
   missSFX: {fileID: 154648367}
+  papa: []
 --- !u!114 &154648370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +564,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1653173422}
+  - {fileID: 539142871}
+  - {fileID: 1931663356}
+  - {fileID: 338484410}
+  - {fileID: 1588824917}
+  - {fileID: 1343252586}
   m_Father: {fileID: 706480419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &338484409
@@ -596,7 +603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 271760722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &338484411
 MonoBehaviour:
@@ -643,7 +650,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 271760722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &539142872
 MonoBehaviour:
@@ -845,9 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 706480422}
-  songDelaySeconds: 0
-  marginOfError: 0
-  inputDelayMiliseconds: 0
+  songDelaySeconds: 3
   fileLocation: TutoNotes01.mid
   lanes:
   - {fileID: 1653173423}
@@ -856,8 +861,8 @@ MonoBehaviour:
   - {fileID: 338484411}
   - {fileID: 1588824918}
   - {fileID: 1343252587}
-  noteTime: 3
-  noteSpawnY: 6
+  noteTime: 10
+  noteSpawnY: 20
   noteTapY: -2
   noteDespawnY: -6
 --- !u!82 &706480422
@@ -872,7 +877,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 35b10f26b6ff4fe449329b4c290aa503, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.503
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1129,7 +1134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 271760722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1343252587
 MonoBehaviour:
@@ -1319,7 +1324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 271760722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1588824918
 MonoBehaviour:
@@ -1509,7 +1514,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 271760722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1653173423
 MonoBehaviour:
@@ -1910,7 +1915,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 271760722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1931663357
 MonoBehaviour:
@@ -2077,9 +2082,3 @@ SceneRoots:
   - {fileID: 592743342}
   - {fileID: 706480419}
   - {fileID: 1665992009}
-  - {fileID: 1653173422}
-  - {fileID: 539142871}
-  - {fileID: 1931663356}
-  - {fileID: 338484410}
-  - {fileID: 1588824917}
-  - {fileID: 1343252586}

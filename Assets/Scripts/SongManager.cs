@@ -9,8 +9,6 @@ public class SongManager : MonoBehaviour
     public static SongManager instance;
     public AudioSource audioSource;
     public float songDelaySeconds;
-    public double marginOfError;
-    public int inputDelayMiliseconds;
     
 
     public string fileLocation;
@@ -21,7 +19,6 @@ public class SongManager : MonoBehaviour
     public float noteSpawnY; //Altura del Spawn
     public float noteTapY; //Altura de la barra de tap
     public float noteDespawnY;
-
 
     void Start()
     {
