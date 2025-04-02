@@ -21,15 +21,11 @@ public class SongManager : MonoBehaviour
     public float noteSpawnY; //Altura del Spawn
     public float noteTapY; //Altura de la barra de tap
     public float noteDespawnY;
-    /*{
-        get { return noteTapY - (noteSpawnY - noteTapY); }
-    } //Cuando ha de despawnear la nota*/
 
 
     void Start()
     {
         instance = this;
-        Debug.Log(Application.streamingAssetsPath + "/" + fileLocation);
         midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation); //Cargar el archivo MIDI -- No funciona en WebGL
         GetDataFromMidi();
     }
@@ -37,7 +33,6 @@ public class SongManager : MonoBehaviour
     public void GetDataFromMidi()
     {
         var notes = midiFile.GetNotes();
-        Debug.Log(notes.GetType());
         var array = new Note[notes.Count];
         notes.CopyTo(array, 0);
         
@@ -56,10 +51,7 @@ public class SongManager : MonoBehaviour
     {
         return (double)instance.audioSource.timeSamples / instance.audioSource.clip.frequency;
     }
-    private void Update()
-    {
-        
-    }
+
 
     private void OnDrawGizmos()
     {

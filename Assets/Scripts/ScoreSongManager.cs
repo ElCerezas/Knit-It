@@ -9,4 +9,17 @@ public class ScoreSongManager : MonoBehaviour
     {
         instance = this;
     }
+
+    public void NoteHit()
+    {
+
+    }
+    public void NoteMiss()
+    {
+
+    }
+    public void NoteDespawned()
+    {
+
+    }
 }

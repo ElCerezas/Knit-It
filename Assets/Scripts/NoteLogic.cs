@@ -6,11 +6,12 @@ public class NoteLogic : MonoBehaviour
 {
     double timeInstantiated;
     public float assignedTime;
+    ScoreSongManager ScoreSongManager;
 
     private void Start()
     {
         timeInstantiated = SongManager.GetAudioSourceTime();
-        Debug.Log("NoteSpawned");
+        ScoreSongManager = ScoreSongManager.instance;
     }
 
     private void Update()
@@ -19,11 +20,12 @@ public class NoteLogic : MonoBehaviour
         float t = (float)(timeSinceInstantiated / (SongManager.instance.noteTime));
         if (t > 1)
         {
+            ScoreSongManager.NoteDespawned();
             Destroy(gameObject);
         }
         else
         {
-            transform.position = Vector2.Lerp(Vector2.up * SongManager.instance.noteSpawnY, Vector2.up * SongManager.instance.noteDespawnY, t);
+            transform.position = Vector2.Lerp(new Vector2(transform.position.x, SongManager.instance.noteSpawnY), new Vector2(transform.position.x, SongManager.instance.noteDespawnY), t);
             GetComponent<SpriteRenderer>().enabled = true;
         }
             
