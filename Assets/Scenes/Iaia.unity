@@ -280,13 +280,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1653173422}
-  - {fileID: 539142871}
-  - {fileID: 1931663356}
-  - {fileID: 338484410}
-  - {fileID: 1588824917}
-  - {fileID: 1343252586}
+  m_Children: []
   m_Father: {fileID: 706480419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &338484409
@@ -314,12 +308,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338484409}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 271760722}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &338484411
 MonoBehaviour:
@@ -333,7 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef792376d030eaa45958cf84be25f204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 3
+  input: 106
   notePrefab: {fileID: 4809418671576950934, guid: d1f59f93a7a12494dab1c34752af78dd, type: 3}
   timeStamps: []
 --- !u!1 &539142870
@@ -361,12 +356,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539142870}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 271760722}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &539142872
 MonoBehaviour:
@@ -380,7 +375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef792376d030eaa45958cf84be25f204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 1
+  input: 115
   notePrefab: {fileID: 4809418671576950934, guid: d1f59f93a7a12494dab1c34752af78dd, type: 3}
   timeStamps: []
 --- !u!1 &592743339
@@ -600,9 +596,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 706480422}
   songDelaySeconds: 0
-  marginOfError: 0.2
+  marginOfError: 0.07
   inputDelayMiliseconds: 0
-  fileLocation: 
+  fileLocation: TutoNotes01.mid
   lanes:
   - {fileID: 1653173423}
   - {fileID: 539142872}
@@ -611,7 +607,7 @@ MonoBehaviour:
   - {fileID: 1588824918}
   - {fileID: 1343252587}
   noteTime: 1
-  noteSpawnY: 6
+  noteSpawnY: 5.3
   noteTapY: -2
 --- !u!82 &706480422
 AudioSource:
@@ -623,8 +619,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 35b10f26b6ff4fe449329b4c290aa503, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -734,12 +730,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343252585}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 271760722}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1343252587
 MonoBehaviour:
@@ -753,7 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef792376d030eaa45958cf84be25f204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 5
+  input: 108
   notePrefab: {fileID: 4809418671576950934, guid: d1f59f93a7a12494dab1c34752af78dd, type: 3}
   timeStamps: []
 --- !u!1 &1588824916
@@ -781,12 +778,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588824916}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 271760722}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1588824918
 MonoBehaviour:
@@ -800,7 +797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef792376d030eaa45958cf84be25f204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 4
+  input: 107
   notePrefab: {fileID: 4809418671576950934, guid: d1f59f93a7a12494dab1c34752af78dd, type: 3}
   timeStamps: []
 --- !u!1 &1653173421
@@ -828,12 +826,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653173421}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 271760722}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1653173423
 MonoBehaviour:
@@ -848,6 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteRestriction: 0
+  input: 97
   notePrefab: {fileID: 4809418671576950934, guid: d1f59f93a7a12494dab1c34752af78dd, type: 3}
   timeStamps: []
 --- !u!1 &1931663355
@@ -875,12 +874,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931663355}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 271760722}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1931663357
 MonoBehaviour:
@@ -894,7 +893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef792376d030eaa45958cf84be25f204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteRestriction: 0
+  noteRestriction: 2
+  input: 100
   notePrefab: {fileID: 4809418671576950934, guid: d1f59f93a7a12494dab1c34752af78dd, type: 3}
   timeStamps: []
 --- !u!1660057539 &9223372036854775807
@@ -903,3 +903,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 592743342}
   - {fileID: 706480419}
+  - {fileID: 1653173422}
+  - {fileID: 539142871}
+  - {fileID: 1931663356}
+  - {fileID: 338484410}
+  - {fileID: 1588824917}
+  - {fileID: 1343252586}

@@ -7,6 +7,7 @@ using UnityEngine;
 public class LaneLogic : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
+    public KeyCode input;
 
     public GameObject notePrefab;
     List<NoteLogic> notes = new List<NoteLogic>();
@@ -24,47 +25,52 @@ public class LaneLogic : MonoBehaviour
         {
             if (note.NoteName == noteRestriction)
             {
-                TimeSpan metricTS = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongManager.midiFile.GetTempoMap());
-                timeStamps.Add((double)metricTS.Minutes * 60f + metricTS.Seconds + metricTS.Milliseconds / 1000f);
+                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongManager.midiFile.GetTempoMap());
+                timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
             }
         }
     }
-    private void Update()
+    void Update()
     {
-        if(spawnIndex < timeStamps.Count)
+        if (spawnIndex < timeStamps.Count)
         {
-            if(SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.instance.noteTime)
+            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.instance.noteTime)
             {
-                NoteLogic note =  Instantiate(notePrefab, transform).GetComponent<NoteLogic>();
-                notes.Add(note);
-                note.assignedTime = (float)timeStamps[spawnIndex];
+                var note = Instantiate(notePrefab, transform);
+                notes.Add(note.GetComponent<NoteLogic>());
+                note.GetComponent<NoteLogic>().assignedTime = (float)timeStamps[spawnIndex];
                 spawnIndex++;
             }
         }
+
         if (inputIndex < timeStamps.Count)
         {
-            timeStamp = timeStamps[inputIndex];
-            margainOfError = SongManager.instance.marginOfError;
-            audioTime = SongManager.GetAudioSourceTime() - (SongManager.instance.inputDelayMiliseconds / 1000.0);
-        }
-        if (timeStamp + margainOfError < audioTime)
-        {
+            double timeStamp = timeStamps[inputIndex];
+            double marginOfError = SongManager.instance.marginOfError;
+            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.instance.inputDelayMiliseconds / 1000.0);
 
+            if (Input.GetKeyDown(input))
+            {
+                if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                {
+                    Hit();
+                    print($"Hit on {inputIndex} note");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;
+                }
+                else
+                {
+                    print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                }
+            }
+            if (timeStamp + marginOfError <= audioTime)
+            {
+                Miss();
+                print($"Missed {inputIndex} note");
+                inputIndex++;
+            }
         }
-    }
 
-    void OnLaneButton()
-    {
-        if(Math.Abs(audioTime - timeStamp) < margainOfError) //Apretada a tiempo
-        {
-            Hit();
-            Destroy(notes[inputIndex].gameObject);
-            inputIndex++;
-        }
-        else //Fallo
-        {
-            Miss();
-        }
     }
     void Hit()
     {

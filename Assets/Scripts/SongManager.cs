@@ -29,7 +29,9 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        Debug.Log(Application.streamingAssetsPath + "/" + fileLocation);
         midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation); //Cargar el archivo MIDI -- No funciona en WebGL
+        GetDataFromMidi();
     }
 
     public void GetDataFromMidi()
@@ -43,6 +45,7 @@ public class SongManager : MonoBehaviour
         {
             lane.SetTimeStamps(array);
         }
+        Debug.Log("pLAYINGsONG");
         Invoke(nameof(StartSong), songDelaySeconds);
     }
     public void StartSong()
@@ -51,7 +54,11 @@ public class SongManager : MonoBehaviour
     }
     public static double GetAudioSourceTime()
     {
-        return (double) (instance.audioSource.timeSamples / instance.audioSource.clip.frequency);
+        return (double)instance.audioSource.timeSamples / instance.audioSource.clip.frequency;
+    }
+    private void Update()
+    {
+        
     }
 
     private void OnDrawGizmos()
