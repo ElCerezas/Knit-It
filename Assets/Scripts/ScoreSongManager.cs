@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class SongScoreManager : MonoBehaviour
+public class ScoreSongManager : MonoBehaviour
 {
-    public static SongScoreManager instance;
+    public static ScoreSongManager instance;
     public AudioSource hitSFX, missSFX;
     int score;
     void Start()

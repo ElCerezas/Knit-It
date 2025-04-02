@@ -16,15 +16,14 @@ public class NoteLogic : MonoBehaviour
     private void Update()
     {
         double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
-        float t = (float)(timeSinceInstantiated / (SongManager.instance.noteTime * 2f));
-        if (t> 1)
+        float t = (float)(timeSinceInstantiated / (SongManager.instance.noteTime));
+        if (t > 1)
         {
             Destroy(gameObject);
         }
         else
         {
-            Debug.Log(transform.localPosition);
-            transform.localPosition = Vector2.Lerp(Vector2.up * SongManager.instance.noteSpawnY, Vector2.up * SongManager.instance.noteDespawnY, t);
+            transform.position = Vector2.Lerp(Vector2.up * SongManager.instance.noteSpawnY, Vector2.up * SongManager.instance.noteDespawnY, t);
             GetComponent<SpriteRenderer>().enabled = true;
         }
             

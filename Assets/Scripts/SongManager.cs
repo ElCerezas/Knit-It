@@ -20,10 +20,10 @@ public class SongManager : MonoBehaviour
     public float noteTime; //Tiempo hasta la zona de hit
     public float noteSpawnY; //Altura del Spawn
     public float noteTapY; //Altura de la barra de tap
-    public float noteDespawnY
-    {
+    public float noteDespawnY;
+    /*{
         get { return noteTapY - (noteSpawnY - noteTapY); }
-    } //Cuando ha de despawnear la nota
+    } //Cuando ha de despawnear la nota*/
 
 
     void Start()
