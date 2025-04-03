@@ -27,10 +27,15 @@ public class ScoreSongManager : MonoBehaviour
     public void NoteHit(bool isPrefect)
     {
         notesToCombo--;
+        if (isPrefect)
+        {
+            Debug.Log("Perfect");
+            notesToCombo--;
+        }
         if (notesToCombo <= 0)
         {
             combo += comboIncrease;
-            notesToCombo = comboNotes;
+            notesToCombo = comboNotes + notesToCombo;
             OnNewCombo?.Invoke(combo);
         }
         score += Convert.ToInt32(hitIncrease * combo);

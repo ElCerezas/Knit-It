@@ -7,6 +7,8 @@ public class TeclaLogic : MonoBehaviour
 {
     ScoreSongManager ScoreSongManager;
     GameObject nota;
+    [SerializeField] Collider2D perfectZone;
+    bool perfectNote = false;
     private void Start()
     {
         ScoreSongManager = ScoreSongManager.instance;
@@ -21,17 +23,19 @@ public class TeclaLogic : MonoBehaviour
             }
             else
             {
-                ScoreSongManager.NoteHit(false);
+                ScoreSongManager.NoteHit(perfectNote);
                 Destroy(nota);
             }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        perfectNote = perfectZone.IsTouching(collision);
         nota = collision.gameObject;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        perfectNote = perfectZone.IsTouching(collision);
         nota = null;
     }
 }

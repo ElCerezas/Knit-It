@@ -974,10 +974,11 @@ GameObject:
   - component: {fileID: 1034128668}
   - component: {fileID: 1034128671}
   - component: {fileID: 1034128670}
+  - component: {fileID: 1034128672}
   - component: {fileID: 1034128669}
   m_Layer: 0
   m_Name: Tecla (2)
-  m_TagString: Untagged
+  m_TagString: Tecla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1009,6 +1010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811e00b4348ef7a49b20a008edd60a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitZone: {fileID: 1034128670}
+  perfectZone: {fileID: 1034128672}
 --- !u!61 &1034128670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1106,6 +1109,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1034128672
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034128667}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!1 &1343252585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,10 +1480,11 @@ GameObject:
   - component: {fileID: 1531853201}
   - component: {fileID: 1531853204}
   - component: {fileID: 1531853203}
+  - component: {fileID: 1531853205}
   - component: {fileID: 1531853202}
   m_Layer: 0
   m_Name: Tecla (4)
-  m_TagString: Untagged
+  m_TagString: Tecla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1467,6 +1516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811e00b4348ef7a49b20a008edd60a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitZone: {fileID: 1531853203}
+  perfectZone: {fileID: 1531853205}
 --- !u!61 &1531853203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1564,6 +1615,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1531853205
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531853200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!1 &1588824916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,10 +1718,11 @@ GameObject:
   - component: {fileID: 1639447090}
   - component: {fileID: 1639447093}
   - component: {fileID: 1639447092}
+  - component: {fileID: 1639447094}
   - component: {fileID: 1639447091}
   m_Layer: 0
   m_Name: Tecla (5)
-  m_TagString: Untagged
+  m_TagString: Tecla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1657,6 +1754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811e00b4348ef7a49b20a008edd60a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitZone: {fileID: 1639447092}
+  perfectZone: {fileID: 1639447094}
 --- !u!61 &1639447092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1754,6 +1853,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1639447094
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639447089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!1 &1653173421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,10 +1956,11 @@ GameObject:
   - component: {fileID: 1662754541}
   - component: {fileID: 1662754544}
   - component: {fileID: 1662754543}
+  - component: {fileID: 1662754545}
   - component: {fileID: 1662754542}
   m_Layer: 0
   m_Name: Tecla (1)
-  m_TagString: Untagged
+  m_TagString: Tecla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,6 +1992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811e00b4348ef7a49b20a008edd60a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitZone: {fileID: 1662754543}
+  perfectZone: {fileID: 1662754545}
 --- !u!61 &1662754543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1944,6 +2091,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1662754545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662754540}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!1 &1665992006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,10 +2333,11 @@ GameObject:
   - component: {fileID: 1865689860}
   - component: {fileID: 1865689863}
   - component: {fileID: 1865689862}
+  - component: {fileID: 1865689864}
   - component: {fileID: 1865689861}
   m_Layer: 0
   m_Name: Tecla (3)
-  m_TagString: Untagged
+  m_TagString: Tecla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2176,6 +2369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811e00b4348ef7a49b20a008edd60a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitZone: {fileID: 1865689862}
+  perfectZone: {fileID: 1865689864}
 --- !u!61 &1865689862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2273,6 +2468,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1865689864
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865689859}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!1 &1931663355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,10 +2571,11 @@ GameObject:
   - component: {fileID: 2109079041}
   - component: {fileID: 2109079044}
   - component: {fileID: 2109079043}
+  - component: {fileID: 2109079045}
   - component: {fileID: 2109079042}
   m_Layer: 0
   m_Name: Tecla (6)
-  m_TagString: Untagged
+  m_TagString: Tecla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2366,6 +2607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811e00b4348ef7a49b20a008edd60a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitZone: {fileID: 2109079043}
+  perfectZone: {fileID: 2109079045}
 --- !u!61 &2109079043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2463,6 +2706,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2109079045
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109079040}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
