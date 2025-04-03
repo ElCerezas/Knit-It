@@ -6,7 +6,7 @@ using Melanchall.DryWetMidi.Interaction;
 
 public class SongManager : MonoBehaviour
 {
-    public static SongManager instance;
+    public static SongManager Instance;
     public AudioSource audioSource;
     public float songDelaySeconds;
     
@@ -20,13 +20,22 @@ public class SongManager : MonoBehaviour
     public float noteTapY; //Altura de la barra de tap
     public float noteDespawnY;
 
+    NoteTypes noteToSpawn = NoteTypes.Basic;
     void Start()
     {
-        instance = this;
+        Instance = this;
         midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation); //Cargar el archivo MIDI -- No funciona en WebGL
         GetDataFromMidi();
     }
-
+    public void LoadNewMidi(string newFileName)
+    {
+        fileLocation = newFileName;
+        midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation);
+    }
+    public void SetUpNewSong(AudioClip clip)
+    {
+        audioSource.clip = clip;
+    }
     public void GetDataFromMidi()
     {
         var notes = midiFile.GetNotes();
@@ -46,9 +55,16 @@ public class SongManager : MonoBehaviour
     }
     public static double GetAudioSourceTime()
     {
-        return (double)instance.audioSource.timeSamples / instance.audioSource.clip.frequency;
+        return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
-
+    public NoteTypes GetNoteTypeToSpawn()
+    {
+        return noteToSpawn;
+    }
+    public void SetNoteType(NoteTypes newNoteToSpawn)
+    {
+        noteToSpawn = newNoteToSpawn;
+    }
 
     private void OnDrawGizmos()
     {

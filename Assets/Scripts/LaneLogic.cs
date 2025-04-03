@@ -28,9 +28,10 @@ public class LaneLogic : MonoBehaviour
     {
         if (spawnIndex < timeStamps.Count)
         {
-            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.instance.noteTime)
+            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
             {
                 var note = Instantiate(notePrefab, transform);
+                note.GetComponent<NoteLogic>().SetNoteType(SongManager.Instance.GetNoteTypeToSpawn());
                 notes.Add(note.GetComponent<NoteLogic>());
                 note.GetComponent<NoteLogic>().assignedTime = (float)timeStamps[spawnIndex];
                 spawnIndex++;

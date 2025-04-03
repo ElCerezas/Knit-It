@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreSongManager : MonoBehaviour
 {
-    public static ScoreSongManager instance;
+    public static ScoreSongManager Instance;
     public AudioSource hitSFX, missSFX;
 
     int score = 0;
@@ -20,7 +20,7 @@ public class ScoreSongManager : MonoBehaviour
     public static event ScoreUpdate OnNewCombo;
     void Start()
     {
-        instance = this;
+        Instance = this;
         notesToCombo = comboNotes;
     }
 

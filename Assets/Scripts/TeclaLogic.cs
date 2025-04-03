@@ -11,7 +11,7 @@ public class TeclaLogic : MonoBehaviour
     bool perfectNote = false;
     private void Start()
     {
-        ScoreSongManager = ScoreSongManager.instance;
+        ScoreSongManager = ScoreSongManager.Instance;
     }
     public void TeclaPulsada(InputAction.CallbackContext Context)
     {
