@@ -56,4 +56,9 @@ public class ScoreSongManager : MonoBehaviour
         OnNewScore?.Invoke(score);
         OnNewCombo?.Invoke(combo);
     }
+    public int GetScore()
+    {
+        return score;
+    }
+
 }

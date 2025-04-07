@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
+using UnityEngine.InputSystem;
 
 public class SongManager : MonoBehaviour
 {
     public static SongManager Instance;
     public AudioSource audioSource;
     public float songDelaySeconds;
-    
+
 
     public string fileLocation;
     public static MidiFile midiFile;
@@ -20,7 +21,25 @@ public class SongManager : MonoBehaviour
     public float noteTapY; //Altura de la barra de tap
     public float noteDespawnY;
 
+    bool songStarted = false;
+    [SerializeField] GameObject finalScoreManager, gameplayCanvas;
+
     NoteTypes noteToSpawn = NoteTypes.Basic;
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.H))
+        {
+            Debug.Log(Instance.audioSource.timeSamples);
+        }
+        if(!audioSource.isPlaying && songStarted)
+        {
+            Debug.Log("SongEnded");
+            songStarted = false;
+            finalScoreManager.SetActive(true);
+            gameplayCanvas.SetActive(false);
+            gameObject.SetActive(false);
+        }
+    }
     void Start()
     {
         Instance = this;
@@ -52,6 +71,7 @@ public class SongManager : MonoBehaviour
     public void StartSong()
     {
         audioSource.Play();
+        songStarted = true;
     }
     public static double GetAudioSourceTime()
     {
