@@ -26,6 +26,10 @@ public class FinalScoreLogic : MonoBehaviour
         Instance = this;
         finalScore = ScoreSongManager.Instance.GetScore();
 
+        SetImageAlpha(star1, 0f);
+        SetImageAlpha(star2, 0f);   
+        SetImageAlpha(star3, 0f);
+
         StartCoroutine(AnimateScoreText(finalScore, 2f)); // 2 segundos de animación
     }
     void Update()
@@ -40,18 +44,66 @@ public class FinalScoreLogic : MonoBehaviour
         float elapsed = 0f;
         int startScore = 0;
 
+        bool star1Shown = false;
+        bool star2Shown = false;
+        bool star3Shown = false;
+
+        float star1Threshold = scoreFor3Stars * 0.25f;
+        float star2Threshold = scoreFor3Stars * 0.50f;
+        float star3Threshold = scoreFor3Stars;
+
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
-            int currentScore = Mathf.RoundToInt(Mathf.Lerp(startScore, targetScore, t));
+            float easedT = Mathf.SmoothStep(0, 1, t);
+
+            int currentScore = Mathf.RoundToInt(Mathf.Lerp(startScore, targetScore, easedT));
             score.text = currentScore.ToString();
             scoreBar.value = currentScore;
+
+            if (!star1Shown && currentScore >= star1Threshold)
+            {
+                StartCoroutine(FadeInImage(star1));
+                star1Shown = true;
+            }
+            if (!star2Shown && currentScore >= star2Threshold)
+            {
+                StartCoroutine(FadeInImage(star2));
+                star2Shown = true;
+            }
+            if (!star3Shown && currentScore >= star3Threshold)
+            {
+                StartCoroutine(FadeInImage(star3));
+                star3Shown = true;
+            }
+
             yield return null;
         }
 
-        // Asegurarse que el score final es exacto
         score.text = targetScore.ToString();
+        scoreBar.value = targetScore;
+        pressToNext = true;
+    }
+
+    void SetImageAlpha(Image image, float alpha)
+    {
+        Color c = image.color;
+        c.a = alpha;
+        image.color = c;
+    }
+    IEnumerator FadeInImage(Image image, float fadeTime = 0.2f)
+    {
+        float elapsed = 0f;
+        Color c = image.color;
+        while (elapsed < fadeTime)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsed / fadeTime);
+            c.a = alpha;
+            image.color = c;
+            yield return null;
+        }
     }
 
 }

@@ -85,7 +85,7 @@ public class ScoreSongManager : MonoBehaviour
         {
             healthBar.value = life;
         }
-        if (life <= 0)
+        if (life <= -1000)
         {
             GameLostCanvas.SetActive(true);
             gameplayCanvas.SetActive(false);
