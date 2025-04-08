@@ -12,6 +12,7 @@ public class ButtonSetup : MonoBehaviour
         if (SceneController.Instance != null)
         {
             boton.onClick.AddListener(() => SceneController.Instance.LoadScene(sceneName));
+            PlayerPrefs.DeleteAll();
         }
         else
         {

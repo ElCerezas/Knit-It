@@ -85,7 +85,7 @@ public class ScoreSongManager : MonoBehaviour
         {
             healthBar.value = life;
         }
-        if (life <= -1000)
+        if (life <= 0)
         {
             GameLostCanvas.SetActive(true);
             gameplayCanvas.SetActive(false);
@@ -101,7 +101,7 @@ public class ScoreSongManager : MonoBehaviour
             gameplayCanvas.SetActive(false);
             SongManager.SetActive(false);
 
-            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, score);
+            PlayerPrefs.SetInt("Score1", score);
         }
     }
 
@@ -109,7 +109,6 @@ public class ScoreSongManager : MonoBehaviour
     {
         if(life <= 0)
         {
-            Debug.Log("Restard");
             SceneController.Instance.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

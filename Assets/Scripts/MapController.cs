@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MapController : MonoBehaviour
@@ -15,13 +16,17 @@ public class MapController : MonoBehaviour
 
     private void Start()
     {
-        score1 = PlayerPrefs.GetInt("MaxScoreLevel1", 0);
+        score1 = PlayerPrefs.GetInt("Score1", 0);
         score2 = PlayerPrefs.GetInt("MaxScoreLevel2", 0);
         score3 = PlayerPrefs.GetInt("MaxScoreLevel3", 0);
         Level2Unlocked();
         Level3Unlocked();
     }
-    
+    private void Awake()
+    {
+        Level2Unlocked();
+        Level3Unlocked();
+    }
     public void Level2Unlocked()
     {
         if (score1 == 0)
