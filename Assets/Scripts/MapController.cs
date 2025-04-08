@@ -15,9 +15,9 @@ public class MapController : MonoBehaviour
 
     private void Start()
     {
-        score1 = PlayerPrefs.GetInt("MaxScoreLevel1");
-        score2 = PlayerPrefs.GetInt("MaxScoreLevel2");
-        score3 = PlayerPrefs.GetInt("MaxScoreLevel3");
+        score1 = PlayerPrefs.GetInt("MaxScoreLevel1", 0);
+        score2 = PlayerPrefs.GetInt("MaxScoreLevel2", 0);
+        score3 = PlayerPrefs.GetInt("MaxScoreLevel3", 0);
         Level2Unlocked();
         Level3Unlocked();
     }

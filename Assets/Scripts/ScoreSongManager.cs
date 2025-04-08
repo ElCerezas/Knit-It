@@ -25,7 +25,7 @@ public class ScoreSongManager : MonoBehaviour
     public static event ScoreUpdate OnNewCombo;
 
     public delegate void RetryLevel();
-    public static event RetryLevel OnRetryLevel;
+    public static event RetryLevel OnLostLevel;
 
     [SerializeField] GameObject finalScoreManager, gameplayCanvas, SongManager, GameLostCanvas;
     void Start()
@@ -45,7 +45,7 @@ public class ScoreSongManager : MonoBehaviour
         if (notesToCombo <= 0)
         {
             combo += comboIncrease;
-            notesToCombo = comboNotes + notesToCombo;
+            notesToCombo = comboNotes;
             OnNewCombo?.Invoke(combo);
         }
         score += Convert.ToInt32(hitIncrease * combo);
@@ -56,17 +56,19 @@ public class ScoreSongManager : MonoBehaviour
         notesToCombo = comboNotes;
         combo = 1;
         score -= 2;
-        life -= 10;
+        life -= 5;
         OnNewScore?.Invoke(score);
         OnNewCombo?.Invoke(combo);
+        CheckLife();
     }
     public void NoteDespawned()
     {
         notesToCombo = comboNotes;
         combo = 1;
-        life--;
+        life -= 2;
         OnNewScore?.Invoke(score);
         OnNewCombo?.Invoke(combo);
+        CheckLife();
     }
     public int GetScore()
     {
@@ -77,12 +79,18 @@ public class ScoreSongManager : MonoBehaviour
         return life;
     }
 
-    void ChechLife()
+    void CheckLife()
     {
+        if (healthBar != null)
+        {
+            healthBar.value = life;
+        }
         if (life <= 0)
         {
             GameLostCanvas.SetActive(true);
-            OnRetryLevel?.Invoke();
+            gameplayCanvas.SetActive(false);
+            SongManager.SetActive(false);
+            OnLostLevel?.Invoke();
         }
     }
     public void CheckGameWin()
@@ -92,11 +100,17 @@ public class ScoreSongManager : MonoBehaviour
             finalScoreManager.SetActive(true);
             gameplayCanvas.SetActive(false);
             SongManager.SetActive(false);
+
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, score);
         }
     }
 
-    void OnRestart()
+   public void OnRestart()
     {
-        SceneController.Instance.LoadScene("SceneManager.loadedSceneCount");
+        if(life <= 0)
+        {
+            Debug.Log("Restard");
+            SceneController.Instance.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

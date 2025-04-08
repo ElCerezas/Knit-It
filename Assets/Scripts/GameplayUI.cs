@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameplayUI : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GameplayUI : MonoBehaviour
     {
         if(c > 1)
         {
-            combo.text = $"x{c}";
+            combo.text = $"x{c.ToString("0.#")}";
             Debug.Log(combo.gameObject.GetComponent<RectTransform>().rotation);
             combo.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, Random.Range(-10f, 10f));
 

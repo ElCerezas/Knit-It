@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FinalScoreLogic : MonoBehaviour
@@ -14,7 +18,7 @@ public class FinalScoreLogic : MonoBehaviour
 
     int finalScore = 0;
     [SerializeField] float scoreFor3Stars = 1000;
-
+    bool pressToNext = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,13 @@ public class FinalScoreLogic : MonoBehaviour
         finalScore = ScoreSongManager.Instance.GetScore();
 
         StartCoroutine(AnimateScoreText(finalScore, 2f)); // 2 segundos de animación
+    }
+    void Update()
+    {
+        if (pressToNext && Keyboard.current.anyKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
     IEnumerator AnimateScoreText(int targetScore, float duration)
     {
@@ -35,7 +46,7 @@ public class FinalScoreLogic : MonoBehaviour
             float t = Mathf.Clamp01(elapsed / duration);
             int currentScore = Mathf.RoundToInt(Mathf.Lerp(startScore, targetScore, t));
             score.text = currentScore.ToString();
-            scoreBar.value = (float)currentScore / scoreFor3Stars;
+            scoreBar.value = currentScore;
             yield return null;
         }
 
