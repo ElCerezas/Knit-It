@@ -22,7 +22,6 @@ public class SongManager : MonoBehaviour
     public float noteDespawnY;
 
     bool songStarted = false;
-    [SerializeField] GameObject finalScoreManager, gameplayCanvas;
 
     NoteTypes noteToSpawn = NoteTypes.Basic;
     private void Update()
@@ -35,9 +34,7 @@ public class SongManager : MonoBehaviour
         {
             Debug.Log("SongEnded");
             songStarted = false;
-            finalScoreManager.SetActive(true);
-            gameplayCanvas.SetActive(false);
-            gameObject.SetActive(false);
+            ScoreSongManager.Instance.CheckGameWin();
         }
     }
     void Start()

@@ -13,7 +13,7 @@ public class FinalScoreLogic : MonoBehaviour
     [SerializeField] Image star1, star2, star3;
 
     int finalScore = 0;
-    [SerializeField] int scoreFor3Stars = 1000;
+    [SerializeField] float scoreFor3Stars = 1000;
 
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class FinalScoreLogic : MonoBehaviour
             float t = Mathf.Clamp01(elapsed / duration);
             int currentScore = Mathf.RoundToInt(Mathf.Lerp(startScore, targetScore, t));
             score.text = currentScore.ToString();
-            scoreBar.value = currentScore / scoreFor3Stars;
+            scoreBar.value = (float)currentScore / scoreFor3Stars;
             yield return null;
         }
 
