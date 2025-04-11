@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteLogic : MonoBehaviour
 {
-    double timeInstantiated;
+    /*double timeInstantiated;
     public float assignedTime;
     ScoreSongManager ScoreSongManager;
 
@@ -34,5 +34,5 @@ public class NoteLogic : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = true;
         }
             
-    }
+    }*/
 }
