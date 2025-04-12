@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class NoteLogic : MonoBehaviour
 {
     protected ScoreSongManager scoreManager;
     protected BoxLogic actualBox, nextBox;
 
-    protected virtual void Start()
+    void Start()
     {
         scoreManager = ScoreSongManager.Instance;
         actualBox = GetComponentInParent<BoxLogic>();
@@ -25,14 +28,24 @@ public class NoteLogic : MonoBehaviour
         else
         {
             // Eliminar nota + despawn
-            ScoreSongManager.Instance.NoteDespawned();
+            OnNoteDespawn();
             Destroy(gameObject);
         }
     }
 
     public virtual void OnNoteHit()
     {
-        //Cuando le das  a la nota que passa?
+        scoreManager.NotesToCombo--;
+        if (scoreManager.NotesToCombo <= 0)
+        {
+            scoreManager.AddCombo();
+        }
+        scoreManager.AddScore(10);
+    }
+    public virtual void OnNoteDespawn()
+    {
+        scoreManager.ResetCombo();
+        scoreManager.AddLife(-2);
     }
 
     protected IEnumerator MoveTo(Vector2 targetPos)

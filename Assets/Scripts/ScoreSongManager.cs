@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class ScoreSongManager : MonoBehaviour
@@ -14,11 +16,11 @@ public class ScoreSongManager : MonoBehaviour
 
     int life = 100;
     int score = 0;
-    public int hitIncrease = 10;
+    private int hitIncrease = 10;
     float combo = 1;
-    public float comboIncrease = 0.1f;
+    private float comboIncrease = 0.1f;
     int notesToCombo;
-    public int comboNotes = 5;
+    private int comboNotes = 5;
 
     public delegate void ScoreUpdate(float newScore);
     public static event ScoreUpdate OnNewScore;
@@ -28,47 +30,18 @@ public class ScoreSongManager : MonoBehaviour
     public static event RetryLevel OnLostLevel;
 
     [SerializeField] GameObject finalScoreManager, gameplayCanvas, SongManager, GameLostCanvas;
+
+    public int NotesToCombo { get => notesToCombo; set => notesToCombo = value; }
+
     void Start()
     {
         Instance = this;
-        notesToCombo = comboNotes;
-    }
-
-    public void NoteHit(bool isPrefect)
-    {
-        notesToCombo--;
-        if (isPrefect)
-        {
-            Debug.Log("Perfect");
-            notesToCombo--;
-        }
-        if (notesToCombo <= 0)
-        {
-            combo += comboIncrease;
-            notesToCombo = comboNotes;
-            OnNewCombo?.Invoke(combo);
-        }
-        score += Convert.ToInt32(hitIncrease * combo);
-        OnNewScore?.Invoke(score);
+        NotesToCombo = ComboNotes;
     }
     public void NoteMiss()
     {
-        notesToCombo = comboNotes;
-        combo = 1;
-        score -= 2;
-        life -= 5;
-        OnNewScore?.Invoke(score);
-        OnNewCombo?.Invoke(combo);
-        CheckLife();
-    }
-    public void NoteDespawned()
-    {
-        notesToCombo = comboNotes;
-        combo = 1;
-        life -= 2;
-        OnNewScore?.Invoke(score);
-        OnNewCombo?.Invoke(combo);
-        CheckLife();
+        ResetCombo();
+        AddLife(-5);
     }
     public int GetScore()
     {
@@ -78,14 +51,43 @@ public class ScoreSongManager : MonoBehaviour
     {
         return life;
     }
+    public void AddCombo()
+    {
+        combo += comboIncrease;
+        NotesToCombo = comboNotes;
+        OnNewCombo?.Invoke(combo);
+    }
+    public void AddScore(int howMuch)
+    {
+        if (howMuch >=0)
+        {
+            score += Convert.ToInt32(howMuch * combo);
+        } 
+        else
+        {
+            score -= howMuch;
+        }
+        OnNewScore?.Invoke(score);
+    }
+    public void AddLife(int howMuch)
+    {
+        life += howMuch;
+        CheckLife();
+    }
 
+    public void ResetCombo()
+    {
+        NotesToCombo = comboNotes;
+        combo = 1;
+        OnNewCombo?.Invoke(combo);
+    }
     void CheckLife()
     {
         if (healthBar != null)
         {
-            healthBar.value = life;
+            healthBar.value = Life;
         }
-        if (life <= 0)
+        if (Life <= 0)
         {
             GameLostCanvas.SetActive(true);
             gameplayCanvas.SetActive(false);
@@ -95,19 +97,18 @@ public class ScoreSongManager : MonoBehaviour
     }
     public void CheckGameWin()
     {
-        if (score > 0)
+        if (Score > 0)
         {
             finalScoreManager.SetActive(true);
             gameplayCanvas.SetActive(false);
             SongManager.SetActive(false);
 
-            PlayerPrefs.SetInt("Score1", score);
+            PlayerPrefs.SetInt("Score1", Score);
         }
     }
-
    public void OnRestart()
     {
-        if(life <= 0)
+        if(Life <= 0)
         {
             SceneController.Instance.LoadScene(SceneManager.GetActiveScene().name);
         }
