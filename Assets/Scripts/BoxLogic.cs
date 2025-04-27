@@ -1,3 +1,4 @@
+using Melanchall.DryWetMidi.MusicTheory;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,24 +6,6 @@ using UnityEngine;
 public class BoxLogic : MonoBehaviour
 {
     [SerializeField] int col, row;
-    private void OnEnable()
-    {
-        SongManager.OnBeat += HandleBeat;
-    }
-
-    private void OnDisable()
-    {
-        SongManager.OnBeat -= HandleBeat;
-    }
-
-    void HandleBeat()
-    {
-        GameObject[] Notes = transform.GetComponentsInChildren<GameObject>();
-        for (int i = 0; i < Notes.Length; i++)
-        {
-            Notes[i].SendMessage("OnBeatMove");
-        }
-    }
     public int GetBoxCol()
     {
         return col;
@@ -34,7 +17,7 @@ public class BoxLogic : MonoBehaviour
     public void SpawnNote(NoteType type)
     {
         string prefabName = $"Note_{type}";
-        GameObject notePrefab = Resources.Load<GameObject>($"Prefabs/Notes/{prefabName}");
+        GameObject notePrefab = Resources.Load<GameObject>($"{prefabName}");
 
         if (notePrefab != null)
         {
@@ -42,7 +25,7 @@ public class BoxLogic : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"No se encontró el prefab para {type}");
+            Debug.LogWarning($"No se encontró el prefab para {prefabName} en Resources/");
         }
     }
 

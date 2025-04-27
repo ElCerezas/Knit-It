@@ -36,7 +36,7 @@ public class ScoreSongManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        NotesToCombo = ComboNotes;
+        NotesToCombo = comboNotes;
     }
     public void NoteMiss()
     {
@@ -85,9 +85,9 @@ public class ScoreSongManager : MonoBehaviour
     {
         if (healthBar != null)
         {
-            healthBar.value = Life;
+            healthBar.value = life;
         }
-        if (Life <= 0)
+        if (life <= 0)
         {
             GameLostCanvas.SetActive(true);
             gameplayCanvas.SetActive(false);
@@ -97,18 +97,18 @@ public class ScoreSongManager : MonoBehaviour
     }
     public void CheckGameWin()
     {
-        if (Score > 0)
+        if (score > 0)
         {
             finalScoreManager.SetActive(true);
             gameplayCanvas.SetActive(false);
             SongManager.SetActive(false);
 
-            PlayerPrefs.SetInt("Score1", Score);
+            PlayerPrefs.SetInt("Score1", score);
         }
     }
    public void OnRestart()
     {
-        if(Life <= 0)
+        if(life <= 0)
         {
             SceneController.Instance.LoadScene(SceneManager.GetActiveScene().name);
         }

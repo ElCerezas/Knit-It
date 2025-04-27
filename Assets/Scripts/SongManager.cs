@@ -13,8 +13,8 @@ public class SongManager : MonoBehaviour
     public AudioSource audioSource;
     public float songDelaySeconds;
 
-    public string level; //Subcarpeta de streaming Assets
-    public string fileLocation; //Archivos
+    public string level; // Subcarpeta de StreamingAssets
+    public string fileLocation; // Nombre de archivo MIDI
 
     public static MidiFile midiFile;
 
@@ -24,6 +24,7 @@ public class SongManager : MonoBehaviour
     public static event Action OnBeat;
 
     private List<BeatData> beatMap = new List<BeatData>();
+    private List<double> beatTimes = new List<double>();
     private TempoMap tempoMap;
     private bool songStarted = false;
 
@@ -31,6 +32,7 @@ public class SongManager : MonoBehaviour
     {
         Instance = this;
     }
+
     void Start()
     {
         boxGrid = ConvertTo2DArray(flatArray);
@@ -53,20 +55,20 @@ public class SongManager : MonoBehaviour
         tempoMap = midiFile.GetTempoMap();
         var notes = midiFile.GetNotes();
 
-        List<double> beatTimes = new List<double>();
+        beatTimes = new List<double>();
+        beatMap = new List<BeatData>();
 
         foreach (var note in notes)
         {
             var metricTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, tempoMap);
             var beatTime = metricTime.Minutes * 60 + metricTime.Seconds + metricTime.Milliseconds / 1000f;
 
-            // Si es nota de beat
             if (note.NoteNumber == 67)
             {
                 beatTimes.Add(beatTime);
                 continue;
             }
-            // Si es una nota válida para spawnear
+
             if (note.NoteNumber >= 60 && note.NoteNumber <= 63)
             {
                 int column = note.NoteNumber - 60;
@@ -85,9 +87,10 @@ public class SongManager : MonoBehaviour
         Debug.Log("Loaded beat map with " + beatMap.Count + " notes");
         Debug.Log("Loaded " + beatTimes.Count + " beat events");
 
-        StartCoroutine(BeatLoop(beatTimes));
+        StartCoroutine(BeatLoop());
         Invoke(nameof(StartSong), songDelaySeconds);
     }
+
     private void LoadOverrides()
     {
         string path = Application.streamingAssetsPath + "/" + level + "/" + fileLocation + "_overrides.json";
@@ -120,14 +123,17 @@ public class SongManager : MonoBehaviour
             Debug.Log("No overrides found for this level.");
         }
     }
+
     public void StartSong()
     {
         audioSource.Play();
         songStarted = true;
     }
-    private IEnumerator BeatLoop(List<double> beatTimes)
+
+    private IEnumerator BeatLoop()
     {
         int beatIndex = 0;
+        int noteIndex = 0;
 
         while (beatIndex < beatTimes.Count)
         {
@@ -136,7 +142,18 @@ public class SongManager : MonoBehaviour
 
             if (songTime >= nextBeat)
             {
-                OnBeat?.Invoke(); //Disparar beat global
+                OnBeat?.Invoke(); // Disparar evento global
+
+                // Spawnear nota solo si coincide el tiempo
+                if (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
+                {
+                    int col = beatMap[noteIndex].column;
+                    NoteType type = beatMap[noteIndex].type;
+
+                    boxGrid[0, col].SpawnNote(type);
+                    noteIndex++;
+                }
+
                 beatIndex++;
             }
 
@@ -148,20 +165,23 @@ public class SongManager : MonoBehaviour
     {
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
+
     public BoxLogic[,] ConvertTo2DArray(BoxLogic[] flat)
     {
         int row = 5;
         int col = 4;
-        BoxLogic[,] Gen2d = new BoxLogic[row, col];
+        BoxLogic[,] gen2D = new BoxLogic[row, col];
         int index = 0;
+
         for (int c = 0; c < col; c++)
         {
             for (int r = 0; r < row; r++)
             {
-                Gen2d[r, c] = flat[index];
+                gen2D[r, c] = flat[index];
                 index++;
             }
         }
-        return Gen2d;
+
+        return gen2D;
     }
 }

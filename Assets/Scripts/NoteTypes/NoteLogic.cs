@@ -1,24 +1,37 @@
 using System;
 using System.Collections;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class NoteLogic : MonoBehaviour
 {
     protected ScoreSongManager scoreManager;
     protected BoxLogic actualBox, nextBox;
+    private SpriteRenderer spriteRenderer;
+    private bool spriteActivated = false;
 
+    private void OnEnable()
+    {
+        SongManager.OnBeat += OnBeatMove;
+    }
+    private void OnDisable()
+    {
+        SongManager.OnBeat -= OnBeatMove;
+    }
     void Start()
     {
         scoreManager = ScoreSongManager.Instance;
         actualBox = GetComponentInParent<BoxLogic>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = false; // Apagar sprite al inicio
     }
 
     public virtual void OnBeatMove()
     {
-        int nextRow = actualBox.GetBoxRow() + 1; //Movimiento basico de bajar
-        int col = actualBox.GetBoxCol(); //Se mantiene la columna
+        Debug.Log("NoteBeated");
+        int nextRow = actualBox.GetBoxRow() + 1; // Movimiento básico: bajar fila
+        int col = actualBox.GetBoxCol();         // Mantener la columna
 
         if (nextRow < SongManager.Instance.boxGrid.GetLength(0))
         {
@@ -27,7 +40,7 @@ public class NoteLogic : MonoBehaviour
         }
         else
         {
-            // Eliminar nota + despawn
+            // No hay siguiente casilla -> nota perdida
             OnNoteDespawn();
             Destroy(gameObject);
         }
@@ -41,7 +54,9 @@ public class NoteLogic : MonoBehaviour
             scoreManager.AddCombo();
         }
         scoreManager.AddScore(10);
+        Destroy(gameObject); // Destruir nota al acertar
     }
+
     public virtual void OnNoteDespawn()
     {
         scoreManager.ResetCombo();
@@ -50,13 +65,19 @@ public class NoteLogic : MonoBehaviour
 
     protected IEnumerator MoveTo(Vector2 targetPos)
     {
-        Vector2 startPos = transform.position;
-        float duration = 0.1f;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
+        if (!spriteActivated && spriteRenderer != null)
         {
-            transform.position = Vector2.Lerp(startPos, targetPos, elapsed / duration);
+            spriteRenderer.enabled = true;
+            spriteActivated = true;
+        }
+
+        Vector2 startPos = transform.position;
+        float elapsed = 0f;
+        float moveDuration = 0.3f; // Duración de movimiento por beat
+
+        while (elapsed < moveDuration)
+        {
+            transform.position = Vector2.Lerp(startPos, targetPos, elapsed / moveDuration);
             elapsed += Time.deltaTime;
             yield return null;
         }

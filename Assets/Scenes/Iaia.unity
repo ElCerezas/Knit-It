@@ -1420,9 +1420,6 @@ MonoBehaviour:
   hitSFX: {fileID: 154648368}
   missSFX: {fileID: 154648367}
   healthBar: {fileID: 1839049548}
-  hitIncrease: 10
-  comboIncrease: 0.1
-  comboNotes: 5
   finalScoreManager: {fileID: 1848747981}
   gameplayCanvas: {fileID: 1828731671}
   SongManager: {fileID: 706480418}
@@ -1605,7 +1602,7 @@ MonoBehaviour:
   audioSource: {fileID: 706480422}
   songDelaySeconds: 1
   level: 
-  fileLocation: JosefinaNotas.mid
+  fileLocation: TestBuild
   flatArray:
   - {fileID: 1653173423}
   - {fileID: 1800853981}
@@ -1637,7 +1634,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 329267cad100c124ead5dee384604e68, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d5abe127f36cbff44b68db5cea9480d6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.503
   m_Pitch: 1
