@@ -35,16 +35,21 @@ public class SceneController : MonoBehaviour
     private System.Collections.IEnumerator LoadSceneAsyncCoroutine(string sceneName)
     {
         if (!Application.CanStreamedLevelBeLoaded(sceneName))
-        {
             yield break;
-        }
+
+        if (ScreenFader.Instance != null)
+            yield return ScreenFader.Instance.Fade(1f);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         while (!operation.isDone)
-        {
             yield return null;
-        }
+
+        yield return null;
+
+        if (ScreenFader.Instance != null)
+            yield return ScreenFader.Instance.Fade(0f);
     }
+
     public void QuitGame()
     {
         Debug.Log("Quit Game");

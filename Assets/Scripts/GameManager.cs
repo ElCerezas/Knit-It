@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public delegate void UpdateState();
     public static event UpdateState retry;
+    public Canvas pauseMenu;
 
 
     private void Awake()
@@ -39,9 +40,11 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Playing:
                 Time.timeScale = 1f;
+                AudioListener.pause = false;
                 break;
             case GameState.Paused:
                 Time.timeScale = 0f;
+                AudioListener.pause = true;
                 break;
         }
     }
@@ -51,10 +54,12 @@ public class GameManager : MonoBehaviour
         if (currentState == GameState.Playing)
         {
             SetGameState(GameState.Paused);
+            pauseMenu.gameObject.SetActive(true);
         }
         else if (currentState == GameState.Paused)
         {
             SetGameState(GameState.Playing);
+            pauseMenu.gameObject.SetActive(false);
         }
     }
 
