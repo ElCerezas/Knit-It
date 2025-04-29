@@ -16,7 +16,6 @@ public class ScoreSongManager : MonoBehaviour
 
     int life = 100;
     int score = 0;
-    private int hitIncrease = 10;
     float combo = 1;
     private float comboIncrease = 0.1f;
     int notesToCombo;
@@ -104,6 +103,13 @@ public class ScoreSongManager : MonoBehaviour
             SongManager.SetActive(false);
 
             PlayerPrefs.SetInt("Score1", score);
+        }
+        else
+        {
+            GameLostCanvas.SetActive(true);
+            gameplayCanvas.SetActive(false);
+            SongManager.SetActive(false);
+            OnLostLevel?.Invoke();
         }
     }
    public void OnRestart()

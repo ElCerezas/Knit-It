@@ -46,7 +46,7 @@ public class NoteLogic : MonoBehaviour
         }
     }
 
-    public virtual void OnNoteHit()
+    public virtual void OnNoteHit(bool isPerfect)
     {
         scoreManager.NotesToCombo--;
         if (scoreManager.NotesToCombo <= 0)

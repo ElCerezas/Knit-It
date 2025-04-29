@@ -23,7 +23,7 @@ public class TeclaLogic : MonoBehaviour
             }
             else
             {
-                //ScoreSongManager.noteHit(perfectNote);
+                nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
                 Destroy(nota);
             }
         }
