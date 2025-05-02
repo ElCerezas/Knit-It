@@ -1,17 +1,35 @@
+using Unity.Mathematics;
+using UnityEngine;
+
 public class GumNote : NoteLogic
 {
     private bool firstHitDone = false;
-
+    private bool returned = false;
+    private int originalRow;
+    private int col;
+    Collider2D selfCollider;
     public override void OnNoteHit(bool isPerfect)
     {
         if (!firstHitDone)
         {
             firstHitDone = true;
-            scoreManager.NotesToCombo--; 
+            selfCollider = GetComponent<Collider2D>();
+            selfCollider.enabled = false;
+
+            scoreManager.NotesToCombo--;
             if (scoreManager.NotesToCombo <= 0)
                 scoreManager.AddCombo();
+
             scoreManager.AddScore(5);
-            MoveUpOneBox();
+
+            originalRow = actualBox.GetBoxRow();
+            col = actualBox.GetBoxCol();
+            int nextRow = math.max(0, originalRow - 1);
+            nextBox = SongManager.Instance.boxGrid[nextRow, col];
+
+            StartCoroutine(MoveTo(nextBox.transform.position));
+            // Subscribirse a un beat para regresar
+            SongManager.OnBeat += ReturnToOriginalBox;
         }
         else
         {
@@ -19,20 +37,17 @@ public class GumNote : NoteLogic
         }
     }
 
-    private void MoveUpOneBox()
+    private void ReturnToOriginalBox()
     {
-        int prevRow = actualBox.GetBoxRow() - 1; 
-        int col = actualBox.GetBoxCol();
+        if (!returned)
+        {
+            returned = true;
+            selfCollider.enabled = true;
+            nextBox = SongManager.Instance.boxGrid[originalRow, col];
+            StartCoroutine(MoveTo(nextBox.transform.position));
 
-        if (prevRow >= 0)
-        {
-            BoxLogic prevBox = SongManager.Instance.boxGrid[prevRow, col];
-            actualBox = prevBox;
-            StartCoroutine(MoveTo(prevBox.transform.position));
-        }
-        else
-        {
-            Destroy(gameObject);
+            // Desuscribirse para evitar múltiples llamadas
+            SongManager.OnBeat -= ReturnToOriginalBox;
         }
     }
 }
