@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public enum NoteType
 {
-    Basic, Golden, BubleGum
+    Basic, Golden, Gum, Healing
 }
 public struct BeatData
 {
@@ -12,21 +13,41 @@ public struct BeatData
     public int column;//Columna donde spawnea (0-3)
     public NoteType type;//Tipo de nota a spawnear
 }
+[Serializable]
 public class BeatOverrideData
 {
-    public int beatIndex;//En que beat se ha de cambiar la nota
-    public int? column;//Si se hubiese de ajustar la columna
-    public string type;//Tipo de nota, default = Basic
+    public int beatIndex;
+    public int? column;
+    public string type;
 }
-public static class JsonUtilityWrapper //Para que unity pueda leer el json
+
+public static class JsonUtilityWrapper
 {
+    [System.Serializable]
     private class Wrapper<T>
     {
-        public List<T> list;
+        public List<T> items;
     }
+
     public static List<T> FromJsonList<T>(string json)
     {
-        return JsonUtility.FromJson<Wrapper<T>>("{\"list\":" + json + "}").list;
+        if (string.IsNullOrEmpty(json)) return new List<T>();
+
+        try
+        {
+            var wrapper = JsonUtility.FromJson<Wrapper<T>>("{\"items\":" + json + "}");
+            return wrapper.items ?? new List<T>();
+        }
+        catch
+        {
+            Debug.LogError("Error parsing JSON overrides.");
+            return new List<T>();
+        }
     }
 }
 
+[Serializable]
+public class BeatOverrideList
+{
+    public List<BeatOverrideData> items;
+}

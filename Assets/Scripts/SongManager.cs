@@ -13,8 +13,7 @@ public class SongManager : MonoBehaviour
     public AudioSource audioSource;
     public float songDelaySeconds;
 
-    public string level; // Subcarpeta de StreamingAssets
-    public string fileLocation; // Nombre de archivo MIDI
+    public string fileLocation; // Nombre de archivo MIDI (sin extensión)
 
     public static MidiFile midiFile;
 
@@ -36,7 +35,8 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         boxGrid = ConvertTo2DArray(flatArray);
-        midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + level + "/" + fileLocation + ".mid");
+        string midiPath = Path.Combine(Application.streamingAssetsPath, fileLocation + ".mid");
+        midiFile = MidiFile.Read(midiPath);
         GetDataFromMidi();
     }
 
@@ -84,6 +84,8 @@ public class SongManager : MonoBehaviour
         beatMap = beatMap.OrderBy(b => b.time).ToList();
         beatTimes = beatTimes.OrderBy(t => t).ToList();
 
+        LoadOverrides();
+
         Debug.Log("Loaded beat map with " + beatMap.Count + " notes");
         Debug.Log("Loaded " + beatTimes.Count + " beat events");
 
@@ -93,30 +95,38 @@ public class SongManager : MonoBehaviour
 
     private void LoadOverrides()
     {
-        string path = Application.streamingAssetsPath + "/" + level + "/" + fileLocation + "_overrides.json";
+        string path = Path.Combine(Application.streamingAssetsPath, fileLocation + "_overrides.json");
 
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
-            List<BeatOverrideData> overrides = JsonUtilityWrapper.FromJsonList<BeatOverrideData>(json);
-
-            foreach (var ovr in overrides)
+            try
             {
-                if (ovr.beatIndex >= 0 && ovr.beatIndex < beatMap.Count)
+                BeatOverrideList wrapper = JsonUtility.FromJson<BeatOverrideList>(json);
+                List<BeatOverrideData> overrides = wrapper.items;
+
+                foreach (var ovr in overrides)
                 {
-                    BeatData bd = beatMap[ovr.beatIndex];
+                    if (ovr.beatIndex >= 0 && ovr.beatIndex < beatMap.Count)
+                    {
+                        BeatData bd = beatMap[ovr.beatIndex];
 
-                    if (ovr.column.HasValue)
-                        bd.column = ovr.column.Value;
+                        if (ovr.column.HasValue)
+                            bd.column = ovr.column.Value;
 
-                    if (!string.IsNullOrEmpty(ovr.type))
-                        bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
+                        if (!string.IsNullOrEmpty(ovr.type))
+                            bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
 
-                    beatMap[ovr.beatIndex] = bd;
+                        beatMap[ovr.beatIndex] = bd;
+                    }
                 }
-            }
 
-            Debug.Log("Applied " + overrides.Count + " overrides.");
+                Debug.Log("Applied " + overrides.Count + " overrides.");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error parsing JSON overrides: " + ex.Message);
+            }
         }
         else
         {
@@ -144,7 +154,6 @@ public class SongManager : MonoBehaviour
             {
                 OnBeat?.Invoke(); // Evento de beat
 
-                // Spawnea todas las notas que coincidan con el tiempo de este beat
                 while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
                 {
                     int col = beatMap[noteIndex].column;

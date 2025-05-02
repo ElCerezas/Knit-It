@@ -26,12 +26,10 @@ public class NoteLogic : MonoBehaviour
         if (spriteRenderer != null)
             spriteRenderer.enabled = false; // Apagar sprite al inicio
     }
-
     public virtual void OnBeatMove()
     {
-        Debug.Log("NoteBeated");
-        int nextRow = actualBox.GetBoxRow() + 1; // Movimiento básico: bajar fila
-        int col = actualBox.GetBoxCol();         // Mantener la columna
+        int nextRow = actualBox.GetBoxRow() + 1;
+        int col = actualBox.GetBoxCol();    
 
         if (nextRow < SongManager.Instance.boxGrid.GetLength(0))
         {
@@ -40,29 +38,32 @@ public class NoteLogic : MonoBehaviour
         }
         else
         {
-            // No hay siguiente casilla -> nota perdida
             OnNoteDespawn();
             Destroy(gameObject);
         }
     }
-
     public virtual void OnNoteHit(bool isPerfect)
     {
-        scoreManager.NotesToCombo--;
-        if (scoreManager.NotesToCombo <= 0)
+        if (isPerfect)
         {
             scoreManager.AddCombo();
         }
+        else
+        {
+            scoreManager.NotesToCombo--;
+            if (scoreManager.NotesToCombo <= 0)
+            {
+                scoreManager.AddCombo();
+            }
+        }
         scoreManager.AddScore(10);
-        Destroy(gameObject); // Destruir nota al acertar
+        Destroy(gameObject);
     }
-
     public virtual void OnNoteDespawn()
     {
         scoreManager.ResetCombo();
         scoreManager.AddLife(-2);
     }
-
     protected IEnumerator MoveTo(Vector2 targetPos)
     {
         if (!spriteActivated && spriteRenderer != null)
