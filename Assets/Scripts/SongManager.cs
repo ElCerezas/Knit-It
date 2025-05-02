@@ -142,10 +142,10 @@ public class SongManager : MonoBehaviour
 
             if (songTime >= nextBeat)
             {
-                OnBeat?.Invoke(); // Disparar evento global
+                OnBeat?.Invoke(); // Evento de beat
 
-                // Spawnear nota solo si coincide el tiempo
-                if (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
+                // Spawnea todas las notas que coincidan con el tiempo de este beat
+                while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
                 {
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
