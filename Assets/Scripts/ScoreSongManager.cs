@@ -12,7 +12,7 @@ public class ScoreSongManager : MonoBehaviour
 {
     public static ScoreSongManager Instance;
     public AudioSource hitSFX, missSFX;
-    [SerializeField] Slider healthBar;
+    [SerializeField] Image healthBar;
 
     int life = 100;
     int score = 0;
@@ -84,7 +84,7 @@ public class ScoreSongManager : MonoBehaviour
     {
         if (healthBar != null)
         {
-            healthBar.value = life;
+            healthBar.GetComponent<Animator>().SetInteger("Health", life);
         }
         if (life <= 0)
         {
