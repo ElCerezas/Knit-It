@@ -1407,6 +1407,7 @@ GameObject:
   - component: {fileID: 632140169}
   - component: {fileID: 632140168}
   - component: {fileID: 632140167}
+  - component: {fileID: 632140170}
   m_Layer: 5
   m_Name: Kniters
   m_TagString: Untagged
@@ -1492,6 +1493,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632140165}
   m_CullTransparentMesh: 1
+--- !u!114 &632140170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632140165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a047ee4c39597924999ca4704c51402a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 1
+  bpm: 120
 --- !u!1 &662392114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1660,7 @@ MonoBehaviour:
   - {fileID: 241336123}
   - {fileID: 52358704}
   - {fileID: 1378697094}
+  BPM: 100
 --- !u!82 &706480422
 AudioSource:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ public class SongManager : MonoBehaviour
     private List<double> beatTimes = new List<double>();
     private TempoMap tempoMap;
     private bool songStarted = false;
+    public float BPM = 120f;
 
     private void Awake()
     {
