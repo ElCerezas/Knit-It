@@ -4,12 +4,12 @@ using UnityEngine;
 public class BeatTimedAnimator : MonoBehaviour
 {
     public float animationDuration = 1f; // Duración real del clip en segundos
-    public float bpm = SongManager.Instance.BPM;             // BPM de la canción
 
     private Animator animator;
 
     void Start()
     {
+        float bpm = SongManager.Instance.BPM;
         animator = GetComponent<Animator>();
 
         // Calcular la duración de un beat en segundos
