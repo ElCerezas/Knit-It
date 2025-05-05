@@ -1506,7 +1506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDuration: 1
-  bpm: 120
 --- !u!1 &662392114
 GameObject:
   m_ObjectHideFlags: 0

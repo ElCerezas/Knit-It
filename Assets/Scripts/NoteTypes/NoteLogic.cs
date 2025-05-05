@@ -8,6 +8,7 @@ public class NoteLogic : MonoBehaviour
     protected BoxLogic actualBox, nextBox;
     private SpriteRenderer spriteRenderer;
     private bool spriteActivated = false;
+    private float beatTime;
 
     private void OnEnable()
     {
@@ -25,6 +26,7 @@ public class NoteLogic : MonoBehaviour
 
         if (spriteRenderer != null)
             spriteRenderer.enabled = false; // Apagar sprite al inicio
+        beatTime = 60/SongManager.Instance.BPM;
     }
     public virtual void OnBeatMove()
     {
@@ -74,7 +76,7 @@ public class NoteLogic : MonoBehaviour
 
         Vector2 startPos = transform.position;
         float elapsed = 0f;
-        float moveDuration = 0.3f; // Duración de movimiento por beat
+        float moveDuration = beatTime/2; // Duración de movimiento por beat
 
         while (elapsed < moveDuration)
         {
