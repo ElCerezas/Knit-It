@@ -9,6 +9,8 @@ public class ButtonSetup : MonoBehaviour
     void Start()
     {
         Button boton = GetComponent<Button>();
+        //To delete:
+        PlayerPrefs.DeleteAll();
 
         if (SceneController.Instance != null)
         {

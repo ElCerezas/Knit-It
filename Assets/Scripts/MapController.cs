@@ -17,8 +17,8 @@ public class MapController : MonoBehaviour
     private void Start()
     {
         score1 = PlayerPrefs.GetInt("Score1", 0);
-        score2 = PlayerPrefs.GetInt("MaxScoreLevel2", 0);
-        score3 = PlayerPrefs.GetInt("MaxScoreLevel3", 0);
+        score2 = PlayerPrefs.GetInt("Score2", 0);
+        score3 = PlayerPrefs.GetInt("Score3", 0);
         Level2Unlocked();
         Level3Unlocked();
     }
@@ -29,7 +29,7 @@ public class MapController : MonoBehaviour
     }
     public void Level2Unlocked()
     {
-        if (score1 == 0)
+        if (score1 <= 0)
         {
             lvl2Unlocked = false;
             level2.interactable = false;
@@ -42,7 +42,7 @@ public class MapController : MonoBehaviour
     }
     public void Level3Unlocked()
     {
-        if (score2 == 0)
+        if (score2 <= 0)
         {
             lvl3Unlocked = false;
             level3.interactable = false;

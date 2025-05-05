@@ -188,5 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce8db5553f412547b51ffb0d402f23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pulseScale: 1.15
-  baseScale: 1
+  pulseFactor: 1.2
