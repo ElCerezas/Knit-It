@@ -8,6 +8,7 @@ public class TeclaLogic : MonoBehaviour
     ScoreSongManager ScoreSongManager;
     GameObject nota;
     [SerializeField] Collider2D perfectZone;
+    [SerializeField] ParticleSystem particlesHit, particlesMiss, particlesPerf;
     bool perfectNote = false;
     private void Start()
     {
@@ -20,11 +21,19 @@ public class TeclaLogic : MonoBehaviour
             if (nota == null)
             {
                 ScoreSongManager.NoteMiss();
+                particlesMiss?.Play();
             }
             else
             {
                 nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
                 Destroy(nota);
+                if (perfectNote)
+                {
+                    particlesPerf?.Play();
+                }else
+                {
+                    particlesHit?.Play();
+                }
             }
         }
     }
