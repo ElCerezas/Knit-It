@@ -25,15 +25,16 @@ public class TeclaLogic : MonoBehaviour
             }
             else
             {
-                nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
-                Destroy(nota);
                 if (perfectNote)
                 {
                     particlesPerf?.Play();
-                }else
+                }
+                else
                 {
                     particlesHit?.Play();
                 }
+                nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
+                Destroy(nota);
             }
         }
     }

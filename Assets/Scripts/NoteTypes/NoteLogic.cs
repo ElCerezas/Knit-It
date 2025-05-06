@@ -9,6 +9,7 @@ public class NoteLogic : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool spriteActivated = false;
     private float beatTime;
+    protected Collider2D selfCollider;
 
     private void OnEnable()
     {
@@ -23,7 +24,7 @@ public class NoteLogic : MonoBehaviour
         scoreManager = ScoreSongManager.Instance;
         actualBox = GetComponentInParent<BoxLogic>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        selfCollider = GetComponent<Collider2D>();
         if (spriteRenderer != null)
             spriteRenderer.enabled = false; // Apagar sprite al inicio
         beatTime = 60/SongManager.Instance.BPM;
@@ -66,7 +67,7 @@ public class NoteLogic : MonoBehaviour
         scoreManager.ResetCombo();
         scoreManager.AddLife(-2);
     }
-    protected IEnumerator MoveTo(Vector2 targetPos)
+    protected IEnumerator MoveTo(Vector2 targetPos, float quickMultiply = 1)
     {
         if (!spriteActivated && spriteRenderer != null)
         {
@@ -76,7 +77,7 @@ public class NoteLogic : MonoBehaviour
 
         Vector2 startPos = transform.position;
         float elapsed = 0f;
-        float moveDuration = beatTime/2; // Duración de movimiento por beat
+        float moveDuration = (beatTime/2)/quickMultiply; // Duración de movimiento por beat
 
         while (elapsed < moveDuration)
         {

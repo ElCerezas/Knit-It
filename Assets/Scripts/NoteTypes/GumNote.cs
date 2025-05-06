@@ -1,13 +1,12 @@
 using Unity.Mathematics;
 using UnityEngine;
+using System.Collections;
 
 public class GumNote : NoteLogic
 {
     private bool firstHitDone = false;
     private bool returned = false;
     private int originalRow;
-    private int col;
-    Collider2D selfCollider;
     public override void OnNoteHit(bool isPerfect)
     {
         if (!firstHitDone)
@@ -21,33 +20,35 @@ public class GumNote : NoteLogic
                 scoreManager.AddCombo();
 
             scoreManager.AddScore(5);
-
-            originalRow = actualBox.GetBoxRow();
-            col = actualBox.GetBoxCol();
-            int nextRow = math.max(0, originalRow - 1);
-            nextBox = SongManager.Instance.boxGrid[nextRow, col];
-
-            StartCoroutine(MoveTo(nextBox.transform.position));
-            // Subscribirse a un beat para regresar
-            SongManager.OnBeat += ReturnToOriginalBox;
+  
+            SongManager.OnBeat += ReturnBack;
+            SongManager.OnBeat -= OnBeatMove;
         }
-        else
+        else if (returned)
         {
             base.OnNoteHit(isPerfect);
         }
     }
+    public override void OnBeatMove()
+    {
+        selfCollider.enabled = true;
+        base.OnBeatMove();
+    }
 
-    private void ReturnToOriginalBox()
+    private void ReturnBack()
     {
         if (!returned)
         {
             returned = true;
-            selfCollider.enabled = true;
-            nextBox = SongManager.Instance.boxGrid[originalRow, col];
+            selfCollider.enabled = false;
+            int nextRow = actualBox.GetBoxRow() - 2;
+            int col = actualBox.GetBoxCol();
+            nextBox = SongManager.Instance.boxGrid[nextRow, col];
             StartCoroutine(MoveTo(nextBox.transform.position));
 
-            // Desuscribirse para evitar múltiples llamadas
-            SongManager.OnBeat -= ReturnToOriginalBox;
+            // Desuscribirse para evitar multiples llamadas
+            SongManager.OnBeat -= ReturnBack;
+            SongManager.OnBeat += OnBeatMove;
         }
     }
 }

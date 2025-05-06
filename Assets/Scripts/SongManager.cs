@@ -108,19 +108,23 @@ public class SongManager : MonoBehaviour
 
                 foreach (var ovr in overrides)
                 {
-                    if (ovr.beatIndex >= 0 && ovr.beatIndex < beatMap.Count)
+                    if (!string.IsNullOrEmpty(ovr.type))
                     {
-                        BeatData bd = beatMap[ovr.beatIndex];
+                        // Buscar la nota en beatMap que coincide con el beatIndex y columna
+                        var bdIndex = beatMap.FindIndex(b =>
+                            Mathf.Approximately((float)b.time, (float)beatTimes[ovr.beatIndex]) &&
+                            (!ovr.column.HasValue || b.column == ovr.column.Value)
+                        );
 
-                        /*if (ovr.column.HasValue)
-                            bd.column = ovr.column.Value;*/
-
-                        if (!string.IsNullOrEmpty(ovr.type))
+                        if (bdIndex != -1)
+                        {
+                            BeatData bd = beatMap[bdIndex];
                             bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
-
-                        beatMap[ovr.beatIndex] = bd;
+                            beatMap[bdIndex] = bd;
+                        }
                     }
                 }
+
 
                 Debug.Log("Applied " + overrides.Count + " overrides.");
             }
