@@ -41,7 +41,7 @@ public class GumNote : NoteLogic
         {
             returned = true;
             selfCollider.enabled = false;
-            int nextRow = actualBox.GetBoxRow() - 2;
+            int nextRow = actualBox.GetBoxRow() - 1;
             int col = actualBox.GetBoxCol();
             nextBox = SongManager.Instance.boxGrid[nextRow, col];
             StartCoroutine(MoveTo(nextBox.transform.position));
