@@ -14,10 +14,11 @@ public class BoxLogic : MonoBehaviour
     {
         return row;
     }
-    public void SpawnNote(NoteType type)
+    public void SpawnNote(NoteType type, int bpId, int colId)
     {
         string prefabName = $"Note_{type}";
         GameObject notePrefab = Resources.Load<GameObject>($"{prefabName}");
+        notePrefab.name = ("B:"+ bpId + "C:"+colId + "T" + type.ToString());
 
         if (notePrefab != null)
         {

@@ -112,8 +112,8 @@ public class SongManager : MonoBehaviour
                     {
                         BeatData bd = beatMap[ovr.beatIndex];
 
-                        if (ovr.column.HasValue)
-                            bd.column = ovr.column.Value;
+                        /*if (ovr.column.HasValue)
+                            bd.column = ovr.column.Value;*/
 
                         if (!string.IsNullOrEmpty(ovr.type))
                             bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
@@ -154,13 +154,14 @@ public class SongManager : MonoBehaviour
             if (songTime >= nextBeat)
             {
                 OnBeat?.Invoke(); // Evento de beat
+                Debug.Log($"Beat {beatIndex}");
 
                 while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
                 {
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
 
-                    boxGrid[0, col].SpawnNote(type);
+                    boxGrid[0, col].SpawnNote(type, beatIndex, col);
                     noteIndex++;
                 }
 
