@@ -85,6 +85,18 @@ public class SongManager : MonoBehaviour
         beatMap = beatMap.OrderBy(b => b.time).ToList();
         beatTimes = beatTimes.OrderBy(t => t).ToList();
 
+        // Sync de beatMap con beatTimes
+        for (int i = 0; i < beatMap.Count; i++)
+        {
+            double closest = beatTimes.OrderBy(bt => Math.Abs(bt - beatMap[i].time)).First();
+            beatMap[i] = new BeatData
+            {
+                time = closest,
+                column = beatMap[i].column,
+                type = beatMap[i].type
+            };
+        }
+
         LoadOverrides();
 
         Debug.Log("Loaded beat map with " + beatMap.Count + " notes");
@@ -93,6 +105,7 @@ public class SongManager : MonoBehaviour
         StartCoroutine(BeatLoop());
         Invoke(nameof(StartSong), songDelaySeconds);
     }
+
 
     private void LoadOverrides()
     {
@@ -159,9 +172,8 @@ public class SongManager : MonoBehaviour
             {
                 OnBeat?.Invoke(); // Evento de beat
                 Debug.Log($"Beat {beatIndex}");
-
                 while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
-                {
+                {   
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
 
