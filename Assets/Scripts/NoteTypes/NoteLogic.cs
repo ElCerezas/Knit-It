@@ -65,7 +65,7 @@ public class NoteLogic : MonoBehaviour
     public virtual void OnNoteDespawn()
     {
         scoreManager.ResetCombo();
-        scoreManager.AddLife(-2);
+        scoreManager.AddLife(-1);
     }
     protected IEnumerator MoveTo(Vector2 targetPos, float quickMultiply = 1)
     {

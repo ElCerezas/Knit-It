@@ -14,7 +14,7 @@ public class ScoreSongManager : MonoBehaviour
     public AudioSource hitSFX, missSFX;
     [SerializeField] Image healthBar;
 
-    int life = 100;
+    [SerializeField]int life = 100;
     int score = 0;
     float combo = 1;
     private float comboIncrease = 0.1f;
@@ -40,7 +40,7 @@ public class ScoreSongManager : MonoBehaviour
     public void NoteMiss()
     {
         ResetCombo();
-        AddLife(-5);
+        AddLife(-2);
     }
     public int GetScore()
     {

@@ -558,24 +558,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Lane5",
-                    "type": "Button",
-                    "id": "ed6e3684-6282-4879-8838-b1926e82efae",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Lane6",
-                    "type": "Button",
-                    "id": "e0149c92-c34e-4a10-9310-89b25deb959f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Restart",
                     "type": "Button",
                     "id": "63d74fa8-2c56-4a15-847c-eaf81bf5f3ac",
@@ -622,33 +604,11 @@
                 {
                     "name": "",
                     "id": "69e0ab1a-d359-44c8-b88a-9ebd3328b98d",
-                    "path": "<Keyboard>/j",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Lane4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0bf63aa3-04bd-4807-858c-128ec5bac060",
-                    "path": "<Keyboard>/k",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Lane5",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1043a656-5803-4dab-89e0-178026c03687",
-                    "path": "<Keyboard>/l",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Lane6",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

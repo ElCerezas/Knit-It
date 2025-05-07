@@ -1,251 +1,178 @@
 {
 	"items": [
-    	{ "beatIndex": 8, "column": 0 ,"type": "Gum" },
+		{ "beatIndex": 15, "column": 0, "type": "Basic" },
+		{ "beatIndex": 17, "column": 2, "type": "Basic" },
 
-		{ "beatIndex": 10, "column": 2 ,"type": "Gum" },
+		{ "beatIndex": 19, "column": 1, "type": "Basic" },
+		{ "beatIndex": 21, "column": 4, "type": "Basic" },
 
+		{ "beatIndex": 23, "column": 0, "type": "Basic" },
+		{ "beatIndex": 25, "column": 1, "type": "Basic" },
+		{ "beatIndex": 25, "column": 3, "type": "Basic" },
 
+		{ "beatIndex": 27, "column": 1, "type": "Basic" },
+		{ "beatIndex": 29, "column": 0, "type": "Basic" },
+		{ "beatIndex": 29, "column": 1, "type": "Basic" },
+		{ "beatIndex": 29, "column": 2, "type": "Basic" },
+		{ "beatIndex": 29, "column": 3, "type": "Basic" },
 
-    	{ "beatIndex": 12, "column": 1 ,"type": "Gum" },
+		{ "beatIndex": 31, "column": 0, "type": "Basic" },
+		{ "beatIndex": 33, "column": 2, "type": "Gum" },
 
-		{ "beatIndex": 14, "column": 4 ,"type": "Gum" },
+		{ "beatIndex": 35, "column": 1, "type": "Basic" },
 
+		{ "beatIndex": 37, "column": 3, "type": "Gum" },
+		
+		{ "beatIndex": 39, "column": 0, "type": "Basic" },
+		{ "beatIndex": 40, "column": 0, "type": "Basic" },
 
-    	{ "beatIndex": 16, "column": 0 ,"type": "Basic" },
+		{ "beatIndex": 41, "column": 2, "type": "Gum" },
+		
+		
+		{ "beatIndex": 43, "column": 3, "type": "Basic" },
+		{ "beatIndex": 44, "column": 3, "type": "Basic" },
 
-		{ "beatIndex": 18, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 18, "column": 3 ,"type": "Basic" },
+		{ "beatIndex": 45, "column": 1, "type": "Gum" },
+		
+		
+		
+		{ "beatIndex": 47, "column": 0, "type": "Gum" },
+		{ "beatIndex": 48, "column": 0, "type": "Basic" },
+		{ "beatIndex": 49, "column": 2, "type": "ZigZagR" },
+		
+		{ "beatIndex": 51, "column": 3, "type": "Gum" },
+		{ "beatIndex": 52, "column": 3, "type": "Basic" },		
+		{ "beatIndex": 53, "column": 1, "type": "ZigZagL" },
+		
+		{ "beatIndex": 55, "column": 0, "type": "Gum" },
+		{ "beatIndex": 56, "column": 2, "type": "Basic" },
+		{ "beatIndex": 57, "column": 1, "type": "Basic" },
+		
+		{ "beatIndex": 59, "column": 1, "type": "Basic" },
+		{ "beatIndex": 59, "column": 2, "type": "Basic" },
+		{ "beatIndex": 60, "column": 0, "type": "Basic" },
+		{ "beatIndex": 60, "column": 1, "type": "Gum" },
+		{ "beatIndex": 60, "column": 2, "type": "Gum" },
+		{ "beatIndex": 60, "column": 3, "type": "Basic" },
+		{ "beatIndex": 61, "column": 1, "type": "Basic" },
+		{ "beatIndex": 61, "column": 2, "type": "Basic" },
+		{ "beatIndex": 62, "column": 0, "type": "Basic" },
+		{ "beatIndex": 62, "column": 3, "type": "Basic" },
+		
+		{ "beatIndex": 63, "column": 0, "type": "Basic" },
+		{ "beatIndex": 64, "column": 1, "type": "Basic" },
+		{ "beatIndex": 65, "column": 2, "type": "Basic" },
+		{ "beatIndex": 66, "column": 3, "type": "Basic" },
+		
+		{ "beatIndex": 67, "column": 3, "type": "Basic" },
+		{ "beatIndex": 68, "column": 2, "type": "Basic" },
+		{ "beatIndex": 69, "column": 1, "type": "Basic" },
+		{ "beatIndex": 70, "column": 0, "type": "Basic" },
+		
+		{ "beatIndex": 71, "column": 0, "type": "Basic" },
+		{ "beatIndex": 73, "column": 2, "type": "Healing" },
+		
+		{ "beatIndex": 75, "column": 1, "type": "Basic" },
+		{ "beatIndex": 77, "column": 3, "type": "Healing" },
+		
+		{ "beatIndex": 79, "column": 1, "type": "Gum" },
+		{ "beatIndex": 81, "column": 2, "type": "Quick" },
+		
+		{ "beatIndex": 83, "column": 0, "type": "Gum" },
+		{ "beatIndex": 85, "column": 3, "type": "Quick" },
+		
+		{ "beatIndex": 87, "column": 3, "type": "Gum" },
+		{ "beatIndex": 88, "column": 1, "type": "Basic" },
+		{ "beatIndex": 89, "column": 0, "type": "Gum" },
+		{ "beatIndex": 90, "column": 2, "type": "Basic" },
+		{ "beatIndex": 91, "column": 4, "type": "Basic" },
 
-
-		{ "beatIndex": 20, "column": 1 ,"type": "Basic" },
-
-		{ "beatIndex": 22, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 22, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 22, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 22, "column": 3 ,"type": "Basic" },
-
-
-    	{ "beatIndex": 24, "column": 0 ,"type": "Basic" },
-
-		{ "beatIndex": 26, "column": 2, "type": "ZigZagR" },
-
-		{ "beatIndex": 28, "column": 1 ,"type": "Basic" },
-
-		{ "beatIndex": 30, "column": 3 ,"type": "ZigZagL"},
-
-
-    	{ "beatIndex": 32, "column": 0 ,"type": "Basic" },
-
-		{ "beatIndex": 33, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 34, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 34, "column": 2 ,"type": "ZigZagL" },
-
-
-    	{ "beatIndex": 36, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 37, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 38, "column": 1 ,"type": "ZigZagR" },
-		{ "beatIndex": 38, "column": 3 ,"type": "Basic" },
-
-
-		{ "beatIndex": 40, "column": 0 ,"type": "Gum" },
-		{ "beatIndex": 42, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 42, "column": 2 ,"type": "ZigZagR" },
-
-
-		{ "beatIndex": 44, "column": 3 ,"type": "Gum" },
-		{ "beatIndex": 46, "column": 1 ,"type": "ZigZagL" },
-		{ "beatIndex": 46, "column": 3 ,"type": "Basic" },
-
-
-    	{ "beatIndex": 48, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 48, "column": 1 ,"type": "Gum" },
-    	{ "beatIndex": 48, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 49, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 49, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 50, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 50, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 51, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 51, "column": 3 ,"type": "Basic" },
-
-    	{ "beatIndex": 52, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 52, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 53, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 53, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 54, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 54, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 55, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 55, "column": 3 ,"type": "Basic" },
-
-    	{ "beatIndex": 56, "column": 0 ,"type": "Healing" },
-		{ "beatIndex": 57, "column": 1 ,"type": "Healing" },
-		{ "beatIndex": 58, "column": 2 ,"type": "Healing" },
-		{ "beatIndex": 59, "column": 3 ,"type": "Healing" },
-
-		{ "beatIndex": 60, "column": 3 ,"type": "Healing" },
-		{ "beatIndex": 61, "column": 2 ,"type": "Healing" },
-		{ "beatIndex": 62, "column": 1 ,"type": "Healing" },
-		{ "beatIndex": 63, "column": 0 ,"type": "Healing" },
-
-    	{ "beatIndex": 64, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 64, "column": 2 ,"type": "Quick" },
-		{ "beatIndex": 65, "column": 1 ,"type": "Quick" },
-		{ "beatIndex": 65, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 66, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 66, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 67, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 67, "column": 3 ,"type": "Quick" },
-
-    	{ "beatIndex": 68, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 68, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 68, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 68, "column": 3 ,"type": "Quick" },
-		{ "beatIndex": 70, "column": 1 ,"type": "Quick" },
-		{ "beatIndex": 70, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 71, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 71, "column": 2 ,"type": "Quick" },
-
-    	{ "beatIndex": 72, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 72, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 73, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 73, "column": 3 ,"type": "Quick" },
-		{ "beatIndex": 74, "column": 0 ,"type": "Gum" },
-		{ "beatIndex": 74, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 75, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 75, "column": 3 ,"type": "Gum" },
-
-		{ "beatIndex": 76, "column": 0 ,"type": "Gum" },
-		{ "beatIndex": 76, "column": 3 ,"type": "Gum" },
-		{ "beatIndex": 77, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 77, "column": 2 ,"type": "Basic" },
-    	{ "beatIndex": 78, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 78, "column": 3 ,"type": "Quick" },
-		{ "beatIndex": 79, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 79, "column": 2 ,"type": "Basic" },
-
-		{ "beatIndex": 80, "column": 0 ,"type": "Gum" },
-		{ "beatIndex": 80, "column": 3 ,"type": "Gum" },
-		{ "beatIndex": 80, "column": 1 ,"type": "Quick" },
-		{ "beatIndex": 80, "column": 2 ,"type": "Quick" },
-    	{ "beatIndex": 81, "column": 1 ,"type": "Healing" },
-		{ "beatIndex": 81, "column": 2 ,"type": "Healing" },
-		{ "beatIndex": 82, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 82, "column": 3 ,"type": "Quick" },
-    	{ "beatIndex": 83, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 83, "column": 2 ,"type": "Basic" },
-
-    	{ "beatIndex": 84, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 84, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 85, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 85, "column": 3 ,"type": "Quick" },
- 		{ "beatIndex": 86, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 86, "column": 3 ,"type": "Quick" },
-		{ "beatIndex": 86, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 86, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 87, "column": 0 ,"type": "Healing" },
-		{ "beatIndex": 87, "column": 3 ,"type": "Healing" },
-
-		{ "beatIndex": 88, "column": 0 ,"type": "Gum" },
-		{ "beatIndex": 88, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 89, "column": 2 ,"type": "Quick" },
-    	{ "beatIndex": 90, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 90, "column": 3 ,"type": "Gum" },
-		{ "beatIndex": 91, "column": 2 ,"type": "Quick" },
-
-		{ "beatIndex": 92, "column": 0 ,"type": "Gum" },
-		{ "beatIndex": 92, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 93, "column": 2 ,"type": "Quick" },
-    	{ "beatIndex": 94, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 94, "column": 3 ,"type": "Gum" },
-		{ "beatIndex": 95, "column": 2 ,"type": "Quick" },
-
-		{ "beatIndex": 96, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 96, "column": 1 ,"type": "ZigZagL" },
- 		{ "beatIndex": 96, "column": 3 ,"type": "ZigZagL" },
-		{ "beatIndex": 97, "column": 2 ,"type": "Quick" },
-		{ "beatIndex": 98, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 98, "column": 1 ,"type": "ZigZagL" },
- 		{ "beatIndex": 98, "column": 3 ,"type": "ZigZagL" },
-		{ "beatIndex": 99, "column": 2 ,"type": "Quick" },
-
-		{ "beatIndex": 100, "column": 0 ,"type": "ZigZagR" },
-		{ "beatIndex": 100, "column": 2 ,"type": "ZigZagR" },
- 		{ "beatIndex": 100, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 101, "column": 1 ,"type": "Quick" },
-		{ "beatIndex": 102, "column": 0 ,"type": "ZigZagR" },
-		{ "beatIndex": 102, "column": 2 ,"type": "ZigZagR" },
- 		{ "beatIndex": 102, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 103, "column": 1 ,"type": "Quick" },
-
-		{ "beatIndex": 104, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 104, "column": 1 ,"type": "Gum" },
- 		{ "beatIndex": 105, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 106, "column": 3 ,"type": "Gum" },
-		{ "beatIndex": 107, "column": 0 ,"type": "Basic" },
-
-		{ "beatIndex": 108, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 108, "column": 3 ,"type": "Gum" },
- 		{ "beatIndex": 109, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 110, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 111, "column": 0 ,"type": "Basic" },
-
-		{ "beatIndex": 112, "column": 0 ,"type": "Gum" },
-		{ "beatIndex": 112, "column": 2 ,"type": "Basic" },
- 		{ "beatIndex": 113, "column": 2 ,"type": "Quick" },
-		{ "beatIndex": 114, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 114, "column": 3 ,"type": "Gum" },
- 		{ "beatIndex": 115, "column": 0 ,"type": "Quick" },
-
-		{ "beatIndex": 116, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 116, "column": 3 ,"type": "Quick" },
- 		{ "beatIndex": 117, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 118, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 118, "column": 2 ,"type": "Gum" },
- 		{ "beatIndex": 119, "column": 0 ,"type": "Basic" },
-
-		{ "beatIndex": 120, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 121, "column": 1 ,"type": "Quick" },
-		{ "beatIndex": 122, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 123, "column": 3 ,"type": "Quick" },
-
-		{ "beatIndex": 124, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 125, "column": 2 ,"type": "Quick" },
-		{ "beatIndex": 126, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 127, "column": 0 ,"type": "Quick" },
-
-		{ "beatIndex": 128, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 128, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 129, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 129, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 130, "column": 1 ,"type": "Quick" },
-		{ "beatIndex": 130, "column": 2 ,"type": "Quick" },
-		{ "beatIndex": 131, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 131, "column": 3 ,"type": "Basic" },
-
-    	{ "beatIndex": 132, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 132, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 133, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 133, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 134, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 134, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 135, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 135, "column": 3 ,"type": "Quick" },
-
-		{ "beatIndex": 136, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 136, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 137, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 137, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 138, "column": 1 ,"type": "Quick" },
-		{ "beatIndex": 138, "column": 2 ,"type": "Quick" },
-		{ "beatIndex": 139, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 139, "column": 3 ,"type": "Basic" },
-
-    	{ "beatIndex": 140, "column": 0 ,"type": "Basic" },
-		{ "beatIndex": 140, "column": 2 ,"type": "Basic" },
-		{ "beatIndex": 141, "column": 1 ,"type": "Basic" },
-		{ "beatIndex": 141, "column": 3 ,"type": "Basic" },
-		{ "beatIndex": 142, "column": 1 ,"type": "Gum" },
-		{ "beatIndex": 142, "column": 2 ,"type": "Gum" },
-		{ "beatIndex": 143, "column": 0 ,"type": "Quick" },
-		{ "beatIndex": 143, "column": 3 ,"type": "Quick" }
-  	]
+		{ "beatIndex": 92, "column": 3, "type": "Gum" },
+		{ "beatIndex": 93, "column": 2, "type": "Basic" },
+		{ "beatIndex": 94, "column": 0, "type": "Basic" },
+		
+		{ "beatIndex": 96, "column": 0, "type": "Gum" },
+		{ "beatIndex": 96, "column": 3, "type": "Basic" },
+		{ "beatIndex": 97, "column": 1, "type": "Basic" },
+		{ "beatIndex": 97, "column": 2, "type": "Basic" },
+		
+		{ "beatIndex": 99, "column": 0, "type": "Basic" },
+		{ "beatIndex": 99, "column": 3, "type": "Gum" },
+		{ "beatIndex": 100, "column": 1, "type": "Basic" },
+		{ "beatIndex": 100, "column": 2, "type": "Basic" },
+		
+		{ "beatIndex": 103, "column": 0, "type": "Gum" },
+		{ "beatIndex": 103, "column": 1, "type": "Basic" },
+		{ "beatIndex": 103, "column": 2, "type": "Basic" },
+		{ "beatIndex": 103, "column": 3, "type": "Basic" },
+		{ "beatIndex": 105, "column": 0, "type": "Basic" },
+		{ "beatIndex": 105, "column": 1, "type": "Gum" },
+		{ "beatIndex": 105, "column": 2, "type": "Basic" },
+		{ "beatIndex": 105, "column": 3, "type": "Basic" },
+		
+		{ "beatIndex": 107, "column": 0, "type": "Basic" },
+		{ "beatIndex": 107, "column": 1, "type": "Basic" },
+		{ "beatIndex": 107, "column": 2, "type": "Gum" },
+		{ "beatIndex": 107, "column": 3, "type": "Basic" },
+		{ "beatIndex": 109, "column": 0, "type": "Basic" },
+		{ "beatIndex": 109, "column": 1, "type": "Basic" },
+		{ "beatIndex": 109, "column": 2, "type": "Basic" },
+		{ "beatIndex": 109, "column": 3, "type": "Gum" },
+		
+		{ "beatIndex": 111, "column": 0, "type": "Gum" },
+		{ "beatIndex": 111, "column": 1, "type": "Basic" },
+		{ "beatIndex": 112, "column": 0, "type": "Gum" },		
+		{ "beatIndex": 112, "column": 2, "type": "Basic" },
+		{ "beatIndex": 113, "column": 2, "type": "Basic" },
+		{ "beatIndex": 114, "column": 1, "type": "Basic" },
+		
+		{ "beatIndex": 116, "column": 0, "type": "Gum" },
+		{ "beatIndex": 116, "column": 3, "type": "Gum" },
+		{ "beatIndex": 117, "column": 1, "type": "Basic" },
+		{ "beatIndex": 119, "column": 1, "type": "Basic" },
+		
+		{ "beatIndex": 121, "column": 1, "type": "Gum" },
+		{ "beatIndex": 121, "column": 3, "type": "Basic" },
+		{ "beatIndex": 122, "column": 0, "type": "Basic" },
+		{ "beatIndex": 122, "column": 2, "type": "Gum" },
+		
+		{ "beatIndex": 125, "column": 1, "type": "Basic" },
+		{ "beatIndex": 125, "column": 2, "type": "Basic" },
+		
+		{ "beatIndex": 127, "column": 0, "type": "Basic" },
+		{ "beatIndex": 128, "column": 0, "type": "Basic" },
+		{ "beatIndex": 128, "column": 1, "type": "Quick" },
+		{ "beatIndex": 129, "column": 0, "type": "Basic" },		
+		{ "beatIndex": 129, "column": 2, "type": "Quick" },
+		{ "beatIndex": 130, "column": 0, "type": "Basic" },		
+		{ "beatIndex": 130, "column": 3, "type": "Quick" },
+		
+		{ "beatIndex": 131, "column": 0, "type": "Basic" },		
+		{ "beatIndex": 131, "column": 3, "type": "Quick" },
+		{ "beatIndex": 132, "column": 0, "type": "Basic" },		
+		{ "beatIndex": 132, "column": 2, "type": "Quick" },
+		{ "beatIndex": 133, "column": 0, "type": "Basic" },		
+		{ "beatIndex": 133, "column": 1, "type": "Quick" },
+		{ "beatIndex": 134, "column": 0, "type": "Basic" },
+		
+		{ "beatIndex": 135, "column": 0, "type": "Gum" },
+		{ "beatIndex": 137, "column": 2, "type": "Gum" },
+		
+		{ "beatIndex": 139, "column": 1, "type": "Gum" },
+		{ "beatIndex": 141, "column": 3, "type": "Basic" },
+		
+		{ "beatIndex": 143, "column": 0, "type": "Basic" },
+		{ "beatIndex": 144, "column": 2, "type": "Basic" },
+		{ "beatIndex": 145, "column": 1, "type": "Quick" },
+		{ "beatIndex": 145, "column": 2, "type": "Quick" },
+		{ "beatIndex": 146, "column": 0, "type": "Basic" },
+		{ "beatIndex": 146, "column": 3, "type": "Basic" },
+		
+		{ "beatIndex": 147, "column": 0, "type": "Basic" },
+		{ "beatIndex": 148, "column": 3, "type": "Basic" },
+		{ "beatIndex": 149, "column": 1, "type": "Gum" },
+		{ "beatIndex": 149, "column": 2, "type": "Gum" },
+		{ "beatIndex": 150, "column": 0, "type": "Basic" },
+		{ "beatIndex": 150, "column": 3, "type": "Basic" }
+	]
 }
