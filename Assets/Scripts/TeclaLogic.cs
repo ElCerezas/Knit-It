@@ -34,7 +34,6 @@ public class TeclaLogic : MonoBehaviour
                     particlesHit?.Play();
                 }
                 nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
-                Destroy(nota);
             }
         }
     }

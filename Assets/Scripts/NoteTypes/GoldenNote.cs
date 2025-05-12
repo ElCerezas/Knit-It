@@ -16,6 +16,6 @@ public class GoldenNote : NoteLogic
             scoreManager.AddCombo();
         }
         scoreManager.AddScore(50);
-        Destroy(gameObject);
+        jumpHit.StartJump();
     }
 }

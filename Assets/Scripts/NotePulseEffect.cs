@@ -15,7 +15,7 @@ public class NotePulseEffect : MonoBehaviour
 
     private void OnEnable()
     {
-        beatInterval = 60f / SongManager.Instance.BPM;
+        beatInterval = 60f / (SongManager.Instance.BPM);
         SongManager.OnBeat += TriggerPulse;
     }
 

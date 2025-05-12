@@ -106,7 +106,6 @@ public class SongManager : MonoBehaviour
         Invoke(nameof(StartSong), songDelaySeconds);
     }
 
-
     private void LoadOverrides()
     {
         string path = Path.Combine(Application.streamingAssetsPath, fileLocation + "_overrides.json");
@@ -123,21 +122,22 @@ public class SongManager : MonoBehaviour
                 {
                     if (!string.IsNullOrEmpty(ovr.type))
                     {
-                        // Buscar la nota en beatMap que coincide con el beatIndex y columna
-                        var bdIndex = beatMap.FindIndex(b =>
-                            Mathf.Approximately((float)b.time, (float)beatTimes[ovr.beatIndex]) &&
-                            (!ovr.column.HasValue || b.column == ovr.column.Value)
-                        );
+                        var matches = beatMap
+                            .Select((b, i) => new { Beat = b, Index = i })
+                            .Where(x =>
+                                Mathf.Approximately((float)x.Beat.time, (float)beatTimes[ovr.beatIndex]) &&
+                                (!ovr.column.HasValue || x.Beat.column == ovr.column.Value)
+                            )
+                            .ToList();
 
-                        if (bdIndex != -1)
+                        foreach (var match in matches)
                         {
-                            BeatData bd = beatMap[bdIndex];
+                            var bd = match.Beat;
                             bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
-                            beatMap[bdIndex] = bd;
+                            beatMap[match.Index] = bd;
                         }
                     }
                 }
-
 
                 Debug.Log("Applied " + overrides.Count + " overrides.");
             }
@@ -151,6 +151,7 @@ public class SongManager : MonoBehaviour
             Debug.Log("No overrides found for this level.");
         }
     }
+
 
     public void StartSong()
     {
@@ -170,8 +171,8 @@ public class SongManager : MonoBehaviour
 
             if (songTime >= nextBeat)
             {
-                OnBeat?.Invoke(); // Evento de beat
-                Debug.Log($"Beat {beatIndex}");
+                OnBeat?.Invoke();
+                //Debug.Log($"Beat {beatIndex}");
                 while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
                 {   
                     int col = beatMap[noteIndex].column;

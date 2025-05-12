@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1705765201301860708}
   - component: {fileID: 2806307056019542153}
   - component: {fileID: 5711910800940768508}
+  - component: {fileID: -5109980556781464683}
   m_Layer: 0
   m_Name: Note_Golden
   m_TagString: Untagged
@@ -187,4 +188,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce8db5553f412547b51ffb0d402f23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pulseFactor: 1.2
+  pulseFactor: 1.4
+--- !u!114 &-5109980556781464683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892551812774472690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c912eb3a07f8f124ab54dc5362a0307d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

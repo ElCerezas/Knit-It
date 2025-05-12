@@ -10,6 +10,7 @@ public class NoteLogic : MonoBehaviour
     private bool spriteActivated = false;
     private float beatTime;
     protected Collider2D selfCollider;
+    protected NoteJumpHit jumpHit;
 
     private void OnEnable()
     {
@@ -25,6 +26,7 @@ public class NoteLogic : MonoBehaviour
         actualBox = GetComponentInParent<BoxLogic>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         selfCollider = GetComponent<Collider2D>();
+        jumpHit = GetComponent<NoteJumpHit>();
         if (spriteRenderer != null)
             spriteRenderer.enabled = false; // Apagar sprite al inicio
         beatTime = 60/SongManager.Instance.BPM;
@@ -60,7 +62,7 @@ public class NoteLogic : MonoBehaviour
             }
         }
         scoreManager.AddScore(10);
-        Destroy(gameObject);
+        jumpHit.StartJump();
     }
     public virtual void OnNoteDespawn()
     {
