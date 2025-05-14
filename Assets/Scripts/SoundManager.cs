@@ -60,7 +60,8 @@ public class SoundManager : MonoBehaviour
             sfxSlider.value = categoryVolumes[SoundCategory.SFX];
             sfxSlider.onValueChanged.AddListener(SetSFXVolume);
         }
-        PlaySound("MainTheme", true);
+        PlaySound("Right", true);
+        PlaySound("Wrong", true);
     }
 
     public void PlaySound(string soundName, bool loop = false)
@@ -150,5 +151,8 @@ public class SoundManager : MonoBehaviour
     public float GetIndividualVolume(string soundName)
     {
         return individualVolumes.ContainsKey(soundName) ? individualVolumes[soundName] : 1.0f;
+    }
+    public void AddSoundToMusic(AudioSource audio)
+    {
     }
 }
