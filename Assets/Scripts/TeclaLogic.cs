@@ -21,6 +21,9 @@ public class TeclaLogic : MonoBehaviour
             if (nota == null)
             {
                 ScoreSongManager.NoteMiss();
+                CameraShake.Instance?.Shake();
+                HitEffect.Instance?.Flash();
+
                 particlesMiss?.Play();
             }
             else

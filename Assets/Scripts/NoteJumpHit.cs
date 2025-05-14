@@ -40,7 +40,7 @@ public class NoteJumpHit : MonoBehaviour
             x = Random.Range(2f, 5f) * -1;
         }
         y = Random.Range(3f, 7f);
-        return new Vector2(x, y);
+        return new Vector2(x, y)*1.5f;
     }
 
     public void StartJump()
