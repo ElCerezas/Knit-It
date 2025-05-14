@@ -581,11 +581,33 @@
                 },
                 {
                     "name": "",
+                    "id": "c2b905f0-fdca-4cd3-be8c-5f201924b74b",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Lane1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bf450d0c-55ed-477e-9f06-a02fc9245719",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "Lane2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8936752b-c38d-4eb7-932f-76862a1d4c78",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Lane2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -603,11 +625,33 @@
                 },
                 {
                     "name": "",
+                    "id": "e09ceb10-fec7-41c6-99e6-914df64cdbe3",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Lane3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "69e0ab1a-d359-44c8-b88a-9ebd3328b98d",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "Lane4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7bbfb51-121b-4ab3-a73e-9407248e5e41",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Lane4",
                     "isComposite": false,
                     "isPartOfComposite": false
