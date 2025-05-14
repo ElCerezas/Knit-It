@@ -6,6 +6,7 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using System.Linq;
 using System.IO;
+using static GameManager;
 
 public class SongManager : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class SongManager : MonoBehaviour
     private TempoMap tempoMap;
     private bool songStarted = false;
     public float BPM = 120f;
+    private float newVolume = 0f;
+    private bool checkForSound = false;
 
     private void Awake()
     {
@@ -35,6 +38,8 @@ public class SongManager : MonoBehaviour
 
     void Start()
     {
+        newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
+        audioSource.volume = newVolume;
         boxGrid = ConvertTo2DArray(flatArray);
         string midiPath = Path.Combine(Application.streamingAssetsPath, fileLocation + ".mid");
         midiFile = MidiFile.Read(midiPath);
@@ -43,7 +48,17 @@ public class SongManager : MonoBehaviour
 
     private void Update()
     {
-        if (!audioSource.isPlaying && songStarted)
+        if (GameManager.Instance.currentState == GameState.Paused && !checkForSound)
+        {
+            checkForSound = true;
+        }
+        if (checkForSound && GameManager.Instance.currentState == GameState.Playing) 
+        {
+            newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
+            audioSource.volume = newVolume;
+            checkForSound = false;
+        }
+        if (!audioSource.isPlaying && songStarted && GameManager.Instance.currentState != GameManager.GameState.Paused)
         {
             Debug.Log("SongEnded");
             songStarted = false;

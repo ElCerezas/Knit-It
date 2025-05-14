@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class Countdown : MonoBehaviour
 {
- public static PauseMenu Instance { get; private set; }
+    public static Countdown Instance { get; private set; }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -12,8 +12,8 @@ public class PauseMenu : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        gameObject.SetActive(false);
     }
 }
