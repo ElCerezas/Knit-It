@@ -187,7 +187,7 @@ public class SongManager : MonoBehaviour
             if (songTime >= nextBeat)
             {
                 OnBeat?.Invoke();
-                //Debug.Log($"Beat {beatIndex}");
+                Debug.Log($"Beat {beatIndex}");
                 while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
                 {   
                     int col = beatMap[noteIndex].column;
