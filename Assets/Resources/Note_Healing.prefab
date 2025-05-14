@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3619339313072061957}
   - component: {fileID: 6551189960610087924}
   - component: {fileID: 6580287096703506745}
-  - component: {fileID: 8243507419633766972}
   - component: {fileID: 1301300934539716579}
   m_Layer: 0
   m_Name: Note_Healing
@@ -176,19 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270254f334680fd4b81e02f7f99ffddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8243507419633766972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6271524756774915897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8db5553f412547b51ffb0d402f23f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pulseFactor: 1.4
 --- !u!114 &1301300934539716579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c912eb3a07f8f124ab54dc5362a0307d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpecific: {fileID: 0}

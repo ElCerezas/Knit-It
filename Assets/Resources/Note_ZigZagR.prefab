@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5164343025920303331}
   - component: {fileID: 1619895292243100087}
   - component: {fileID: 1673388356596257316}
-  - component: {fileID: -2671950700624795105}
   - component: {fileID: 1997248682823625237}
   m_Layer: 0
   m_Name: Note_ZigZagR
@@ -177,19 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toRight: 1
---- !u!114 &-2671950700624795105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950352249016974488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8db5553f412547b51ffb0d402f23f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pulseFactor: 1.4
 --- !u!114 &1997248682823625237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c912eb3a07f8f124ab54dc5362a0307d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpecific: {fileID: 0}

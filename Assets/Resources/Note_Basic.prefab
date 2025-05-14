@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5402751182827165228}
   - component: {fileID: 6088143025739014965}
   - component: {fileID: 8583221895130168962}
-  - component: {fileID: 1691041802933799830}
   - component: {fileID: -3742681977708314111}
   m_Layer: 0
   m_Name: Note_Basic
@@ -176,19 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61e29e0ff7442946846cde3654deef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1691041802933799830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4809418671576950934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8db5553f412547b51ffb0d402f23f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pulseFactor: 1.4
 --- !u!114 &-3742681977708314111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c912eb3a07f8f124ab54dc5362a0307d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpecific: {fileID: 21300000, guid: 5de73633f2446f741a2f87f5813b373d, type: 3}

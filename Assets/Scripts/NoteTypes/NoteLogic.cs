@@ -91,4 +91,9 @@ public class NoteLogic : MonoBehaviour
         transform.position = targetPos;
         actualBox = nextBox;
     }
+    public void ShutDown()
+    {
+        StopAllCoroutines();
+        SongManager.OnBeat -= OnBeatMove;
+    }
 }
