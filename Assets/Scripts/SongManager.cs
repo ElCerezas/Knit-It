@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
@@ -13,7 +13,6 @@ public class SongManager : MonoBehaviour
     public static SongManager Instance;
     public AudioSource audioSource;
     public float songDelaySeconds;
-
     public string fileLocation;
 
     public static MidiFile midiFile;
@@ -28,10 +27,10 @@ public class SongManager : MonoBehaviour
     private TempoMap tempoMap;
     private bool songStarted = false;
     public float BPM = 120f;
+
+    private double dspStartTime;
     private float newVolume = 0f;
     private bool checkForSound = false;
-
-    private double dspStartTime; // NUEVO: tiempo exacto de inicio del audio
 
     private void Awake()
     {
@@ -55,7 +54,6 @@ public class SongManager : MonoBehaviour
         {
             checkForSound = true;
         }
-
         if (checkForSound && GameManager.Instance.currentState == GameState.Playing)
         {
             newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
@@ -122,11 +120,7 @@ public class SongManager : MonoBehaviour
         Debug.Log("Loaded " + beatTimes.Count + " beat events");
 
         StartCoroutine(BeatLoop());
-
-        // Usamos DSP para sincronizar el audio con precisión
-        dspStartTime = AudioSettings.dspTime + songDelaySeconds;
-        audioSource.PlayScheduled(dspStartTime);
-        songStarted = true;
+        StartSong(); // lanzamos StartSong ahora aquí directamente
     }
 
     private void LoadOverrides()
@@ -149,8 +143,7 @@ public class SongManager : MonoBehaviour
                             .Select((b, i) => new { Beat = b, Index = i })
                             .Where(x =>
                                 Mathf.Approximately((float)x.Beat.time, (float)beatTimes[ovr.beatIndex]) &&
-                                (!ovr.column.HasValue || x.Beat.column == ovr.column.Value)
-                            )
+                                (!ovr.column.HasValue || x.Beat.column == ovr.column.Value))
                             .ToList();
 
                         foreach (var match in matches)
@@ -175,41 +168,59 @@ public class SongManager : MonoBehaviour
         }
     }
 
+    public void StartSong()
+    {
+        dspStartTime = AudioSettings.dspTime + songDelaySeconds;
+        audioSource.PlayScheduled(dspStartTime);
+        songStarted = true;
+    }
+
     private IEnumerator BeatLoop()
     {
         int beatIndex = 0;
         int noteIndex = 0;
 
+        double beatInterval = 60.0 / BPM;
+        double nextExpectedBeatTime = AudioSettings.dspTime + songDelaySeconds;
+        double lastBeatTime = nextExpectedBeatTime - beatInterval;
+
+        yield return new WaitUntil(() => AudioSettings.dspTime >= nextExpectedBeatTime);
+
         while (beatIndex < beatTimes.Count)
         {
-            double dspSongTime = AudioSettings.dspTime - dspStartTime;
-            double nextBeat = beatTimes[beatIndex];
+            double currentDSPTime = AudioSettings.dspTime;
 
-            if (dspSongTime >= nextBeat)
+            // Beat ejecutado
+            double delta = currentDSPTime - lastBeatTime;
+            Debug.Log($"[{DateTime.Now:HH:mm:ss}] Beat:{beatIndex} // t desde anterior: {delta:F4}s");
+
+            OnBeat?.Invoke();
+
+            while (noteIndex < beatMap.Count &&
+                   Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex]))
             {
-                OnBeat?.Invoke();
-                Debug.Log($"Beat {beatIndex}");
-
-                while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
-                {
-                    int col = beatMap[noteIndex].column;
-                    NoteType type = beatMap[noteIndex].type;
-
-                    boxGrid[0, col].SpawnNote(type, beatIndex, col);
-                    noteIndex++;
-                }
-
-                beatIndex++;
+                int col = beatMap[noteIndex].column;
+                NoteType type = beatMap[noteIndex].type;
+                boxGrid[0, col].SpawnNote(type, beatIndex, col);
+                noteIndex++;
             }
 
-            yield return null;
+            beatIndex++;
+            lastBeatTime = currentDSPTime;
+            nextExpectedBeatTime += beatInterval;
+
+            // Esperar hasta el siguiente beat exacto
+            double waitTime = nextExpectedBeatTime - AudioSettings.dspTime;
+            if (waitTime > 0)
+                yield return new WaitForSecondsRealtime((float)waitTime);
+            else
+                yield return null; // safety fallback
         }
     }
 
     public static double GetAudioSourceTime()
     {
-        // Recalculado con DSP para mayor precisión
-        return AudioSettings.dspTime - Instance.dspStartTime;
+        return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
 
     public BoxLogic[,] ConvertTo2DArray(BoxLogic[] flat)
