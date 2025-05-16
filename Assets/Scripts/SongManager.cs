@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
 using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
-using System.Linq;
-using System.IO;
 using static GameManager;
 
 public class SongManager : MonoBehaviour
@@ -14,7 +14,7 @@ public class SongManager : MonoBehaviour
     public AudioSource audioSource;
     public float songDelaySeconds;
 
-    public string fileLocation; // Nombre de archivo MIDI (sin extensión)
+    public string fileLocation;
 
     public static MidiFile midiFile;
 
@@ -31,6 +31,8 @@ public class SongManager : MonoBehaviour
     private float newVolume = 0f;
     private bool checkForSound = false;
 
+    private double dspStartTime; // NUEVO: tiempo exacto de inicio del audio
+
     private void Awake()
     {
         Instance = this;
@@ -40,6 +42,7 @@ public class SongManager : MonoBehaviour
     {
         newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
         audioSource.volume = newVolume;
+
         boxGrid = ConvertTo2DArray(flatArray);
         string midiPath = Path.Combine(Application.streamingAssetsPath, fileLocation + ".mid");
         midiFile = MidiFile.Read(midiPath);
@@ -52,13 +55,15 @@ public class SongManager : MonoBehaviour
         {
             checkForSound = true;
         }
-        if (checkForSound && GameManager.Instance.currentState == GameState.Playing) 
+
+        if (checkForSound && GameManager.Instance.currentState == GameState.Playing)
         {
             newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
             audioSource.volume = newVolume;
             checkForSound = false;
         }
-        if (!audioSource.isPlaying && songStarted && GameManager.Instance.currentState != GameManager.GameState.Paused)
+
+        if (!audioSource.isPlaying && songStarted && GameManager.Instance.currentState != GameState.Paused)
         {
             Debug.Log("SongEnded");
             songStarted = false;
@@ -100,7 +105,6 @@ public class SongManager : MonoBehaviour
         beatMap = beatMap.OrderBy(b => b.time).ToList();
         beatTimes = beatTimes.OrderBy(t => t).ToList();
 
-        // Sync de beatMap con beatTimes
         for (int i = 0; i < beatMap.Count; i++)
         {
             double closest = beatTimes.OrderBy(bt => Math.Abs(bt - beatMap[i].time)).First();
@@ -118,7 +122,11 @@ public class SongManager : MonoBehaviour
         Debug.Log("Loaded " + beatTimes.Count + " beat events");
 
         StartCoroutine(BeatLoop());
-        Invoke(nameof(StartSong), songDelaySeconds);
+
+        // Usamos DSP para sincronizar el audio con precisión
+        dspStartTime = AudioSettings.dspTime + songDelaySeconds;
+        audioSource.PlayScheduled(dspStartTime);
+        songStarted = true;
     }
 
     private void LoadOverrides()
@@ -167,13 +175,6 @@ public class SongManager : MonoBehaviour
         }
     }
 
-
-    public void StartSong()
-    {
-        audioSource.Play();
-        songStarted = true;
-    }
-
     private IEnumerator BeatLoop()
     {
         int beatIndex = 0;
@@ -181,15 +182,16 @@ public class SongManager : MonoBehaviour
 
         while (beatIndex < beatTimes.Count)
         {
-            double songTime = GetAudioSourceTime();
+            double dspSongTime = AudioSettings.dspTime - dspStartTime;
             double nextBeat = beatTimes[beatIndex];
 
-            if (songTime >= nextBeat)
+            if (dspSongTime >= nextBeat)
             {
                 OnBeat?.Invoke();
                 Debug.Log($"Beat {beatIndex}");
+
                 while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)nextBeat))
-                {   
+                {
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
 
@@ -206,7 +208,8 @@ public class SongManager : MonoBehaviour
 
     public static double GetAudioSourceTime()
     {
-        return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
+        // Recalculado con DSP para mayor precisión
+        return AudioSettings.dspTime - Instance.dspStartTime;
     }
 
     public BoxLogic[,] ConvertTo2DArray(BoxLogic[] flat)
