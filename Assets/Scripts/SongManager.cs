@@ -32,6 +32,14 @@ public class SongManager : MonoBehaviour
     private float newVolume = 0f;
     private bool checkForSound = false;
 
+
+    //ToBeatLoop
+    int beatIndex = 0;
+    int noteIndex = 0;
+    [SerializeField] double beatThreshold = 0.1;
+    double nextBeatTime = 0;
+
+    double beatInterval, lastBeatTime;
     private void Awake()
     {
         Instance = this;
@@ -46,6 +54,10 @@ public class SongManager : MonoBehaviour
         string midiPath = Path.Combine(Application.streamingAssetsPath, fileLocation + ".mid");
         midiFile = MidiFile.Read(midiPath);
         GetDataFromMidi();
+
+        //BeatLoop
+        beatInterval = 60.0 / BPM;
+
     }
 
     private void Update()
@@ -60,12 +72,37 @@ public class SongManager : MonoBehaviour
             audioSource.volume = newVolume;
             checkForSound = false;
         }
-
         if (!audioSource.isPlaying && songStarted && GameManager.Instance.currentState != GameState.Paused)
         {
             Debug.Log("SongEnded");
             songStarted = false;
             ScoreSongManager.Instance.CheckGameWin();
+        }
+        
+        //BeatLoop
+        if (beatIndex < beatTimes.Count && audioSource.isPlaying && songStarted)
+        {
+
+            double currentDSPTime = audioSource.time;
+                
+            if (currentDSPTime >= nextBeatTime - beatThreshold) 
+            { 
+                double delta = currentDSPTime - lastBeatTime;
+                Debug.Log($"[{DateTime.Now:HH:mm:ss}] Beat:{beatIndex}");
+                OnBeat?.Invoke();
+
+                while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex]))
+                {
+                    int col = beatMap[noteIndex].column;
+                    NoteType type = beatMap[noteIndex].type;
+                    boxGrid[0, col].SpawnNote(type, beatIndex, col);
+                    noteIndex++;
+                }
+
+                beatIndex++;
+                nextBeatTime += beatInterval;
+                lastBeatTime = currentDSPTime;
+            }
         }
     }
 
@@ -118,8 +155,6 @@ public class SongManager : MonoBehaviour
 
         Debug.Log("Loaded beat map with " + beatMap.Count + " notes");
         Debug.Log("Loaded " + beatTimes.Count + " beat events");
-
-        StartCoroutine(BeatLoop());
         StartSong(); // lanzamos StartSong ahora aquí directamente
     }
 
@@ -173,49 +208,6 @@ public class SongManager : MonoBehaviour
         dspStartTime = AudioSettings.dspTime + songDelaySeconds;
         audioSource.PlayScheduled(dspStartTime);
         songStarted = true;
-    }
-
-    private IEnumerator BeatLoop()
-    {
-        int beatIndex = 0;
-        int noteIndex = 0;
-
-        double beatInterval = 60.0 / BPM;
-        double nextExpectedBeatTime = AudioSettings.dspTime + songDelaySeconds;
-        double lastBeatTime = nextExpectedBeatTime - beatInterval;
-
-        yield return new WaitUntil(() => AudioSettings.dspTime >= nextExpectedBeatTime);
-
-        while (beatIndex < beatTimes.Count)
-        {
-            double currentDSPTime = AudioSettings.dspTime;
-
-            // Beat ejecutado
-            double delta = currentDSPTime - lastBeatTime;
-            Debug.Log($"[{DateTime.Now:HH:mm:ss}] Beat:{beatIndex} // t desde anterior: {delta:F4}s");
-
-            OnBeat?.Invoke();
-
-            while (noteIndex < beatMap.Count &&
-                   Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex]))
-            {
-                int col = beatMap[noteIndex].column;
-                NoteType type = beatMap[noteIndex].type;
-                boxGrid[0, col].SpawnNote(type, beatIndex, col);
-                noteIndex++;
-            }
-
-            beatIndex++;
-            lastBeatTime = currentDSPTime;
-            nextExpectedBeatTime += beatInterval;
-
-            // Esperar hasta el siguiente beat exacto
-            double waitTime = nextExpectedBeatTime - AudioSettings.dspTime;
-            if (waitTime > 0)
-                yield return new WaitForSecondsRealtime((float)waitTime);
-            else
-                yield return null; // safety fallback
-        }
     }
 
     public static double GetAudioSourceTime()
