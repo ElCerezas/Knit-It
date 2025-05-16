@@ -31388,7 +31388,6 @@ GameObject:
   - component: {fileID: 1045762491}
   - component: {fileID: 1045762493}
   - component: {fileID: 1045762495}
-  - component: {fileID: 1045762494}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -31443,20 +31442,6 @@ MonoBehaviour:
   maxDis: 0
   minDis: 1
   vc: {fileID: 1045762491}
---- !u!114 &1045762494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045762490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9127dc12e5d179c43ba97a65c6cb21b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bpm: 100
-  autoStart: 1
 --- !u!82 &1045762495
 AudioSource:
   m_ObjectHideFlags: 0
