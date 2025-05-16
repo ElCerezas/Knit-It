@@ -12,27 +12,23 @@ public class SongManager : MonoBehaviour
 {
     public static SongManager Instance;
     public AudioSource audioSource;
-    public float songDelaySeconds = 0.5f;
+    public float songDelaySeconds;
     public string fileLocation;
+
     public static MidiFile midiFile;
 
     [SerializeField] BoxLogic[] flatArray;
     public BoxLogic[,] boxGrid;
+
     public static event Action OnBeat;
 
-    private List<BeatData> beatMap = new();
-    private List<double> beatTimes = new();
+    private List<BeatData> beatMap = new List<BeatData>();
+    private List<double> beatTimes = new List<double>();
     private TempoMap tempoMap;
     private bool songStarted = false;
-
     public float BPM = 120f;
-    private double beatInterval;
-    private double dspStartTime;
-    private double nextBeatTime;
-    private int beatIndex = 0;
-    private int noteIndex = 0;
-    private double lastBeatDSP = 0;
 
+    private double dspStartTime;
     private float newVolume = 0f;
     private bool checkForSound = false;
 
@@ -52,41 +48,17 @@ public class SongManager : MonoBehaviour
         GetDataFromMidi();
     }
 
-    void Update()
+    private void Update()
     {
         if (GameManager.Instance.currentState == GameState.Paused && !checkForSound)
+        {
             checkForSound = true;
-
+        }
         if (checkForSound && GameManager.Instance.currentState == GameState.Playing)
         {
             newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
             audioSource.volume = newVolume;
             checkForSound = false;
-        }
-
-        if (!songStarted || GameManager.Instance.currentState == GameState.Paused)
-            return;
-
-        double dspNow = AudioSettings.dspTime;
-        while (dspNow >= nextBeatTime)
-        {
-            double delta = nextBeatTime - lastBeatDSP;
-            Debug.Log($"[{DateTime.Now:HH:mm:ss}] Beat:{beatIndex} // t desde anterior: {delta:F4}s -> desfase: {(0.6 - delta):F4}");
-
-            OnBeat?.Invoke();
-
-            while (noteIndex < beatMap.Count &&
-                   Math.Abs(beatMap[noteIndex].time - (nextBeatTime - dspStartTime)) < 0.01)
-            {
-                int col = beatMap[noteIndex].column;
-                NoteType type = beatMap[noteIndex].type;
-                boxGrid[0, col].SpawnNote(type, beatIndex, col);
-                noteIndex++;
-            }
-
-            lastBeatDSP = nextBeatTime;
-            nextBeatTime += beatInterval;
-            beatIndex++;
         }
 
         if (!audioSource.isPlaying && songStarted && GameManager.Instance.currentState != GameState.Paused)
@@ -101,8 +73,9 @@ public class SongManager : MonoBehaviour
     {
         tempoMap = midiFile.GetTempoMap();
         var notes = midiFile.GetNotes();
-        beatTimes = new();
-        beatMap = new();
+
+        beatTimes = new List<double>();
+        beatMap = new List<BeatData>();
 
         foreach (var note in notes)
         {
@@ -130,83 +103,142 @@ public class SongManager : MonoBehaviour
         beatMap = beatMap.OrderBy(b => b.time).ToList();
         beatTimes = beatTimes.OrderBy(t => t).ToList();
 
-        foreach (var b in beatMap)
+        for (int i = 0; i < beatMap.Count; i++)
         {
-            double closest = beatTimes.OrderBy(bt => Math.Abs(bt - b.time)).First();
-            SetTimeBeat(closest, b);
+            double closest = beatTimes.OrderBy(bt => Math.Abs(bt - beatMap[i].time)).First();
+            beatMap[i] = new BeatData
+            {
+                time = closest,
+                column = beatMap[i].column,
+                type = beatMap[i].type
+            };
         }
 
         LoadOverrides();
-        StartSong();
+
+        Debug.Log("Loaded beat map with " + beatMap.Count + " notes");
+        Debug.Log("Loaded " + beatTimes.Count + " beat events");
+
+        StartCoroutine(BeatLoop());
+        StartSong(); // lanzamos StartSong ahora aquí directamente
     }
-    private void SetTimeBeat(double c, BeatData b)
-    {
-        b.time = c;
-    }
+
     private void LoadOverrides()
     {
         string path = Path.Combine(Application.streamingAssetsPath, fileLocation + "_overrides.json");
-        if (!File.Exists(path)) return;
 
-        try
+        if (File.Exists(path))
         {
-            var json = File.ReadAllText(path);
-            var wrapper = JsonUtility.FromJson<BeatOverrideList>(json);
-            var overrides = wrapper.items;
-
-            foreach (var ovr in overrides)
+            string json = File.ReadAllText(path);
+            try
             {
-                if (string.IsNullOrEmpty(ovr.type)) continue;
+                BeatOverrideList wrapper = JsonUtility.FromJson<BeatOverrideList>(json);
+                List<BeatOverrideData> overrides = wrapper.items;
 
-                var matches = beatMap
-                    .Select((b, i) => new { Beat = b, Index = i })
-                    .Where(x =>
-                        Mathf.Approximately((float)x.Beat.time, (float)beatTimes[ovr.beatIndex]) &&
-                        (!ovr.column.HasValue || x.Beat.column == ovr.column.Value))
-                    .ToList();
-
-                foreach (var match in matches)
+                foreach (var ovr in overrides)
                 {
-                    var bd = match.Beat;
-                    bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
-                    beatMap[match.Index] = bd;
-                }
-            }
+                    if (!string.IsNullOrEmpty(ovr.type))
+                    {
+                        var matches = beatMap
+                            .Select((b, i) => new { Beat = b, Index = i })
+                            .Where(x =>
+                                Mathf.Approximately((float)x.Beat.time, (float)beatTimes[ovr.beatIndex]) &&
+                                (!ovr.column.HasValue || x.Beat.column == ovr.column.Value))
+                            .ToList();
 
-            Debug.Log("Applied " + overrides.Count + " overrides.");
+                        foreach (var match in matches)
+                        {
+                            var bd = match.Beat;
+                            bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
+                            beatMap[match.Index] = bd;
+                        }
+                    }
+                }
+
+                Debug.Log("Applied " + overrides.Count + " overrides.");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error parsing JSON overrides: " + ex.Message);
+            }
         }
-        catch (Exception ex)
+        else
         {
-            Debug.LogError("Error parsing JSON overrides: " + ex.Message);
+            Debug.Log("No overrides found for this level.");
         }
     }
+
     public void StartSong()
     {
-        beatInterval = 60.0 / BPM;
         dspStartTime = AudioSettings.dspTime + songDelaySeconds;
-        nextBeatTime = dspStartTime;
-        lastBeatDSP = dspStartTime - beatInterval;
-
         audioSource.PlayScheduled(dspStartTime);
         songStarted = true;
     }
+
+    private IEnumerator BeatLoop()
+    {
+        int beatIndex = 0;
+        int noteIndex = 0;
+
+        double beatInterval = 60.0 / BPM;
+        double nextExpectedBeatTime = AudioSettings.dspTime + songDelaySeconds;
+        double lastBeatTime = nextExpectedBeatTime - beatInterval;
+
+        yield return new WaitUntil(() => AudioSettings.dspTime >= nextExpectedBeatTime);
+
+        while (beatIndex < beatTimes.Count)
+        {
+            double currentDSPTime = AudioSettings.dspTime;
+
+            // Beat ejecutado
+            double delta = currentDSPTime - lastBeatTime;
+            Debug.Log($"[{DateTime.Now:HH:mm:ss}] Beat:{beatIndex} // t desde anterior: {delta:F4}s");
+
+            OnBeat?.Invoke();
+
+            while (noteIndex < beatMap.Count &&
+                   Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex]))
+            {
+                int col = beatMap[noteIndex].column;
+                NoteType type = beatMap[noteIndex].type;
+                boxGrid[0, col].SpawnNote(type, beatIndex, col);
+                noteIndex++;
+            }
+
+            beatIndex++;
+            lastBeatTime = currentDSPTime;
+            nextExpectedBeatTime += beatInterval;
+
+            // Esperar hasta el siguiente beat exacto
+            double waitTime = nextExpectedBeatTime - AudioSettings.dspTime;
+            if (waitTime > 0)
+                yield return new WaitForSecondsRealtime((float)waitTime);
+            else
+                yield return null; // safety fallback
+        }
+    }
+
     public static double GetAudioSourceTime()
     {
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
+
     public BoxLogic[,] ConvertTo2DArray(BoxLogic[] flat)
     {
         int row = 5;
         int col = 4;
         BoxLogic[,] gen2D = new BoxLogic[row, col];
         int index = 0;
+
         for (int c = 0; c < col; c++)
         {
             for (int r = 0; r < row; r++)
             {
-                gen2D[r, c] = flat[index++];
+                gen2D[r, c] = flat[index];
+                index++;
             }
         }
+
         return gen2D;
     }
 }
