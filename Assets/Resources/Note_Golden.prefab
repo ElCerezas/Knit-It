@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1705765201301860708}
   - component: {fileID: 2806307056019542153}
   - component: {fileID: -5109980556781464683}
+  - component: {fileID: 5885390691547840245}
+  - component: {fileID: -8305498167829879776}
   m_Layer: 0
   m_Name: Note_Golden
   m_TagString: Untagged
@@ -78,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.80098975, b: 0.39308167, a: 1}
+  m_Sprite: {fileID: -1480783026, guid: a33364efba5215d4e998aaad0b944b93, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -188,3 +190,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSpecific: {fileID: 0}
+--- !u!95 &5885390691547840245
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892551812774472690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1367cc6b6e305446907da681e3c63e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8305498167829879776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892551812774472690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a047ee4c39597924999ca4704c51402a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 1

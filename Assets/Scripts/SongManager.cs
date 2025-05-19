@@ -27,19 +27,23 @@ public class SongManager : MonoBehaviour
     private TempoMap tempoMap;
     private bool songStarted = false;
     public float BPM = 120f;
+    int noteNum = 1;
 
     private double dspStartTime;
     private float newVolume = 0f;
     private bool checkForSound = false;
 
-
-    //ToBeatLoop
+    // BeatLoop
     int beatIndex = 0;
     int noteIndex = 0;
     [SerializeField] double beatThreshold = 0.1;
     double nextBeatTime = 0;
-
     double beatInterval, lastBeatTime;
+
+    // Pausa
+    private bool wasPaused = false;
+    private double pauseStartDSPTime = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -55,48 +59,59 @@ public class SongManager : MonoBehaviour
         midiFile = MidiFile.Read(midiPath);
         GetDataFromMidi();
 
-        //BeatLoop
         beatInterval = 60.0 / BPM;
-
     }
 
-    private void Update()
+    void Update()
     {
-        if (GameManager.Instance.currentState == GameState.Paused && !checkForSound)
+        if (!songStarted) return;
+
+        if (GameManager.Instance.currentState == GameState.Paused)
         {
-            checkForSound = true;
+            if (!wasPaused)
+            {
+                wasPaused = true;
+                pauseStartDSPTime = AudioSettings.dspTime;
+            }
+            return;
         }
-        if (checkForSound && GameManager.Instance.currentState == GameState.Playing)
+
+        if (wasPaused && GameManager.Instance.currentState == GameState.Playing)
+        {
+            double pauseDuration = AudioSettings.dspTime - pauseStartDSPTime;
+            nextBeatTime += pauseDuration;
+            lastBeatTime += pauseDuration;
+            dspStartTime += pauseDuration;
+            wasPaused = false;
+        }
+
+        if (checkForSound)
         {
             newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
             audioSource.volume = newVolume;
             checkForSound = false;
         }
-        if (!audioSource.isPlaying && songStarted && GameManager.Instance.currentState != GameState.Paused)
-        {
-            Debug.Log("SongEnded");
-            songStarted = false;
-            ScoreSongManager.Instance.CheckGameWin();
-        }
-        
-        //BeatLoop
-        if (beatIndex < beatTimes.Count && audioSource.isPlaying && songStarted)
-        {
 
-            double currentDSPTime = audioSource.time;
-                
-            if (currentDSPTime >= nextBeatTime - beatThreshold) 
-            { 
+        if (beatIndex < beatTimes.Count && audioSource.isPlaying)
+        {
+            double currentDSPTime = AudioSettings.dspTime;
+
+            if (currentDSPTime >= nextBeatTime - beatThreshold)
+            {
                 double delta = currentDSPTime - lastBeatTime;
-                Debug.Log($"[{DateTime.Now:HH:mm:ss}] Beat:{beatIndex}");
+                //Debug.Log($"Beat:{beatIndex} // t desde anterior: {delta:F4}s -> desfase: {(beatInterval - delta):F4}");
+
                 OnBeat?.Invoke();
 
-                while (noteIndex < beatMap.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex]))
+                while (noteIndex < beatMap.Count &&
+                       Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex]))
                 {
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
                     boxGrid[0, col].SpawnNote(type, beatIndex, col);
                     noteIndex++;
+                    Debug.Log($"Beat:{beatIndex} Note: {noteNum} // t desde anterior: {delta:F4}s -> desfase: {(beatInterval - delta):F4}");
+                    noteNum++;
                 }
 
                 beatIndex++;
@@ -104,10 +119,18 @@ public class SongManager : MonoBehaviour
                 lastBeatTime = currentDSPTime;
             }
         }
+
+        if (beatIndex >= beatTimes.Count && songStarted)
+        {
+            songStarted = false;
+            ScoreSongManager.Instance.CheckGameWin();
+        }
     }
 
     public void GetDataFromMidi()
     {
+        beatInterval = 60.0 / BPM;
+
         tempoMap = midiFile.GetTempoMap();
         var notes = midiFile.GetNotes();
 
@@ -152,10 +175,16 @@ public class SongManager : MonoBehaviour
         }
 
         LoadOverrides();
-
         Debug.Log("Loaded beat map with " + beatMap.Count + " notes");
         Debug.Log("Loaded " + beatTimes.Count + " beat events");
-        StartSong(); // lanzamos StartSong ahora aquí directamente
+
+        StartCoroutine(WaitAndStartSong(songDelaySeconds));
+    }
+
+    private IEnumerator WaitAndStartSong(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        StartSong();
     }
 
     private void LoadOverrides()
@@ -189,9 +218,9 @@ public class SongManager : MonoBehaviour
                         }
                     }
                 }
-
                 Debug.Log("Applied " + overrides.Count + " overrides.");
             }
+            
             catch (Exception ex)
             {
                 Debug.LogError("Error parsing JSON overrides: " + ex.Message);
@@ -205,9 +234,12 @@ public class SongManager : MonoBehaviour
 
     public void StartSong()
     {
-        dspStartTime = AudioSettings.dspTime + songDelaySeconds;
-        audioSource.PlayScheduled(dspStartTime);
+        dspStartTime = AudioSettings.dspTime;
+        audioSource.Play();
         songStarted = true;
+
+        nextBeatTime = dspStartTime;
+        lastBeatTime = dspStartTime - beatInterval;
     }
 
     public static double GetAudioSourceTime()
