@@ -10999,7 +10999,7 @@ MonoBehaviour:
   hitSFX: {fileID: 154648368}
   missSFX: {fileID: 154648367}
   healthBar: {fileID: 632140168}
-  life: 100
+  life: 1000
   finalScoreManager: {fileID: 1848747981}
   gameplayCanvas: {fileID: 1828731671}
   SongManager: {fileID: 706480418}
@@ -11345,6 +11345,7 @@ MonoBehaviour:
   - {fileID: 52358704}
   - {fileID: 1378697094}
   BPM: 100
+  spawnOffsetBeats: 5
   beatThreshold: 0.1
 --- !u!82 &706480422
 AudioSource:

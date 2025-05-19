@@ -7,6 +7,7 @@ using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using static GameManager;
+using Melanchall.DryWetMidi.MusicTheory;
 
 public class SongManager : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class SongManager : MonoBehaviour
     private TempoMap tempoMap;
     private bool songStarted = false;
     public float BPM = 120f;
-    int noteNum = 1;
+    [SerializeField] int spawnOffsetBeats = 5; // Número de beats para adelantar el spawn
 
     private double dspStartTime;
     private float newVolume = 0f;
@@ -103,15 +104,12 @@ public class SongManager : MonoBehaviour
 
                 OnBeat?.Invoke();
 
-                while (noteIndex < beatMap.Count &&
-                       Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex]))
+                while (noteIndex < beatMap.Count && beatIndex + spawnOffsetBeats < beatTimes.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex + spawnOffsetBeats]))
                 {
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
                     boxGrid[0, col].SpawnNote(type, beatIndex, col);
                     noteIndex++;
-                    Debug.Log($"Beat:{beatIndex} Note: {noteNum} // t desde anterior: {delta:F4}s -> desfase: {(beatInterval - delta):F4}");
-                    noteNum++;
                 }
 
                 beatIndex++;
@@ -220,7 +218,7 @@ public class SongManager : MonoBehaviour
                 }
                 Debug.Log("Applied " + overrides.Count + " overrides.");
             }
-            
+
             catch (Exception ex)
             {
                 Debug.LogError("Error parsing JSON overrides: " + ex.Message);
