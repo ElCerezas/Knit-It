@@ -7,7 +7,6 @@ using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using static GameManager;
-using Melanchall.DryWetMidi.MusicTheory;
 
 public class SongManager : MonoBehaviour
 {
@@ -21,34 +20,34 @@ public class SongManager : MonoBehaviour
     [SerializeField] BoxLogic[] flatArray;
     public BoxLogic[,] boxGrid;
 
-    public static event Action OnBeat;
+    public static event Action OnBeat, OnHalfBeat;
 
     private List<BeatData> beatMap = new List<BeatData>();
     private List<double> beatTimes = new List<double>();
     private TempoMap tempoMap;
     private bool songStarted = false;
     public float BPM = 120f;
-    [SerializeField] int spawnOffsetBeats = 5; // Número de beats para adelantar el spawn
+    [SerializeField] int spawnOffsetBeats = 5;
 
     private double dspStartTime;
     private float newVolume = 0f;
     private bool checkForSound = false;
 
-    // BeatLoop
     int beatIndex = 0;
     int noteIndex = 0;
     [SerializeField] double beatThreshold = 0.1;
     double nextBeatTime = 0;
-    double beatInterval, lastBeatTime;
+    double lastBeatTime;
+    double beatInterval;
 
-    // Pausa
+    // Half-beat control
+    private double nextHalfBeatTime = 0;
+    private bool wasHalfBeat = false;
+
     private bool wasPaused = false;
     private double pauseStartDSPTime = 0;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    private void Awake() => Instance = this;
 
     void Start()
     {
@@ -82,6 +81,7 @@ public class SongManager : MonoBehaviour
             double pauseDuration = AudioSettings.dspTime - pauseStartDSPTime;
             nextBeatTime += pauseDuration;
             lastBeatTime += pauseDuration;
+            nextHalfBeatTime += pauseDuration;
             dspStartTime += pauseDuration;
             wasPaused = false;
         }
@@ -93,18 +93,25 @@ public class SongManager : MonoBehaviour
             checkForSound = false;
         }
 
+        double currentDSPTime = AudioSettings.dspTime;
+
+        //HALF BEAT
+        if (currentDSPTime >= nextHalfBeatTime - (beatThreshold / 2f))
+        {
+            OnHalfBeat?.Invoke();
+            nextHalfBeatTime += beatInterval;
+        }
+
+        //BEAT LOOP
         if (beatIndex < beatTimes.Count && audioSource.isPlaying)
         {
-            double currentDSPTime = AudioSettings.dspTime;
-
             if (currentDSPTime >= nextBeatTime - beatThreshold)
             {
-                double delta = currentDSPTime - lastBeatTime;
-                //Debug.Log($"Beat:{beatIndex} // t desde anterior: {delta:F4}s -> desfase: {(beatInterval - delta):F4}");
-
                 OnBeat?.Invoke();
 
-                while (noteIndex < beatMap.Count && beatIndex + spawnOffsetBeats < beatTimes.Count && Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex + spawnOffsetBeats]))
+                while (noteIndex < beatMap.Count &&
+                       beatIndex + spawnOffsetBeats < beatTimes.Count &&
+                       Mathf.Approximately((float)beatMap[noteIndex].time, (float)beatTimes[beatIndex + spawnOffsetBeats]))
                 {
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
@@ -113,12 +120,12 @@ public class SongManager : MonoBehaviour
                 }
 
                 beatIndex++;
-                nextBeatTime += beatInterval;
                 lastBeatTime = currentDSPTime;
+                nextBeatTime += beatInterval;
             }
         }
 
-        if (beatIndex >= beatTimes.Count && songStarted)
+        if (beatIndex >= beatTimes.Count && songStarted && !audioSource.isPlaying)
         {
             songStarted = false;
             ScoreSongManager.Instance.CheckGameWin();
@@ -128,7 +135,6 @@ public class SongManager : MonoBehaviour
     public void GetDataFromMidi()
     {
         beatInterval = 60.0 / BPM;
-
         tempoMap = midiFile.GetTempoMap();
         var notes = midiFile.GetNotes();
 
@@ -173,9 +179,6 @@ public class SongManager : MonoBehaviour
         }
 
         LoadOverrides();
-        Debug.Log("Loaded beat map with " + beatMap.Count + " notes");
-        Debug.Log("Loaded " + beatTimes.Count + " beat events");
-
         StartCoroutine(WaitAndStartSong(songDelaySeconds));
     }
 
@@ -188,45 +191,35 @@ public class SongManager : MonoBehaviour
     private void LoadOverrides()
     {
         string path = Path.Combine(Application.streamingAssetsPath, fileLocation + "_overrides.json");
+        if (!File.Exists(path)) return;
 
-        if (File.Exists(path))
+        string json = File.ReadAllText(path);
+        try
         {
-            string json = File.ReadAllText(path);
-            try
+            BeatOverrideList wrapper = JsonUtility.FromJson<BeatOverrideList>(json);
+            foreach (var ovr in wrapper.items)
             {
-                BeatOverrideList wrapper = JsonUtility.FromJson<BeatOverrideList>(json);
-                List<BeatOverrideData> overrides = wrapper.items;
-
-                foreach (var ovr in overrides)
+                if (!string.IsNullOrEmpty(ovr.type))
                 {
-                    if (!string.IsNullOrEmpty(ovr.type))
-                    {
-                        var matches = beatMap
-                            .Select((b, i) => new { Beat = b, Index = i })
-                            .Where(x =>
-                                Mathf.Approximately((float)x.Beat.time, (float)beatTimes[ovr.beatIndex]) &&
-                                (!ovr.column.HasValue || x.Beat.column == ovr.column.Value))
-                            .ToList();
+                    var matches = beatMap
+                        .Select((b, i) => new { Beat = b, Index = i })
+                        .Where(x =>
+                            Mathf.Approximately((float)x.Beat.time, (float)beatTimes[ovr.beatIndex]) &&
+                            (!ovr.column.HasValue || x.Beat.column == ovr.column.Value))
+                        .ToList();
 
-                        foreach (var match in matches)
-                        {
-                            var bd = match.Beat;
-                            bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
-                            beatMap[match.Index] = bd;
-                        }
+                    foreach (var match in matches)
+                    {
+                        var bd = match.Beat;
+                        bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
+                        beatMap[match.Index] = bd;
                     }
                 }
-                Debug.Log("Applied " + overrides.Count + " overrides.");
-            }
-
-            catch (Exception ex)
-            {
-                Debug.LogError("Error parsing JSON overrides: " + ex.Message);
             }
         }
-        else
+        catch (Exception ex)
         {
-            Debug.Log("No overrides found for this level.");
+            Debug.LogError("Error parsing JSON overrides: " + ex.Message);
         }
     }
 
@@ -237,6 +230,7 @@ public class SongManager : MonoBehaviour
         songStarted = true;
 
         nextBeatTime = dspStartTime;
+        nextHalfBeatTime = dspStartTime + (beatInterval / 2.0);
         lastBeatTime = dspStartTime - beatInterval;
     }
 

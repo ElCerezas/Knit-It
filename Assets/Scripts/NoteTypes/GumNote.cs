@@ -21,8 +21,8 @@ public class GumNote : NoteLogic
 
             scoreManager.AddScore(5);
   
-            SongManager.OnBeat += ReturnBack;
-            SongManager.OnBeat -= OnBeatMove;
+            SongManager.OnHalfBeat += ReturnBack;
+            SongManager.OnHalfBeat -= OnBeatMove;
         }
         else if (returned)
         {
@@ -47,8 +47,8 @@ public class GumNote : NoteLogic
             StartCoroutine(MoveTo(nextBox.transform.position));
 
             // Desuscribirse para evitar multiples llamadas
-            SongManager.OnBeat -= ReturnBack;
-            SongManager.OnBeat += OnBeatMove;
+            SongManager.OnHalfBeat -= ReturnBack;
+            SongManager.OnHalfBeat += OnBeatMove;
         }
     }
 }

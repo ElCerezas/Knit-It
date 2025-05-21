@@ -14,11 +14,11 @@ public class NoteLogic : MonoBehaviour
 
     private void OnEnable()
     {
-        SongManager.OnBeat += OnBeatMove;
+        SongManager.OnHalfBeat += OnBeatMove;
     }
     private void OnDisable()
     {
-        SongManager.OnBeat -= OnBeatMove;
+        SongManager.OnHalfBeat -= OnBeatMove;
     }
     void Start()
     {
@@ -94,6 +94,6 @@ public class NoteLogic : MonoBehaviour
     public void ShutDown()
     {
         StopAllCoroutines();
-        SongManager.OnBeat -= OnBeatMove;
+        SongManager.OnHalfBeat -= OnBeatMove;
     }
 }
