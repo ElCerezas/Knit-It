@@ -48,7 +48,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
-  soundList: []
+  soundList:
+  - name: NoteRight
+    clip: {fileID: 8300000, guid: 8ef0e4174ecf0734d8e74f3bb71e44ee, type: 3}
+    category: 1
+    volume: 1
+  - name: NoteWrong
+    clip: {fileID: 8300000, guid: 6c68a38e2eb14b748ac99bb52ee7adcf, type: 3}
+    category: 1
+    volume: 1
 --- !u!114 &-6573952161750157313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +70,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  blockingPanel: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  countdownText: {fileID: 0}
+  countdownTime: 3
 --- !u!114 &1543008571865839359
 MonoBehaviour:
   m_ObjectHideFlags: 0

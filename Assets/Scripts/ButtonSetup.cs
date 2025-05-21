@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class ButtonSetup : MonoBehaviour
 {
     public string sceneName;
+    public bool hasQuit = false;
     public bool hasFade = false;
 
     void Start()
@@ -14,9 +15,16 @@ public class ButtonSetup : MonoBehaviour
 
         if (SceneController.Instance != null)
         {
-            if(!hasFade)
-            boton.onClick.AddListener(() => SceneController.Instance.LoadScene(sceneName));
-            else boton.onClick.AddListener(() => SceneController.Instance.LoadSceneAsync(sceneName));
+            if (hasQuit)
+            {
+                boton.onClick.AddListener(() => SceneController.Instance.QuitGame());
+            }
+            else
+            {
+                if (!hasFade)
+                    boton.onClick.AddListener(() => SceneController.Instance.LoadScene(sceneName));
+                else boton.onClick.AddListener(() => SceneController.Instance.LoadSceneAsync(sceneName));
+            }
         }
         else
         {
