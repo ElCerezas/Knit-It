@@ -8,8 +8,8 @@ public class NoteJumpHit : MonoBehaviour
     PulseEffectRender pulseEffect;
     Rigidbody2D rb2;
     public Sprite particleSpecific;
-
     private bool isDestroying = false;
+    public GameObject explosion;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class NoteJumpHit : MonoBehaviour
 
     private void Update()
     {
-        if (!isDestroying && (transform.position.x > 8 || transform.position.x < -8))
+        if (!isDestroying && (transform.position.x > 8.5 || transform.position.x < -8.5))
         {
             isDestroying = true;
             StartCoroutine(PlayAndDestroy());
@@ -53,19 +53,17 @@ public class NoteJumpHit : MonoBehaviour
     IEnumerator PlayAndDestroy()
     {
         // Instanciar partículas
-        GameObject explosion = Instantiate(Resources.Load<GameObject>("NoteExplosion"), transform.position, Quaternion.identity);
-
         if (particleSpecific != null)
         {
             var renderer = explosion.GetComponent<ParticleSystemRenderer>();
             renderer.material = new Material(Shader.Find("Sprites/Default"));
             renderer.material.mainTexture = particleSpecific.texture;
         }
-
+        explosion.SetActive(true);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         // Esperar a que terminen (0.5s por defecto)
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
-        Destroy(explosion);
         Destroy(gameObject);
     }
 }
