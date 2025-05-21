@@ -12,6 +12,10 @@ public class NoteLogic : MonoBehaviour
     protected Collider2D selfCollider;
     protected NoteJumpHit jumpHit;
 
+    // Tilt control
+    protected bool tiltingInitialized = false;
+    protected int tiltDirection = 1; // 1 = derecha, -1 = izquierda
+
     private void OnEnable()
     {
         SongManager.OnHalfBeat += OnBeatMove;
@@ -79,7 +83,7 @@ public class NoteLogic : MonoBehaviour
         scoreManager.AddLife(-1);
     }
 
-    protected IEnumerator MoveTo(Vector2 targetPos, float quickMultiply = 1f)
+    protected IEnumerator MoveTo(Vector2 targetPos, float quickMultiply = 1f, float tiltAngle = 15f)
     {
         if (!spriteActivated && spriteRenderer != null)
         {
@@ -91,14 +95,41 @@ public class NoteLogic : MonoBehaviour
         float elapsed = 0f;
         float moveDuration = (beatTime / 2f) / quickMultiply;
 
+        // Inicializar dirección aleatoria la primera vez
+        if (!tiltingInitialized)
+        {
+            tiltDirection = UnityEngine.Random.value > 0.5f ? 1 : -1;
+            tiltingInitialized = true;
+        }
+        else
+        {
+            tiltDirection *= -1;
+        }
+
+        // Ángulos de rotación
+        Quaternion initialRotation = transform.rotation;
+        Quaternion tiltedRotation = Quaternion.Euler(0, 0, tiltAngle * tiltDirection);
+
+        while (elapsed < moveDuration / 2f)
+        {
+            float t = elapsed / (moveDuration / 2f);
+            transform.position = Vector2.Lerp(startPos, targetPos, elapsed / moveDuration);
+            transform.rotation = Quaternion.Lerp(initialRotation, tiltedRotation, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
         while (elapsed < moveDuration)
         {
+            float t = (elapsed - moveDuration / 2f) / (moveDuration / 2f);
             transform.position = Vector2.Lerp(startPos, targetPos, elapsed / moveDuration);
+            transform.rotation = Quaternion.Lerp(tiltedRotation, initialRotation, t);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
         transform.position = targetPos;
+        transform.rotation = initialRotation;
         actualBox = nextBox;
     }
 
@@ -108,7 +139,7 @@ public class NoteLogic : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void ShutDown()
+    public virtual void ShutDown()
     {
         StopAllCoroutines();
         SongManager.OnHalfBeat -= OnBeatMove;

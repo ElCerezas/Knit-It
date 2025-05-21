@@ -9,7 +9,9 @@ public class NoteJumpHit : MonoBehaviour
     Rigidbody2D rb2;
     public Sprite particleSpecific;
     private bool isDestroying = false;
-    public GameObject explosion;
+
+    [Header("Explosion Prefab")]
+    public GameObject explosionPrefab;
 
     void Start()
     {
@@ -21,7 +23,7 @@ public class NoteJumpHit : MonoBehaviour
 
     private void Update()
     {
-        if (!isDestroying && (transform.position.x > 8.5 || transform.position.x < -8.5))
+        if (!isDestroying && (transform.position.x > 8.5f || transform.position.x < -8.5f))
         {
             isDestroying = true;
             StartCoroutine(PlayAndDestroy());
@@ -52,18 +54,30 @@ public class NoteJumpHit : MonoBehaviour
 
     IEnumerator PlayAndDestroy()
     {
-        // Instanciar partículas
-        if (particleSpecific != null)
+        // Instanciar explosión si se ha asignado
+        if (explosionPrefab != null)
         {
-            var renderer = explosion.GetComponent<ParticleSystemRenderer>();
-            renderer.material = new Material(Shader.Find("Sprites/Default"));
-            renderer.material.mainTexture = particleSpecific.texture;
-        }
-        explosion.SetActive(true);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        // Esperar a que terminen (0.5s por defecto)
-        yield return new WaitForSeconds(1f);
+            GameObject instance = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
+            if (particleSpecific != null)
+            {
+                var renderer = instance.GetComponent<ParticleSystemRenderer>();
+                if (renderer != null)
+                {
+                    renderer.material = new Material(Shader.Find("Sprites/Default"));
+                    renderer.material.mainTexture = particleSpecific.texture;
+                }
+            }
+
+            // Destruir partículas al acabar
+            Destroy(instance, 1f);
+        }
+
+        // Ocultar sprite de la nota
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = false;
+
+        yield return new WaitForSeconds(0.6f);
         Destroy(gameObject);
     }
 }

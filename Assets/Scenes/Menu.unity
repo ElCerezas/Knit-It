@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5af8ea5d65e28040ba5208cb71d0090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Iaia3
+  sceneName: Nivel3
   hasQuit: 0
   hasFade: 1
 --- !u!114 &704263699
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5af8ea5d65e28040ba5208cb71d0090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Iaia
+  sceneName: Nivel1
   hasQuit: 0
   hasFade: 1
 --- !u!114 &1170037517
@@ -2750,7 +2750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5af8ea5d65e28040ba5208cb71d0090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Iaia2
+  sceneName: Nivel2
   hasQuit: 0
   hasFade: 1
 --- !u!114 &1425135605

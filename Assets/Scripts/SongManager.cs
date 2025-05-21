@@ -42,7 +42,6 @@ public class SongManager : MonoBehaviour
 
     // Half-beat control
     private double nextHalfBeatTime = 0;
-    private bool wasHalfBeat = false;
 
     private bool wasPaused = false;
     private double pauseStartDSPTime = 0;

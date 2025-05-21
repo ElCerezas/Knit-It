@@ -7,6 +7,7 @@ public class GumNote : NoteLogic
     private bool firstHitDone = false;
     private bool returned = false;
     private int originalRow;
+    bool onAlternateBeat = false;
     public override void OnNoteHit(bool isPerfect)
     {
         if (!firstHitDone)
@@ -23,6 +24,7 @@ public class GumNote : NoteLogic
   
             SongManager.OnHalfBeat += ReturnBack;
             SongManager.OnHalfBeat -= OnBeatMove;
+            onAlternateBeat = true;
         }
         else if (returned)
         {
@@ -49,6 +51,19 @@ public class GumNote : NoteLogic
             // Desuscribirse para evitar multiples llamadas
             SongManager.OnHalfBeat -= ReturnBack;
             SongManager.OnHalfBeat += OnBeatMove;
+            onAlternateBeat = true;
+        }
+    }
+    public override void ShutDown()
+    {
+        if (!onAlternateBeat)
+        {
+            base.ShutDown();
+        }
+        else
+        {
+            StopAllCoroutines();
+            SongManager.OnHalfBeat -= ReturnBack;
         }
     }
 }
