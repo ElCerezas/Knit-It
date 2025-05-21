@@ -49,7 +49,7 @@ public class NoteLogic : MonoBehaviour
         else
         {
             OnNoteDespawn();
-            StartCoroutine(DestroyAfterDelay(beatTime / 2f));
+            StartCoroutine(DestroyAfterDelay(beatTime / 4f));
         }
     }
 
