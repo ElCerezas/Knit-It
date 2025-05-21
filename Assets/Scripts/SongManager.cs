@@ -125,7 +125,7 @@ public class SongManager : MonoBehaviour
             }
         }
 
-        if (beatIndex >= beatTimes.Count && songStarted && !audioSource.isPlaying)
+        if (songStarted && !audioSource.isPlaying && GameManager.Instance.currentState == GameState.Playing)
         {
             songStarted = false;
             ScoreSongManager.Instance.CheckGameWin();

@@ -16,10 +16,12 @@ public class NoteLogic : MonoBehaviour
     {
         SongManager.OnHalfBeat += OnBeatMove;
     }
+
     private void OnDisable()
     {
         SongManager.OnHalfBeat -= OnBeatMove;
     }
+
     void Start()
     {
         scoreManager = ScoreSongManager.Instance;
@@ -27,14 +29,17 @@ public class NoteLogic : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         selfCollider = GetComponent<Collider2D>();
         jumpHit = GetComponent<NoteJumpHit>();
+
         if (spriteRenderer != null)
-            spriteRenderer.enabled = false; // Apagar sprite al inicio
-        beatTime = 60/SongManager.Instance.BPM;
+            spriteRenderer.enabled = false;
+
+        beatTime = 60f / SongManager.Instance.BPM;
     }
+
     public virtual void OnBeatMove()
     {
         int nextRow = actualBox.GetBoxRow() + 1;
-        int col = actualBox.GetBoxCol();    
+        int col = actualBox.GetBoxCol();
 
         if (nextRow < SongManager.Instance.boxGrid.GetLength(0))
         {
@@ -44,9 +49,10 @@ public class NoteLogic : MonoBehaviour
         else
         {
             OnNoteDespawn();
-            Destroy(gameObject);
+            StartCoroutine(DestroyAfterDelay(beatTime / 2f));
         }
     }
+
     public virtual void OnNoteHit(bool isPerfect)
     {
         if (isPerfect)
@@ -57,19 +63,20 @@ public class NoteLogic : MonoBehaviour
         {
             scoreManager.NotesToCombo--;
             if (scoreManager.NotesToCombo <= 0)
-            {
                 scoreManager.AddCombo();
-            }
         }
+
         scoreManager.AddScore(10);
         jumpHit.StartJump();
     }
+
     public virtual void OnNoteDespawn()
     {
         scoreManager.ResetCombo();
         scoreManager.AddLife(-1);
     }
-    protected IEnumerator MoveTo(Vector2 targetPos, float quickMultiply = 1)
+
+    protected IEnumerator MoveTo(Vector2 targetPos, float quickMultiply = 1f)
     {
         if (!spriteActivated && spriteRenderer != null)
         {
@@ -79,7 +86,7 @@ public class NoteLogic : MonoBehaviour
 
         Vector2 startPos = transform.position;
         float elapsed = 0f;
-        float moveDuration = (beatTime/2)/quickMultiply; // Duración de movimiento por beat
+        float moveDuration = (beatTime / 2f) / quickMultiply;
 
         while (elapsed < moveDuration)
         {
@@ -91,6 +98,13 @@ public class NoteLogic : MonoBehaviour
         transform.position = targetPos;
         actualBox = nextBox;
     }
+
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
+
     public void ShutDown()
     {
         StopAllCoroutines();
