@@ -1,7 +1,6 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
-
-public class CozyButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CozyButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public float hoverScale = 1.1f;
     public float speed = 5f;
@@ -21,4 +20,9 @@ public class CozyButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData) => hovering = true;
     public void OnPointerExit(PointerEventData eventData) => hovering = false;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        hovering = false; 
+    }
 }
