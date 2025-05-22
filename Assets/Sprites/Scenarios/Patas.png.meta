@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3558a8cc945185d478375db7fbc01747
+guid: 977bf8f200f329d4896e02439196320a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 110
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enteraSpriteSheet_0
+      name: Patas_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8988c9dc3d3f43449834e539451a90a4
-      internalID: 1368739194
+      spriteID: 655c9169a321fb14289539790dbcbe39
+      internalID: 882654542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enteraSpriteSheet_1
+      name: Patas_1
       rect:
         serializedVersion: 2
         x: 2079
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6062b6a3b435a9c47ab4610946c0a88f
-      internalID: 1976197706
+      spriteID: b973b1271ffcc8f4cb44ea3b33d072c3
+      internalID: -940582831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enteraSpriteSheet_2
+      name: Patas_2
       rect:
         serializedVersion: 2
         x: 4158
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ade5ac3ce8bcc294fb6e1e59454f1e04
-      internalID: 62522083
+      spriteID: 69682284613b8174398bbc868308202b
+      internalID: -114627193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enteraSpriteSheet_3
+      name: Patas_3
       rect:
         serializedVersion: 2
         x: 6237
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d91c893cd195bf4fa9aec3778ece673
-      internalID: 1463938813
+      spriteID: 6289741ee3cf0e041a20b6f5571c92e5
+      internalID: -1915798392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enteraSpriteSheet_4
+      name: Patas_4
       rect:
         serializedVersion: 2
         x: 8316
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd0d3a2084e648d43ad557ab7b0f5a30
-      internalID: -1547987553
+      spriteID: fbb17d42998de1a49b00572fcd02f1a7
+      internalID: 696392451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enteraSpriteSheet_5
+      name: Patas_5
       rect:
         serializedVersion: 2
         x: 10395
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 195700acb1994e748a7dc92090215666
-      internalID: 374738791
+      spriteID: 4ca0f89c7bf744b4088689abfa92badd
+      internalID: 1741191444
       vertices: []
       indices: 
       edges: []
@@ -233,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      enteraSpriteSheet_0: 1368739194
-      enteraSpriteSheet_1: 1976197706
-      enteraSpriteSheet_2: 62522083
-      enteraSpriteSheet_3: 1463938813
-      enteraSpriteSheet_4: -1547987553
-      enteraSpriteSheet_5: 374738791
+      Patas_0: 882654542
+      Patas_1: -940582831
+      Patas_2: -114627193
+      Patas_3: -1915798392
+      Patas_4: 696392451
+      Patas_5: 1741191444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
