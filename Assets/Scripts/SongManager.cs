@@ -48,6 +48,15 @@ public class SongManager : MonoBehaviour
 
     private void Awake() => Instance = this;
 
+#if UNITY_EDITOR
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown("I"))
+        {
+            ScoreSongManager.Instance.CheckGameWin();
+        }
+    }
+#endif
     void Start()
     {
         newVolume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
@@ -60,7 +69,6 @@ public class SongManager : MonoBehaviour
 
         beatInterval = 60.0 / BPM;
     }
-
     void Update()
     {
         if (!songStarted) return;
