@@ -1,53 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MuestraStats : MonoBehaviour
 {
-    [SerializeField] private GameObject dropdownPanel1;
-    [SerializeField] private GameObject dropdownPanel2;
-    [SerializeField] private GameObject dropdownPanel3;
-
-    private bool isVisible1 = false;
-    private bool isVisible2 = false;
-    private bool isVisible3 = false;
-
+    [SerializeField] private GameObject dropdownPanel;
+    private int finalScore = 0;
+    [SerializeField] private Animation otherAnim;
+    [SerializeField] private Image placeholderImage;
+    [SerializeField] private Sprite iaia1;
+    [SerializeField] private Sprite shadowIaia1;
+    [SerializeField] private Sprite iaia2;
+    [SerializeField] private Sprite shadowIaia2;
+    [SerializeField] private Sprite iaia3;
+    [SerializeField] private Sprite shadowIaia3;
+    [SerializeField] private TextMeshProUGUI HighScore;
+    [Header("PlayButton")]
+    public ButtonSetup playButton;
+    [SerializeField] private string nivel1;
+    [SerializeField] private string nivel2;
+    [SerializeField] private string nivel3;
     void Start()
     {
-        if (dropdownPanel1 != null)
-            dropdownPanel1.SetActive(isVisible1);
-        if (dropdownPanel2 != null)
-            dropdownPanel2.SetActive(isVisible2);
-        if (dropdownPanel3 != null)
-            dropdownPanel3.SetActive(isVisible3);
+        if (dropdownPanel != null)
+            dropdownPanel.SetActive(false);
     }
 
     public void ToggleDropdown1()
     {
-        isVisible1 = !isVisible1;
-        dropdownPanel1.SetActive(isVisible1);
-        isVisible2 = false ;
-        isVisible3 = false ;
-        dropdownPanel2.SetActive(isVisible2);
-        dropdownPanel3.SetActive(isVisible3);
+        dropdownPanel.SetActive(true);
+        playButton.sceneName = nivel1;
+        finalScore = PlayerPrefs.GetInt("Score1");
+        HighScore.text = finalScore.ToString();
+        if (finalScore == 0)
+        {
+            placeholderImage.sprite = shadowIaia1;
+        }
+        else
+        {
+            placeholderImage.sprite = iaia1;
+        }
     }
     public void ToggleDropdown2()
     {
-        isVisible2 = !isVisible2;
-        dropdownPanel2.SetActive(isVisible2);
-        isVisible1 = false;
-        isVisible3 = false;
-        dropdownPanel1.SetActive(isVisible1);
-        dropdownPanel3.SetActive(isVisible3);
+        dropdownPanel.SetActive(true);
+        playButton.sceneName = nivel2;
+        finalScore = PlayerPrefs.GetInt("Score2");
+        HighScore.text = finalScore.ToString();
+        if (finalScore == 0)
+        {
+            placeholderImage.sprite = shadowIaia2;
+        }
+        else
+        {
+            placeholderImage.sprite = iaia2;
+        }
     }
     public void ToggleDropdown3()
     {
-        isVisible3 = !isVisible3;
-        dropdownPanel3.SetActive(isVisible3);
-        isVisible2 = false;
-        isVisible1 = false;
-        dropdownPanel2.SetActive(isVisible2);
-        dropdownPanel1.SetActive(isVisible1);
+        dropdownPanel.SetActive(true);
+        playButton.sceneName = nivel3;
+        finalScore = PlayerPrefs.GetInt("Score3");
+        HighScore.text = finalScore.ToString();
+        if (finalScore == 0)
+        {
+            placeholderImage.sprite = shadowIaia3;
+        }
+        else
+        {
+            placeholderImage.sprite = iaia3;
+        }
+    }
+    public void HideDropdown()
+    {
+        otherAnim.Play("PolaroidOut");
+        StartCoroutine(Timer());
+    }
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(1f);
+        dropdownPanel.SetActive(false);
     }
 }
