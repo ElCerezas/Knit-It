@@ -7,6 +7,7 @@ using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using static GameManager;
+using UnityEngine.InputSystem;
 
 public class SongManager : MonoBehaviour
 {
@@ -123,9 +124,13 @@ public class SongManager : MonoBehaviour
             }
         }
 
-        if (songStarted && !audioSource.isPlaying && GameManager.Instance.currentState == GameState.Playing)
+        if ((songStarted && !audioSource.isPlaying && GameManager.Instance.currentState == GameState.Playing))
         {
             songStarted = false;
+            ScoreSongManager.Instance.CheckGameWin();
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
             ScoreSongManager.Instance.CheckGameWin();
         }
     }

@@ -101,11 +101,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 742
-        width: 3000
-        height: 584
+        y: 965
+        width: 5351
+        height: 990
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -113,27 +113,6 @@ TextureImporter:
       bones: []
       spriteID: f49767b4960df1e41a5a34648377e74e
       internalID: -580323105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ScoreBar_2
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 93
-        width: 713
-        height: 675
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8659f1e51f30b924487438c7fd8b7d0b
-      internalID: 271284914
       vertices: []
       indices: 
       edges: []
@@ -150,8 +129,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       ScoreBar_0: -580323105
-      ScoreBar_1: 1640965414
-      ScoreBar_2: 271284914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
