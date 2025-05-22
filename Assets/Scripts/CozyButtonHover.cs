@@ -2,6 +2,8 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 public class CozyButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    public bool inUI = false;
+    public bool playButton = false;
     public float hoverScale = 1.1f;
     public float speed = 5f;
     private Vector3 originalScale;
@@ -18,11 +20,29 @@ public class CozyButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExit
         transform.localScale = Vector3.Lerp(transform.localScale, target, Time.deltaTime * speed);
     }
 
-    public void OnPointerEnter(PointerEventData eventData) => hovering = true;
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        SoundManager.Instance.PlaySound("UI3");
+        hovering = true;
+    } 
+
     public void OnPointerExit(PointerEventData eventData) => hovering = false;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        hovering = false; 
+        if (inUI)
+        {
+            SoundManager.Instance.PlaySound("UI4");
+        }
+        else if (playButton)
+        {
+            SoundManager.Instance.PlaySound("Play");
+            SoundManager.Instance.StopSound("MainMenu");
+        }
+        else
+        {
+            SoundManager.Instance.PlaySound("UI2");
+        }
+        hovering = false;
     }
 }

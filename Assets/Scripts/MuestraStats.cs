@@ -30,6 +30,7 @@ public class MuestraStats : MonoBehaviour
 
     public void ToggleDropdown1()
     {
+        SoundManager.Instance.PlaySound("Paper");
         dropdownPanel.SetActive(true);
         playButton.sceneName = nivel1;
         finalScore = PlayerPrefs.GetInt("Score1");
@@ -45,6 +46,7 @@ public class MuestraStats : MonoBehaviour
     }
     public void ToggleDropdown2()
     {
+        SoundManager.Instance.PlaySound("Paper");
         dropdownPanel.SetActive(true);
         playButton.sceneName = nivel2;
         finalScore = PlayerPrefs.GetInt("Score2");
@@ -60,6 +62,7 @@ public class MuestraStats : MonoBehaviour
     }
     public void ToggleDropdown3()
     {
+        SoundManager.Instance.PlaySound("Paper");
         dropdownPanel.SetActive(true);
         playButton.sceneName = nivel3;
         finalScore = PlayerPrefs.GetInt("Score3");
@@ -75,6 +78,7 @@ public class MuestraStats : MonoBehaviour
     }
     public void HideDropdown()
     {
+        SoundManager.Instance.PlaySound("Paper");
         otherAnim.Play("PolaroidOut");
         StartCoroutine(Timer());
     }

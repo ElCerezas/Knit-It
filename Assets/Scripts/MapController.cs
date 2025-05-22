@@ -44,6 +44,7 @@ public class MapController : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.PlaySound("MainMenu", true);
         shadowColor = Color.black;
         shadowColor.a = 0.5f;
         basicColor = Color.white;

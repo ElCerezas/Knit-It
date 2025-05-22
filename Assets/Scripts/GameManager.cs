@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         if (currentState == GameState.Playing)
         {
             SetGameState(GameState.Paused);
+            DeactivateParallax();
             pauseMenu.gameObject.SetActive(true);
         }
         else if (currentState == GameState.Paused)
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 SetGameState(GameState.Playing);
+                ActivateParallax();
                 pauseMenu.gameObject.SetActive(false);
             }
         }
@@ -116,12 +118,28 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSecondsRealtime(0.5f); 
+            yield return new WaitForSecondsRealtime(0.5f);
             timeLeft--;
         }
 
         countdownText.gameObject.SetActive(false);
         blockingPanel.gameObject.SetActive(false);
         SetGameState(GameState.Playing);
+    }
+    void ActivateParallax()
+    {
+        ParallaxLayer[] layers = FindObjectsOfType<ParallaxLayer>();
+        foreach (ParallaxLayer layer in layers)
+        {
+            layer.SetMove(true);
+        }
+    }
+    void DeactivateParallax()
+    {
+        ParallaxLayer[] layers = FindObjectsOfType<ParallaxLayer>();
+        foreach (ParallaxLayer layer in layers)
+        {
+            layer.SetMove(false);
+        }
     }
 }
