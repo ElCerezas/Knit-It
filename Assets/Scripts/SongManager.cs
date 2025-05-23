@@ -133,6 +133,7 @@ public class SongManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             ScoreSongManager.Instance.CheckGameWin();
+            songStarted = false;
         }
     }
 
