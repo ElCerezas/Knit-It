@@ -963,6 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51b2663622f3eb47ab01ebefe9a95d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: 0
   parallaxFactor: 0.05
 --- !u!1 &326141693
 GameObject:
@@ -2641,8 +2642,8 @@ MonoBehaviour:
   level2: {fileID: 1557079827}
   level3: {fileID: 1515285141}
   scoreForThreeStars1: 3000
-  scoreForThreeStars2: 6000
-  scoreForThreeStars3: 9000
+  scoreForThreeStars2: 3000
+  scoreForThreeStars3: 3000
   trophySimple1: {fileID: -1280604894, guid: 11fbea82f55c3074abc81366b663c2f5, type: 3}
   trophyPro1: {fileID: 1474041343, guid: 11fbea82f55c3074abc81366b663c2f5, type: 3}
   newRenderer1: {fileID: 1801929397}
@@ -3210,6 +3211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51b2663622f3eb47ab01ebefe9a95d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: 0
   parallaxFactor: 0.1
 --- !u!1 &1489967890
 GameObject:
@@ -4094,6 +4096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51b2663622f3eb47ab01ebefe9a95d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: 0
   parallaxFactor: 0.02
 --- !u!1 &1680202758
 GameObject:
@@ -5385,6 +5388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51b2663622f3eb47ab01ebefe9a95d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: 0
   parallaxFactor: 0.02
 --- !u!1 &2080660105
 GameObject:
