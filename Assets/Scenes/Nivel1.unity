@@ -10572,7 +10572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 27.5}
+  m_AnchoredPosition: {x: 16.1, y: 27.5}
   m_SizeDelta: {x: 9.006, y: 9.006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476013286
@@ -10630,7 +10630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &534720207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15873,7 +15873,7 @@ MonoBehaviour:
   life: 100
   finalScoreManager: {fileID: 1848747981}
   gameplayCanvas: {fileID: 1828731671}
-  SongManager: {fileID: 706480418}
+  sngManager: {fileID: 706480418}
   GameLostCanvas: {fileID: 815917324}
 --- !u!114 &592743346
 MonoBehaviour:
@@ -16138,10 +16138,10 @@ RectTransform:
   - {fileID: 1324152910}
   m_Father: {fileID: 1222668040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 1.4943056}
+  m_SizeDelta: {x: 0, y: -2.9886112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &706480418
 GameObject:
@@ -16192,6 +16192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 706480422}
+  level: 1
   songDelaySeconds: 3
   fileLocation: level1
   flatArray:
@@ -26247,7 +26248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10.931004}
+  m_AnchoredPosition: {x: 16.1, y: 10.931004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &906859090
@@ -46502,8 +46503,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 16.569}
-  m_SizeDelta: {x: 95.6594, y: 11.9574}
+  m_AnchoredPosition: {x: 0, y: 13.482}
+  m_SizeDelta: {x: 95.659, y: 18.131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222668041
 MonoBehaviour:
@@ -46590,7 +46591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25.934061, y: 27.5}
+  m_AnchoredPosition: {x: -16.399998, y: 27.5}
   m_SizeDelta: {x: 9.006, y: 9.006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1266662076
@@ -56348,12 +56349,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -580323105, guid: d8848cb4595bf42498a3180d62d3fbc0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 1512599160, guid: 32b45e84df9e8974f8e8c0f1a6c7cdc8, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.7356667
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -67291,7 +67292,7 @@ MonoBehaviour:
   m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -83299,7 +83300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25.934061, y: 10.931004}
+  m_AnchoredPosition: {x: -16.4, y: 10.931004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &2000550047

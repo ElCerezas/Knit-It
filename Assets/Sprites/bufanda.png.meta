@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8848cb4595bf42498a3180d62d3fbc0
+guid: 32b45e84df9e8974f8e8c0f1a6c7cdc8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ScoreBar_0
+      name: bufanda_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 965
-        width: 5351
-        height: 990
+        x: 42
+        y: 435
+        width: 1131
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f49767b4960df1e41a5a34648377e74e
-      internalID: -580323105
+      spriteID: 9615907508de3b74cba151be17a94e55
+      internalID: 1512599160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bufanda_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 83
+        width: 144
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51638bb3384dc7b48a4be085472ae665
+      internalID: 1112365358
       vertices: []
       indices: 
       edges: []
@@ -128,7 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ScoreBar_0: -580323105
+      bufanda_0: 1512599160
+      bufanda_1: 1112365358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
