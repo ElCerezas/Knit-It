@@ -107,6 +107,7 @@ public class SongManager : MonoBehaviour
         {
             if (currentDSPTime >= nextBeatTime - beatThreshold)
             {
+                Debug.Log($"Beat: {beatIndex}");
                 OnBeat?.Invoke();
 
                 while (noteIndex < beatMap.Count &&
@@ -117,7 +118,7 @@ public class SongManager : MonoBehaviour
                     NoteType type = beatMap[noteIndex].type;
                     boxGrid[0, col].SpawnNote(type, beatIndex, col);
 
-                    Debug.Log($"Beat: {beatIndex} - Col: {col} - Type: {type}");
+                    //Debug.Log($"Beat: {beatIndex} - Col: {col} - Type: {type}");
 
                     noteIndex++;
                 }

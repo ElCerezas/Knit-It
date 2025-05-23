@@ -20,10 +20,10 @@
 		{ "beatIndex": 50, "column": 1, "type": "Basic" },
 		{ "beatIndex": 51, "column": 3, "type": "Basic" },
 	
-		{ "beatIndex": 53, "column": 2, "type": "ZigZagL" },
-		{ "beatIndex": 54, "column": 1, "type": "ZigZagR" },
-		{ "beatIndex": 55, "column": 3, "type": "ZigZagL" },
-		{ "beatIndex": 56, "column": 0, "type": "ZigZagR" },
+		{ "beatIndex": 53, "column": 3, "type": "ZigZagL" },
+		{ "beatIndex": 54, "column": 0, "type": "ZigZagR" },
+		{ "beatIndex": 55, "column": 1, "type": "ZigZagR" },
+		{ "beatIndex": 56, "column": 2, "type": "ZigZagL" },
 
 		{ "beatIndex": 60, "column": 0, "type": "Basic" },
 		{ "beatIndex": 60, "column": 3, "type": "Basic" },
@@ -32,7 +32,7 @@
 		{ "beatIndex": 62, "column": 2, "type": "Basic" },
 		{ "beatIndex": 62, "column": 3, "type": "Basic" },
 		{ "beatIndex": 63, "column": 3, "type": "Basic" },
-		{ "beatIndex": 64, "column": 2, "type": "ZigZagR" },
+		{ "beatIndex": 64, "column": 2, "type": "ZigZagl" },
 
 		{ "beatIndex": 67, "column": 3, "type": "Basic" },
 		{ "beatIndex": 67, "column": 0, "type": "Basic" },
@@ -41,12 +41,12 @@
 		{ "beatIndex": 69, "column": 1, "type": "Basic" },
 		{ "beatIndex": 69, "column": 0, "type": "Basic" },
 		{ "beatIndex": 70, "column": 0, "type": "Basic" },
-		{ "beatIndex": 71, "column": 1, "type": "ZigZagL" },
+		{ "beatIndex": 71, "column": 1, "type": "ZigZagR" },
 
 		{ "beatIndex": 74, "column": 3, "type": "Basic" },
-		{ "beatIndex": 75, "column": 1, "type": "ZigZagR" },
+		{ "beatIndex": 75, "column": 1, "type": "ZigZagL" },
 		{ "beatIndex": 75, "column": 3, "type": "Basic" },
-		{ "beatIndex": 76, "column": 2, "type": "ZigZagL" },
+		{ "beatIndex": 76, "column": 2, "type": "ZigZagR" },
 		{ "beatIndex": 76, "column": 3, "type": "Basic" },
 		{ "beatIndex": 77, "column": 0, "type": "ZigZagR" },
 		{ "beatIndex": 77, "column": 3, "type": "Basic" },
@@ -75,10 +75,10 @@
 
 		{ "beatIndex": 103, "column": 3, "type": "Basic" },
 		{ "beatIndex": 103, "column": 0, "type": "Basic" },
-		{ "beatIndex": 104, "column": 2, "type": "ZigZagR" },
+		{ "beatIndex": 104, "column": 2, "type": "ZigZagL" },
 		{ "beatIndex": 105, "column": 3, "type": "Basic" },
 		{ "beatIndex": 107, "column": 3, "type": "Basic" },
-		{ "beatIndex": 108, "column": 1, "type": "ZigZagL" },
+		{ "beatIndex": 108, "column": 1, "type": "ZigZagR" },
 		{ "beatIndex": 109, "column": 3, "type": "Basic" },
 		{ "beatIndex": 109, "column": 0, "type": "Basic" },
 
@@ -216,11 +216,11 @@
 		{ "beatIndex": 195, "column": 1, "type": "Basic" },
 		{ "beatIndex": 195, "column": 2, "type": "Basic" },
 		{ "beatIndex": 196, "column": 0, "type": "ZigZagR" },
-		{ "beatIndex": 196, "column": 2, "type": "ZigZagR" },
+		{ "beatIndex": 196, "column": 2, "type": "ZigZagL" },
 		{ "beatIndex": 197, "column": 1, "type": "Basic" },
 		{ "beatIndex": 197, "column": 2, "type": "Basic" },
 		{ "beatIndex": 198, "column": 3, "type": "ZigZagL" },
-		{ "beatIndex": 198, "column": 1, "type": "ZigZagL" },
+		{ "beatIndex": 198, "column": 1, "type": "ZigZagR" },
 	
 		{ "beatIndex": 200, "column": 0, "type": "Golden" },
 		{ "beatIndex": 200, "column": 1, "type": "Golden" },
@@ -231,12 +231,12 @@
 		{ "beatIndex": 205, "column": 1, "type": "Basic" },
 		{ "beatIndex": 206, "column": 2, "type": "Basic" },
 		{ "beatIndex": 207, "column": 3, "type": "Basic" },
-		{ "beatIndex": 208, "column": 2, "type": "ZigZagR" },
+		{ "beatIndex": 208, "column": 2, "type": "ZigZagL" },
 
 		{ "beatIndex": 211, "column": 3, "type": "Basic" },
 		{ "beatIndex": 212, "column": 2, "type": "Basic" },
 		{ "beatIndex": 213, "column": 1, "type": "Basic" },
 		{ "beatIndex": 214, "column": 0, "type": "Basic" },
-		{ "beatIndex": 215, "column": 1, "type": "ZigZagL" }
+		{ "beatIndex": 215, "column": 1, "type": "ZigZagR" }
 	]
 }
