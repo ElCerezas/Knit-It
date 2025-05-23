@@ -13,6 +13,7 @@ public class SongManager : MonoBehaviour
 {
     public static SongManager Instance;
     public AudioSource audioSource;
+    public int level = 1;
     public float songDelaySeconds;
     public string fileLocation;
 

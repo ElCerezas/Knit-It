@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.SceneView;
 
 public class ParallaxLayer : MonoBehaviour
 {

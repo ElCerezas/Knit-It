@@ -28,7 +28,7 @@ public class ScoreSongManager : MonoBehaviour
     public delegate void RetryLevel();
     public static event RetryLevel OnLostLevel;
 
-    [SerializeField] GameObject finalScoreManager, gameplayCanvas, SongManager, GameLostCanvas;
+    [SerializeField] GameObject finalScoreManager, gameplayCanvas, sngManager, GameLostCanvas;
 
     public int NotesToCombo { get => notesToCombo; set => notesToCombo = value; }
 
@@ -90,7 +90,7 @@ public class ScoreSongManager : MonoBehaviour
         {
             GameLostCanvas.SetActive(true);
             gameplayCanvas.SetActive(false);
-            SongManager.SetActive(false);
+            sngManager.SetActive(false);
             OnLostLevel?.Invoke();
         }
     }
@@ -100,15 +100,16 @@ public class ScoreSongManager : MonoBehaviour
         {
             finalScoreManager.SetActive(true);
             gameplayCanvas.SetActive(false);
-            SongManager.SetActive(false);
+            sngManager.SetActive(false);
 
-            PlayerPrefs.SetInt("Score1", score);
+            PlayerPrefs.SetInt($"Score{SongManager.Instance.level}", score);
         }
         else
         {
             GameLostCanvas.SetActive(true);
             gameplayCanvas.SetActive(false);
-            SongManager.SetActive(false);
+            sngManager.SetActive(false);
+            SoundManager.Instance.PlaySound("Failed");
             OnLostLevel?.Invoke();
         }
     }

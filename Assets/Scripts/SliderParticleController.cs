@@ -43,19 +43,19 @@ public class SliderParticleController : MonoBehaviour
         }
 
         // Triggers por porcentaje
-        if (!triggered33 && currentValue >= 0.33f)
+        if (!triggered33 && currentValue >= (targetSlider.maxValue/3))
         {
             burst33.Play();
             triggered33 = true;
         }
 
-        if (!triggered66 && currentValue >= 0.66f)
+        if (!triggered66 && currentValue >= (targetSlider.maxValue / 3)*2)
         {
             burst66.Play();
             triggered66 = true;
         }
 
-        if (!triggered100 && currentValue >= 1f)
+        if (!triggered100 && currentValue >= targetSlider.maxValue)
         {
             burst100.Play();
             triggered100 = true;
