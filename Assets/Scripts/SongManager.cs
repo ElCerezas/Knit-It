@@ -116,6 +116,9 @@ public class SongManager : MonoBehaviour
                     int col = beatMap[noteIndex].column;
                     NoteType type = beatMap[noteIndex].type;
                     boxGrid[0, col].SpawnNote(type, beatIndex, col);
+
+                    Debug.Log($"Beat: {beatIndex} - Col: {col} - Type: {type}");
+
                     noteIndex++;
                 }
 

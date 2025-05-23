@@ -80,12 +80,12 @@ public class MapController : MonoBehaviour
             {
                 newRenderer1.sprite = trophySimple1;
                 newRenderer1.color = basicColor;
-                if(score1 < scoreForThreeStars1 * 0.5f && score1 >= scoreForThreeStars1 * 0.25f)
+                if(score1 >= 1000 && score1 < 2000)
                 {
                     ovilloTemplate1.color = Color.white;
                     ovilloTemplate1.sprite = bronze;
                 }
-                else
+                else if (score1 >= 2000 && score1 < 3000)
                 {
                     ovilloTemplate1.color = Color.white;
                     ovilloTemplate1.sprite = silver;
