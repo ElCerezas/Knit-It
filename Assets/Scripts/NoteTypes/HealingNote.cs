@@ -20,9 +20,6 @@ public class HealingNote : NoteLogic
             Destroy(gameObject);
         }
     }
-    public override void OnNoteDespawn()
-    {
-    }
     public override void OnNoteHit(bool isPerfect)
     {
         base.OnNoteHit(isPerfect);

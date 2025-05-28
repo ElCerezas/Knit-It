@@ -23,6 +23,7 @@ public class TeclaLogic : MonoBehaviour
                 ScoreSongManager.NoteMiss();
                 CameraShake.Instance?.Shake();
                 HitEffect.Instance?.Flash();
+                VolumeEffect.Instance?.TriggerErrorEffect(false);
 
                 particlesMiss?.Play();
             }

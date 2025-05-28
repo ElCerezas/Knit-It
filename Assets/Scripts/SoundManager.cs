@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Member;
 
 public class SoundManager : MonoBehaviour
 {
@@ -60,12 +61,11 @@ public class SoundManager : MonoBehaviour
             sfxSlider.value = categoryVolumes[SoundCategory.SFX];
             sfxSlider.onValueChanged.AddListener(SetSFXVolume);
         }
-        PlaySound("Right", true);
-        PlaySound("Wrong", true);
     }
 
     public void PlaySound(string soundName, bool loop = false)
     {
+        Debug.Log("Start");
         if (!soundDictionary.ContainsKey(soundName))
             return;
 
@@ -90,7 +90,9 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            source.PlayOneShot(sound.clip, source.volume);
+            Debug.Log("Play");
+            source.loop = false;
+            source.Play();
         }
     }
 

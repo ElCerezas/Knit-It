@@ -81,6 +81,7 @@ public class NoteLogic : MonoBehaviour
     {
         scoreManager.ResetCombo();
         scoreManager.AddLife(-1);
+        VolumeEffect.Instance.TriggerErrorEffect(true);
     }
 
     protected IEnumerator MoveTo(Vector2 targetPos, float quickMultiply = 1f, float tiltAngle = 15f)
