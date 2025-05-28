@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
  public static PauseMenu Instance { get; private set; }
+    public GameObject NoteMenu;
     private void Awake()
     {
         if (Instance != null && Instance != this)

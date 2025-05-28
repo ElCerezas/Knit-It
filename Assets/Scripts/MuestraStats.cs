@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class MuestraStats : MonoBehaviour
 {
+    [Header("FotoIaia")]
     [SerializeField] private GameObject dropdownPanel;
     private int finalScore = 0;
     [SerializeField] private Animation otherAnim;
+    [SerializeField] private Animator otherAnim2;
     [SerializeField] private Image placeholderImage;
     [SerializeField] private Sprite iaia1;
     [SerializeField] private Sprite shadowIaia1;
@@ -22,10 +24,22 @@ public class MuestraStats : MonoBehaviour
     [SerializeField] private string nivel1;
     [SerializeField] private string nivel2;
     [SerializeField] private string nivel3;
+    [Header("PelusasPorLevel")]
+    [SerializeField] private Image pelusaPlaceholderImage1;
+    [SerializeField] private Image pelusaPlaceholderImage2;
+    [SerializeField] private Image pelusaPlaceholderImage3;
+    [SerializeField] private Image pelusaPlaceholderImage4;
+    [SerializeField] private Sprite pelusa1;
+    [SerializeField] private Sprite pelusa2;
+    [SerializeField] private Sprite pelusa3;
+    [SerializeField] private Sprite pelusa4;
+    private Color transparent = Color.white;
+
     void Start()
     {
         if (dropdownPanel != null)
             dropdownPanel.SetActive(false);
+        transparent.a = 0f;
     }
 
     public void ToggleDropdown1()
@@ -35,6 +49,10 @@ public class MuestraStats : MonoBehaviour
         playButton.sceneName = nivel1;
         finalScore = PlayerPrefs.GetInt("Score1");
         HighScore.text = finalScore.ToString();
+        pelusaPlaceholderImage1.sprite = pelusa1;
+        pelusaPlaceholderImage2.sprite = pelusa2;
+        pelusaPlaceholderImage3.sprite = pelusa4;
+        pelusaPlaceholderImage4.color = transparent;
         if (finalScore == 0)
         {
             placeholderImage.sprite = shadowIaia1;
@@ -51,6 +69,10 @@ public class MuestraStats : MonoBehaviour
         playButton.sceneName = nivel2;
         finalScore = PlayerPrefs.GetInt("Score2");
         HighScore.text = finalScore.ToString();
+        pelusaPlaceholderImage1.sprite = pelusa1;
+        pelusaPlaceholderImage2.sprite = pelusa3;
+        pelusaPlaceholderImage3.sprite = pelusa4;
+        pelusaPlaceholderImage4.color = transparent;
         if (finalScore == 0)
         {
             placeholderImage.sprite = shadowIaia2;
@@ -67,6 +89,11 @@ public class MuestraStats : MonoBehaviour
         playButton.sceneName = nivel3;
         finalScore = PlayerPrefs.GetInt("Score3");
         HighScore.text = finalScore.ToString();
+        pelusaPlaceholderImage1.sprite = pelusa1;
+        pelusaPlaceholderImage2.sprite = pelusa2;
+        pelusaPlaceholderImage3.sprite = pelusa3;
+        pelusaPlaceholderImage4.sprite = pelusa4;
+        pelusaPlaceholderImage4.color = Color.white;
         if (finalScore == 0)
         {
             placeholderImage.sprite = shadowIaia3;
@@ -80,6 +107,7 @@ public class MuestraStats : MonoBehaviour
     {
         SoundManager.Instance.PlaySound("Paper");
         otherAnim.Play("PolaroidOut");
+        otherAnim2.SetTrigger("Out");
         StartCoroutine(Timer());
     }
     IEnumerator Timer()

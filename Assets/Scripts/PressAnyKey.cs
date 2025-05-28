@@ -18,15 +18,19 @@ public class PressAnyKey : MonoBehaviour
     {
         if (!canCheckInput || pressed) return;
 
-        if (Input.anyKey)
+        foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKey(KeyCode.I))
+            if (Input.GetKeyDown(key) && key != KeyCode.Escape)
             {
-                PlayerPrefs.DeleteAll();
+                if (Input.GetKey(KeyCode.I))
+                {
+                    PlayerPrefs.DeleteAll();
+                }
+                pressed = true;
+                SoundManager.Instance.PlaySound("EnterGame");
+                SceneController.Instance.LoadSceneAsync("Menu");
+                break;
             }
-            pressed = true;
-            //SoundManager.Instance.PlaySound("EnterGame");
-            SceneController.Instance.LoadScene("Menu");
         }
     }
 
