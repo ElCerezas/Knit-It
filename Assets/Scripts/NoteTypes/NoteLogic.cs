@@ -55,7 +55,6 @@ public class NoteLogic : MonoBehaviour
         }
         else
         {
-            OnNoteDespawn();
             StartCoroutine(DestroyAfterDelay(beatTime / 4f));
         }
     }
@@ -137,6 +136,7 @@ public class NoteLogic : MonoBehaviour
     private IEnumerator DestroyAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        OnNoteDespawn();
         Destroy(gameObject);
     }
 
