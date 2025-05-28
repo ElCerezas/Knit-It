@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public Image blockingPanel;
     public Canvas pauseMenu;
+    public GameObject noteTuto;
+    public GameObject pause;
     public TMP_Text countdownText; 
     public float countdownTime = 3f;
 
@@ -62,6 +64,8 @@ public class GameManager : MonoBehaviour
         {
             SetGameState(GameState.Paused);
             DeactivateParallax();
+            noteTuto.SetActive(false);
+            pause.SetActive(true);
             pauseMenu.gameObject.SetActive(true);
         }
         else if (currentState == GameState.Paused)
