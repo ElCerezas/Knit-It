@@ -8,7 +8,7 @@ public class NoteLogic : MonoBehaviour
     protected BoxLogic actualBox, nextBox;
     private SpriteRenderer spriteRenderer;
     private bool spriteActivated = false;
-    private float beatTime;
+    protected float beatTime;
     protected Collider2D selfCollider;
     protected NoteJumpHit jumpHit;
 
@@ -133,7 +133,7 @@ public class NoteLogic : MonoBehaviour
         actualBox = nextBox;
     }
 
-    private IEnumerator DestroyAfterDelay(float delay)
+    protected IEnumerator DestroyAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         OnNoteDespawn();
