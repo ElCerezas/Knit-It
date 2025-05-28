@@ -12,7 +12,7 @@ public class ScoreSongManager : MonoBehaviour
 {
     public static ScoreSongManager Instance;
     public AudioSource hitSFX, missSFX;
-    [SerializeField] Image healthBar;
+    [SerializeField] GameObject healthBar;
 
     [SerializeField]int life = 100;
     int score = 0;

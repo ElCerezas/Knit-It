@@ -65,7 +65,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(string soundName, bool loop = false)
     {
-        Debug.Log("Start");
         if (!soundDictionary.ContainsKey(soundName))
             return;
 
@@ -90,7 +89,6 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Play");
             source.loop = false;
             source.Play();
         }
