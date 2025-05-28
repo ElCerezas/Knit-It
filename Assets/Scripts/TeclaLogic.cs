@@ -32,10 +32,12 @@ public class TeclaLogic : MonoBehaviour
                 if (perfectNote)
                 {
                     particlesPerf?.Play();
+                    VolumeEffect.Instance?.TriggerHitEffect(true);
                 }
                 else
                 {
                     particlesHit?.Play();
+                    VolumeEffect.Instance?.TriggerHitEffect(false);
                 }
                 nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
             }
