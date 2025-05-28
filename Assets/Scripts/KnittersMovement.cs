@@ -1,50 +1,61 @@
+using System.Collections;
 using UnityEngine;
 
 public class KnittersMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float smoothTime = 0.1f;
+    [SerializeField] private float moveDuration = 0.6f;
+    [SerializeField] private float centerX = 2.3f;
+    [SerializeField] private float pos1, pos2, pos3, pos4;
 
-    private float targetX;
-    private Vector3 velocity = Vector3.zero;
+    private Coroutine currentMoveCoroutine;
+    private Coroutine returnToCenterCoroutine;
 
-    void Start()
+    private void Update()
     {
-        targetX = transform.position.x;
+        if (Input.GetKeyDown(KeyCode.D))
+            MoveToPosition(pos1);
+        else if (Input.GetKeyDown(KeyCode.F))
+            MoveToPosition(pos2);
+        else if (Input.GetKeyDown(KeyCode.J))
+            MoveToPosition(pos3);
+        else if (Input.GetKeyDown(KeyCode.K))
+            MoveToPosition(pos4);
     }
 
-    void Update()
+    private void MoveToPosition(float targetX)
     {
-        bool keyPressed = false;
-
-        if (Input.GetKeyDown(KeyCode.D))
+        // Si se estaba yendo al centro, detenerlo
+        if (returnToCenterCoroutine != null)
         {
-            targetX = -0.27f;
-            keyPressed = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.F))
-        {
-            targetX = -1.52f;
-            keyPressed = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.J))
-        {
-            targetX = 3.18f;
-            keyPressed = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            targetX = 5.22f;
-            keyPressed = true;
+            StopCoroutine(returnToCenterCoroutine);
+            returnToCenterCoroutine = null;
         }
 
-        // Si no se presionó ninguna tecla, mover hacia el centro
-        if (!keyPressed)
+        // Si ya hay un movimiento en curso, detenerlo
+        if (currentMoveCoroutine != null)
+            StopCoroutine(currentMoveCoroutine);
+
+        currentMoveCoroutine = StartCoroutine(MoveRoutine(targetX));
+    }
+
+    private IEnumerator MoveRoutine(float targetX)
+    {
+        Vector3 startPos = transform.position;
+        Vector3 endPos = new Vector3(targetX, startPos.y, startPos.z);
+        float elapsed = 0f;
+
+        while (elapsed < moveDuration)
         {
-            targetX = 2.3f;
+            elapsed += Time.deltaTime;
+            float t = elapsed / moveDuration;
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+            yield return null;
         }
 
-        Vector3 targetPosition = new Vector3(targetX, transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothTime * Time.deltaTime * moveSpeed);
+        transform.position = endPos;
+        currentMoveCoroutine = null;
+
+        // Si fue un movimiento a una tecla, iniciar retorno al centro
+        returnToCenterCoroutine = StartCoroutine(MoveRoutine(centerX));
     }
 }
