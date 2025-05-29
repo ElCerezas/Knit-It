@@ -23,6 +23,7 @@ public class ButtonSetup : MonoBehaviour
                     boton.onClick.AddListener(() => SceneController.Instance.LoadScene(sceneName));
                 else boton.onClick.AddListener(() => SceneController.Instance.LoadSceneAsync(sceneName));
             }
+            boton.onClick.AddListener(GameManager.Instance.StartPlaying);
         }
         else
         {
