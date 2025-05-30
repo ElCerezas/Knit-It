@@ -12,12 +12,13 @@ public class GameManager : MonoBehaviour
     public static event UpdateState retry;
 
     public Image blockingPanel;
+    public Button returnMenu;
     public Canvas pauseMenu;
     public GameObject noteTuto;
     public GameObject pause;
     public TMP_Text countdownText; 
     public float countdownTime = 3f;
-
+    private bool check;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        check = false;
     }
 
     private void Update()
@@ -38,6 +40,15 @@ public class GameManager : MonoBehaviour
         {
             PauseResumeGame();
         }
+    }
+
+    public void ReturnButtonCheck()
+    {
+        check = true;
+    }
+    public void StartPlaying()
+    {
+        check = false;
     }
 
     public void SetGameState(GameState newState)
@@ -67,10 +78,18 @@ public class GameManager : MonoBehaviour
             noteTuto.SetActive(false);
             pause.SetActive(true);
             pauseMenu.gameObject.SetActive(true);
+            if (sceneName != "Title" && sceneName != "Menu" && sceneName != "Credits")
+            {
+                returnMenu.gameObject.SetActive(true);
+            }
+            else
+            {
+                returnMenu.gameObject.SetActive(false);
+            }
         }
         else if (currentState == GameState.Paused)
         {
-            if (sceneName != "Title" && sceneName != "Menu" && sceneName != "Credits")
+            if (sceneName != "Title" && sceneName != "Menu" && sceneName != "Credits" && check == false)
             {
                 pauseMenu.gameObject.SetActive(false);
                 StartCoroutine(CountdownBeforeResume());
