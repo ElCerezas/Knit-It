@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSpecific: {fileID: 21300000, guid: 5de73633f2446f741a2f87f5813b373d, type: 3}
-  explosionPrefab: {fileID: 3424324139916886206, guid: 813805c870ef31646a4f6c2f5fbee599, type: 3}
+  explosionPrefab: {fileID: 182390672289457926, guid: 2d9cf0a3bb2e80a48959a506f8a68747, type: 3}
 --- !u!95 &5476392280472883637
 Animator:
   serializedVersion: 5
