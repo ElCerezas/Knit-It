@@ -42,7 +42,10 @@ public class GumNote : NoteLogic
         if (!returned)
         {
             returned = true;
-            selfCollider.enabled = false;
+            if(selfCollider != null)
+            {
+                selfCollider.enabled = false;
+            }
             int nextRow = actualBox.GetBoxRow() - 1;
             int col = actualBox.GetBoxCol();
             nextBox = SongManager.Instance.boxGrid[nextRow, col];

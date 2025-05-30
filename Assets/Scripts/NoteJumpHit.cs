@@ -23,7 +23,7 @@ public class NoteJumpHit : MonoBehaviour
 
     private void Update()
     {
-        if (!isDestroying && (transform.position.x > 8.5f || transform.position.x < -8.5f))
+        if (!isDestroying && (transform.position.x > 8.5f || transform.position.x < -8.5f || transform.position.y > 5))
         {
             isDestroying = true;
             StartCoroutine(PlayAndDestroy());
