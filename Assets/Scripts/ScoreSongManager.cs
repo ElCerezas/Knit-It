@@ -100,8 +100,10 @@ public class ScoreSongManager : MonoBehaviour
         {
             finalScoreManager.SetActive(true);
             gameplayCanvas.SetActive(false);
-
-            PlayerPrefs.SetInt($"Score{SongManager.Instance.level}", score);
+            if (score > PlayerPrefs.GetInt($"Score{SongManager.Instance.level}", 0))
+            {
+                PlayerPrefs.SetInt($"Score{SongManager.Instance.level}", score);
+            }
             sngManager.SetActive(false);
 
         }
