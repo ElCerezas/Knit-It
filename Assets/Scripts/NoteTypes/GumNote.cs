@@ -49,7 +49,10 @@ public class GumNote : NoteLogic
             int nextRow = actualBox.GetBoxRow() - 1;
             int col = actualBox.GetBoxCol();
             nextBox = SongManager.Instance.boxGrid[nextRow, col];
-            StartCoroutine(MoveTo(nextBox.transform.position));
+            if (this != null)
+            {
+                StartCoroutine(MoveTo(nextBox.transform.position));
+            }
 
             // Desuscribirse para evitar multiples llamadas
             SongManager.OnHalfBeat -= ReturnBack;

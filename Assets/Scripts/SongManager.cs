@@ -107,7 +107,7 @@ public class SongManager : MonoBehaviour
         {
             if (currentDSPTime >= nextBeatTime - beatThreshold)
             {
-                Debug.Log($"Beat: {beatIndex}");
+                //Debug.Log($"Beat: {beatIndex}");
                 OnBeat?.Invoke();
 
                 while (noteIndex < beatMap.Count &&

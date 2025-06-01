@@ -1,0 +1,642 @@
+fileFormatVersion: 2
+guid: 2a0e39268a76aa74fa5c6c36c80e445e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 110
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: josefina_spriteheett_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10524
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1c878b584174d40a551c4ed46b2202
+      internalID: 701081026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_1
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 10524
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4271da9cb1d90474b8f1626fa427191d
+      internalID: -2004421726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_2
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 10524
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b12b9546e3f3844980e9f200c51ea9e
+      internalID: -639757794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_3
+      rect:
+        serializedVersion: 2
+        x: 7440
+        y: 10524
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494978952a44fd243b390e1f6967f28b
+      internalID: -1363896657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_4
+      rect:
+        serializedVersion: 2
+        x: 9920
+        y: 10524
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4834c3b5d88834995b64ee4ff99a89
+      internalID: 1322203933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_5
+      rect:
+        serializedVersion: 2
+        x: 12400
+        y: 10524
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6db4c24a5bc7a43ab9f8c043df3516
+      internalID: -1440811267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7016
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51b400bc66e03f449fdf05004383701
+      internalID: -1701404418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_7
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 7016
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79a85c839250ea4fbc6b03a4a98c660
+      internalID: -862692270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_8
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 7016
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3172701557b8c74eaf00b67475a6f17
+      internalID: 2121443134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_9
+      rect:
+        serializedVersion: 2
+        x: 7440
+        y: 7016
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bca7e313af36a7448d9e2117ea83813
+      internalID: 2053038900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_10
+      rect:
+        serializedVersion: 2
+        x: 9920
+        y: 7016
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7d8e3bfc49f6547b193a9920f58d5f
+      internalID: -124730139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_11
+      rect:
+        serializedVersion: 2
+        x: 12400
+        y: 7016
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd452bc5ba5910c42ba6b230f9417885
+      internalID: -82954009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3508
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea43029f5e81fdc4aaa58a852c891968
+      internalID: -766192677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_13
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 3508
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239c2aad5fce47340ae275d9e4a6b387
+      internalID: 125406969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_14
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 3508
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516e16d8c90e0d54d98aa7dde1652eec
+      internalID: -320755910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_15
+      rect:
+        serializedVersion: 2
+        x: 7440
+        y: 3508
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c46d393304c084c81f359bd611b852
+      internalID: -1267459772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_16
+      rect:
+        serializedVersion: 2
+        x: 9920
+        y: 3508
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa475d667b875846b159a3a12fdbda6
+      internalID: 1031121846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_17
+      rect:
+        serializedVersion: 2
+        x: 12400
+        y: 3508
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459539fcbeeea7045a5677450a5052f9
+      internalID: 889144750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb16997e0aaacc146b8fbf7fb069a3ff
+      internalID: -177743351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_19
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 0
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23be78f9a7344344683d3505ed8c0470
+      internalID: 1384216288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_20
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 0
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c503c47a492d7e14ba5db069a6091b40
+      internalID: 485580093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_21
+      rect:
+        serializedVersion: 2
+        x: 7440
+        y: 0
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09852e4c2212d742be282b5d03c024c
+      internalID: -428983044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_22
+      rect:
+        serializedVersion: 2
+        x: 9920
+        y: 0
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7730e79464ef145852379adcbe1902
+      internalID: 479850777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: josefina_spriteheett_23
+      rect:
+        serializedVersion: 2
+        x: 12400
+        y: 0
+        width: 2480
+        height: 3508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5306b2a66222db54f9ea768de36ac4f9
+      internalID: -512872550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      josefina_spriteheett_0: 701081026
+      josefina_spriteheett_1: -2004421726
+      josefina_spriteheett_10: -124730139
+      josefina_spriteheett_11: -82954009
+      josefina_spriteheett_12: -766192677
+      josefina_spriteheett_13: 125406969
+      josefina_spriteheett_14: -320755910
+      josefina_spriteheett_15: -1267459772
+      josefina_spriteheett_16: 1031121846
+      josefina_spriteheett_17: 889144750
+      josefina_spriteheett_18: -177743351
+      josefina_spriteheett_19: 1384216288
+      josefina_spriteheett_2: -639757794
+      josefina_spriteheett_20: 485580093
+      josefina_spriteheett_21: -428983044
+      josefina_spriteheett_22: 479850777
+      josefina_spriteheett_23: -512872550
+      josefina_spriteheett_3: -1363896657
+      josefina_spriteheett_4: 1322203933
+      josefina_spriteheett_5: -1440811267
+      josefina_spriteheett_6: -1701404418
+      josefina_spriteheett_7: -862692270
+      josefina_spriteheett_8: 2121443134
+      josefina_spriteheett_9: 2053038900
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
