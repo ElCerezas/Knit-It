@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum NoteType
 {
-    Basic, Golden, Gum, Healing, ZigZagR, ZigZagL, Quick, Feint, Instant, Double
+    Basic, Golden, Gum, Healing, ZigZagR, ZigZagL, Quick, Feint, Ghost, Charge
 }
 public struct BeatData
 {

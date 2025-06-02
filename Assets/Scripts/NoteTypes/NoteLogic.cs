@@ -11,6 +11,7 @@ public class NoteLogic : MonoBehaviour
     protected float beatTime;
     protected Collider2D selfCollider;
     protected NoteJumpHit jumpHit;
+    protected Animator animator;
 
     // Tilt control
     protected bool tiltingInitialized = false;
