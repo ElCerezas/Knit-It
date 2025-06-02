@@ -36,6 +36,6 @@ public class GameplayUI : MonoBehaviour
     }
     void UpdateScore(float s)
     {
-        score.text = $"{s.ToString("D4")}";
+        score.text = ((int)s).ToString("D4");
     }
 }
