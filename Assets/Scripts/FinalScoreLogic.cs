@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -25,12 +26,14 @@ public class FinalScoreLogic : MonoBehaviour
     {
         Instance = this;
         finalScore = ScoreSongManager.Instance.GetScore();
+        scoreBar.maxValue = scoreFor3Stars;
+        scoreBar.value = 0;
 
         SetImageAlpha(star1, 0f);
         SetImageAlpha(star2, 0f);   
         SetImageAlpha(star3, 0f);
 
-        StartCoroutine(AnimateScoreText(finalScore, 2f)); // 2 segundos de animación
+        StartCoroutine(AnimateScoreText(finalScore, 5f)); // 2 segundos de animación
     }
     void Update()
     {
@@ -48,9 +51,10 @@ public class FinalScoreLogic : MonoBehaviour
         bool star2Shown = false;
         bool star3Shown = false;
 
-        float star1Threshold = scoreFor3Stars * 0.25f;
-        float star2Threshold = scoreFor3Stars * 0.50f;
+        float star1Threshold = scoreFor3Stars * 0.33f;
+        float star2Threshold = scoreFor3Stars * 0.66f;
         float star3Threshold = scoreFor3Stars;
+        targetScore = Math.Min(targetScore, (int)scoreFor3Stars);
 
         while (elapsed < duration)
         {
