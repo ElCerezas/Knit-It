@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public Image blockingPanel;
     public Button returnMenu;
+    public Button restartMenu;
     public Canvas pauseMenu;
     public GameObject noteTuto;
     public GameObject pause;
@@ -81,10 +82,12 @@ public class GameManager : MonoBehaviour
             if (sceneName != "Title" && sceneName != "Menu" && sceneName != "Credits")
             {
                 returnMenu.gameObject.SetActive(true);
+                restartMenu.gameObject.SetActive(true);
             }
             else
             {
                 returnMenu.gameObject.SetActive(false);
+                restartMenu.gameObject.SetActive(false);
             }
         }
         else if (currentState == GameState.Paused)
