@@ -5,6 +5,8 @@ public class DiscoEffect : MonoBehaviour
 {
     [SerializeField] float comboMin = 1f;
     [SerializeField] float comboMax = 2f;
+    [SerializeField] Material material;
+    float beat;
 
     float actualTransparency = 0f;
     SpriteRenderer spriteRenderer;
@@ -14,13 +16,23 @@ public class DiscoEffect : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         ScoreSongManager.OnNewCombo += TransparencyAdjust;
+        beat = 60/SongManager.Instance.BPM;
     }
 
     private void OnDisable()
     {
         ScoreSongManager.OnNewCombo -= TransparencyAdjust;
     }
+    private void Update()
+    {
+        if (material != null && beat > 0f)
+        {
+            float offsetY = Mathf.Repeat(Time.time / beat, 1f);
+            Vector2 offset = new Vector2(0f, offsetY);
+            material.SetTextureOffset("_MainTex", offset);
+        }
 
+    }
     void TransparencyAdjust(float combo)
     {
         if (combo <= comboMin)
