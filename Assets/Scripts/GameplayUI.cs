@@ -22,7 +22,7 @@ public class GameplayUI : MonoBehaviour
 
     void UpdateCombo(float c)
     {
-        if(c > 1)
+        if(c >= 1.1)
         {
             combo.text = $"x{c.ToString("0.#")}";
             combo.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, Random.Range(-10f, 10f));

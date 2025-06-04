@@ -49,7 +49,7 @@ public class NoteLogic : MonoBehaviour
         if (nextRow < SongManager.Instance.boxGrid.GetLength(0))
         {
             nextBox = SongManager.Instance.boxGrid[nextRow, col];
-            if (gameObject.activeSelf)
+            if (gameObject.activeSelf && gameObject != null)
             {
                 StartCoroutine(MoveTo(nextBox.transform.position));
             }

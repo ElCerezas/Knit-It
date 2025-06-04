@@ -66,17 +66,17 @@ public class FinalScoreLogic : MonoBehaviour
             score.text = currentScore.ToString();
             scoreBar.value = currentScoreScorebar;
 
-            if (!star1Shown && currentScore >= star1Threshold)
+            if (!star1Shown && currentScoreScorebar >= star1Threshold)
             {
                 StartCoroutine(FadeInImage(star1));
                 star1Shown = true;
             }
-            if (!star2Shown && currentScore >= star2Threshold)
+            if (!star2Shown && currentScoreScorebar >= star2Threshold)
             {
                 StartCoroutine(FadeInImage(star2));
                 star2Shown = true;
             }
-            if (!star3Shown && currentScore >= star3Threshold)
+            if (!star3Shown && currentScoreScorebar >= star3Threshold)
             {
                 StartCoroutine(FadeInImage(star3));
                 star3Shown = true;

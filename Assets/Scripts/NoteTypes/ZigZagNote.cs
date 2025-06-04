@@ -29,7 +29,10 @@ public class ZigZagNote : NoteLogic
         if (nextRow < maxRows && nextCol >= 0 && nextCol < maxCols)
         {
             nextBox = SongManager.Instance.boxGrid[nextRow, nextCol];
-            StartCoroutine(MoveTo(nextBox.transform.position));
+            if (gameObject.activeSelf && gameObject != null)
+            {
+                StartCoroutine(MoveTo(nextBox.transform.position));
+            }
         }
         else
         {

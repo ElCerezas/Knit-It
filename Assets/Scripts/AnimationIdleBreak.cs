@@ -10,7 +10,7 @@ public class AnimationIdleBreak : MonoBehaviour
     public int triggerChance = 3;
 
     private Animator animator;
-    private float idleDuration = 1f;
+    [SerializeField] float idleDuration = 1f;
     private bool isInBreak = false;
 
     private HashSet<string> existingBreaks = new HashSet<string>();

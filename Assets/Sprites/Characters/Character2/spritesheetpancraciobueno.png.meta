@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -95,7 +95,889 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5256.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e13a5a9711049047b9fa0d5b4e47736
+      internalID: -1224332862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_1
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 5256.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9278e5723e28114298ae2a3cf0dde90
+      internalID: 956712248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_2
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 5256.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c6ab0ccf58a6f44ab7ef1b7452e714
+      internalID: 576429112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_3
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 5256.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccc02d4332512b41b9142c607eceffe
+      internalID: -949151049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_4
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 5256.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8093d0f431e044285abe0c9101992d
+      internalID: 752186825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_5
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 5256.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aed967d2b6856545be7513d1681bfb2
+      internalID: 508588478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4380.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e202113540e61ee4f87491dd4e4b67d5
+      internalID: -1319493115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_7
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 4380.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea57358674c404444bd6f0d222f112fb
+      internalID: 1080189687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_8
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 4380.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03807f85f60e6954ea28163a088390c1
+      internalID: -1311758951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_9
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 4380.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bcf71ad59caab4eb93f87f9546c8d6
+      internalID: 1227799644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_10
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 4380.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b30129b276fe4a4e977dc4cda0a1ac2
+      internalID: 618014344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_11
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 4380.857
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19bb5b11d17b6314aaab4481e04c8119
+      internalID: -2121353364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3504.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3907a225ebf5b94fba53f7995a5ec8c
+      internalID: 1624728763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_13
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 3504.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a84d65caded9748b2b9b2d66757856
+      internalID: -1844225760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_14
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 3504.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df8b2cb33e3dd24ea077f9dcb671b46
+      internalID: 715439864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_15
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 3504.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b4d7c9c90a9cd4c8b3dc61c51718d5
+      internalID: 1822182077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_16
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 3504.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c2ade912e061ab449bc09e8105f7e3e
+      internalID: 249604874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_17
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 3504.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e64b323be18a1409299425eda2f9f5
+      internalID: -677897069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2628.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8e72dd114b3db408aed986ce086a96
+      internalID: -618369484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_19
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 2628.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7846abb948e76084f9b306fea70be97f
+      internalID: 288697510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_20
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 2628.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c3896597fedae4f9f3e130d7561dcb
+      internalID: -1780785370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_21
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 2628.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24d897e118b8744bb9a88a94faf512d
+      internalID: 1480019668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_22
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 2628.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726d5b0de42e6a24e8831696056bc7fa
+      internalID: -1605344157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_23
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 2628.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9375e81bb4faba645bad740639194f94
+      internalID: -800508780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1752.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7c55477ba3c774097d656a6d6f72be
+      internalID: -1807603076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_25
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 1752.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016f429b437beaa429342fb7035c1cea
+      internalID: 131020670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_26
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 1752.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ef3183de06f6c49a42a1d0a440c18c
+      internalID: 1189462554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_27
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 1752.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902dbc82a4d98294197e2c3b669772b9
+      internalID: -1878114980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_28
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 1752.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a331d5aaf0d88f459f414a53f0a0ba6
+      internalID: 2040255662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_29
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 1752.8572
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1307d82bdb20bc74f89c6810952353e1
+      internalID: -1156957094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 876.8571
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2dac667277ee74c8be99fa6c6288e0
+      internalID: 1985277423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_31
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 876.8571
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630c745f68bcaf945a6455cfeb7e42d4
+      internalID: -363016601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_32
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 876.8571
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc81d051c49796499ed67968707eb70
+      internalID: 1891351258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_33
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 876.8571
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a76734e64adf2248a4cfb1881d7bc39
+      internalID: 171053999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_34
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 876.8571
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cb8576218e03143ae6a566d19f4812
+      internalID: -1973035612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_35
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 876.8571
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211db4f4d103fca49a22dcef8bd7ab60
+      internalID: -441712254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.8571167
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47d1ea08bfb0a94391c4cca7c4da684
+      internalID: -912498532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_37
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 0.8571167
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959a29f4716e02146aeaa5db14087a5f
+      internalID: 1445956509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_38
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 0.8571167
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b3980e8c2382d42ab31a704ebed7a1
+      internalID: 445558523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_39
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 0.8571167
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27a2e5a0f9c8a44e8e364616046ae15
+      internalID: -519540801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_40
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 0.8571167
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7c0ae3e1f11784fb13ba412548a02c
+      internalID: -1967385349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetpancraciobueno_41
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 0.8571167
+        width: 619.3333
+        height: 876.1429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c8fbbdab619c843901812780bcebe0
+      internalID: -500991272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +988,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spritesheetpancraciobueno_0: -1224332862
+      spritesheetpancraciobueno_1: 956712248
+      spritesheetpancraciobueno_10: 618014344
+      spritesheetpancraciobueno_11: -2121353364
+      spritesheetpancraciobueno_12: 1624728763
+      spritesheetpancraciobueno_13: -1844225760
+      spritesheetpancraciobueno_14: 715439864
+      spritesheetpancraciobueno_15: 1822182077
+      spritesheetpancraciobueno_16: 249604874
+      spritesheetpancraciobueno_17: -677897069
+      spritesheetpancraciobueno_18: -618369484
+      spritesheetpancraciobueno_19: 288697510
+      spritesheetpancraciobueno_2: 576429112
+      spritesheetpancraciobueno_20: -1780785370
+      spritesheetpancraciobueno_21: 1480019668
+      spritesheetpancraciobueno_22: -1605344157
+      spritesheetpancraciobueno_23: -800508780
+      spritesheetpancraciobueno_24: -1807603076
+      spritesheetpancraciobueno_25: 131020670
+      spritesheetpancraciobueno_26: 1189462554
+      spritesheetpancraciobueno_27: -1878114980
+      spritesheetpancraciobueno_28: 2040255662
+      spritesheetpancraciobueno_29: -1156957094
+      spritesheetpancraciobueno_3: -949151049
+      spritesheetpancraciobueno_30: 1985277423
+      spritesheetpancraciobueno_31: -363016601
+      spritesheetpancraciobueno_32: 1891351258
+      spritesheetpancraciobueno_33: 171053999
+      spritesheetpancraciobueno_34: -1973035612
+      spritesheetpancraciobueno_35: -441712254
+      spritesheetpancraciobueno_36: -912498532
+      spritesheetpancraciobueno_37: 1445956509
+      spritesheetpancraciobueno_38: 445558523
+      spritesheetpancraciobueno_39: -519540801
+      spritesheetpancraciobueno_4: 752186825
+      spritesheetpancraciobueno_40: -1967385349
+      spritesheetpancraciobueno_41: -500991272
+      spritesheetpancraciobueno_5: 508588478
+      spritesheetpancraciobueno_6: -1319493115
+      spritesheetpancraciobueno_7: 1080189687
+      spritesheetpancraciobueno_8: -1311758951
+      spritesheetpancraciobueno_9: 1227799644
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
