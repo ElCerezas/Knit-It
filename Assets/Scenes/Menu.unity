@@ -4883,9 +4883,9 @@ MonoBehaviour:
   lvl3Unlocked: 0
   level2: {fileID: 1557079827}
   level3: {fileID: 1515285141}
-  scoreForThreeStars1: 3000
-  scoreForThreeStars2: 3000
-  scoreForThreeStars3: 3000
+  scoreForThreeStars1: 18000
+  scoreForThreeStars2: 18000
+  scoreForThreeStars3: 18000
   trophySimple1: {fileID: -1280604894, guid: 11fbea82f55c3074abc81366b663c2f5, type: 3}
   trophyPro1: {fileID: 1474041343, guid: 11fbea82f55c3074abc81366b663c2f5, type: 3}
   newRenderer1: {fileID: 1801929397}

@@ -105,7 +105,7 @@ TextureImporter:
         width: 1259
         height: 424
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,7 +126,7 @@ TextureImporter:
         width: 828
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,69 +134,6 @@ TextureImporter:
       bones: []
       spriteID: 9f9cb61c0fa299f40b5e600738bbc3a1
       internalID: 1618440558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botones_2
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 722
-        width: 53
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0e89ece57027164998738694ad904a9
-      internalID: 445433806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botones_3
-      rect:
-        serializedVersion: 2
-        x: 1316
-        y: 722
-        width: 17
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 933e312b4925b51469db0996e5d4dde2
-      internalID: -1170291471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botones_4
-      rect:
-        serializedVersion: 2
-        x: 1335
-        y: 720
-        width: 113
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16c5f8c04617f1a44ab28f987e3ede49
-      internalID: 1840915322
       vertices: []
       indices: 
       edges: []
@@ -210,7 +147,7 @@ TextureImporter:
         width: 828
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,27 +155,6 @@ TextureImporter:
       bones: []
       spriteID: b7ea6eadacba3aa4cb62f8e3d0cdd87d
       internalID: 1487007716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botones_6
-      rect:
-        serializedVersion: 2
-        x: 1457
-        y: 713
-        width: 38
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 737872ed1ff43bb4d9ddecafeba235ac
-      internalID: -2010889699
       vertices: []
       indices: 
       edges: []
@@ -252,7 +168,7 @@ TextureImporter:
         width: 829
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,27 +176,6 @@ TextureImporter:
       bones: []
       spriteID: f915a7ab70ac85646a92769747ffeee0
       internalID: -911121202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: botones_8
-      rect:
-        serializedVersion: 2
-        x: 2450
-        y: 367
-        width: 12
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d5ee3535cdc1c541a70b84c9fefa703
-      internalID: 384730008
       vertices: []
       indices: 
       edges: []
@@ -305,6 +200,7 @@ TextureImporter:
       botones_6: -2010889699
       botones_7: -911121202
       botones_8: 384730008
+      botones_9: 51328174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
