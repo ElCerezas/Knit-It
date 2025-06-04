@@ -33,8 +33,12 @@ public class GumNote : NoteLogic
     }
     public override void OnBeatMove()
     {
-        selfCollider.enabled = true;
-        base.OnBeatMove();
+        if (selfCollider != null)
+        {
+            selfCollider.enabled = true;
+            base.OnBeatMove();
+        }
+        
     }
 
     private void ReturnBack()

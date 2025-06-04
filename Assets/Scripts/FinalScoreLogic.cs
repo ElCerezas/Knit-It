@@ -54,7 +54,6 @@ public class FinalScoreLogic : MonoBehaviour
         float star1Threshold = scoreFor3Stars * 0.33f;
         float star2Threshold = scoreFor3Stars * 0.66f;
         float star3Threshold = scoreFor3Stars;
-        targetScore = Math.Min(targetScore, (int)scoreFor3Stars);
 
         while (elapsed < duration)
         {
@@ -63,8 +62,9 @@ public class FinalScoreLogic : MonoBehaviour
             float easedT = Mathf.SmoothStep(0, 1, t);
 
             int currentScore = Mathf.RoundToInt(Mathf.Lerp(startScore, targetScore, easedT));
+            int currentScoreScorebar = Mathf.RoundToInt(Mathf.Lerp(startScore, Math.Min(targetScore, (int)scoreFor3Stars), easedT));
             score.text = currentScore.ToString();
-            scoreBar.value = currentScore;
+            scoreBar.value = currentScoreScorebar;
 
             if (!star1Shown && currentScore >= star1Threshold)
             {
@@ -86,7 +86,7 @@ public class FinalScoreLogic : MonoBehaviour
         }
 
         score.text = targetScore.ToString();
-        scoreBar.value = targetScore;
+        scoreBar.value = Math.Min(targetScore, (int)scoreFor3Stars);
         pressToNext = true;
     }
 
