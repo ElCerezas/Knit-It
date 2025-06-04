@@ -25,7 +25,7 @@ public class SceneController : MonoBehaviour
     public void ReloadCurrentScene()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
+        SceneManager.LoadSceneAsync(currentScene.buildIndex);
     }
 
     public void LoadSceneAsync(string sceneName) // para pantallas de carga

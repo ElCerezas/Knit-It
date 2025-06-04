@@ -33,6 +33,9 @@ public class MuestraStats : MonoBehaviour
     [SerializeField] private Sprite pelusa2;
     [SerializeField] private Sprite pelusa3;
     [SerializeField] private Sprite pelusa4;
+    [SerializeField] private Sprite pelusa5;
+    [SerializeField] private Sprite pelusa6;
+    [SerializeField] private Sprite pelusa7;
     private Color transparent = Color.white;
 
     void Start()
@@ -90,9 +93,9 @@ public class MuestraStats : MonoBehaviour
         finalScore = PlayerPrefs.GetInt("Score3");
         HighScore.text = finalScore.ToString();
         pelusaPlaceholderImage1.sprite = pelusa1;
-        pelusaPlaceholderImage2.sprite = pelusa2;
-        pelusaPlaceholderImage3.sprite = pelusa3;
-        pelusaPlaceholderImage4.sprite = pelusa4;
+        pelusaPlaceholderImage2.sprite = pelusa5;
+        pelusaPlaceholderImage3.sprite = pelusa6;
+        pelusaPlaceholderImage4.sprite = pelusa7;
         pelusaPlaceholderImage4.color = Color.white;
         if (finalScore == 0)
         {
