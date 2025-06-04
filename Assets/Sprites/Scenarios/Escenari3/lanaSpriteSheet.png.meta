@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -95,7 +95,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: lanaSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2da8542736d184c96d92837e43fc3c
+      internalID: -1723819304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 2160
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb7643b4cd42ad418748933011a3857
+      internalID: -2061444708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 4998
+        y: 2160
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ca6da66d94c514981ce0fa79a68120
+      internalID: -717735610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 7497
+        y: 2160
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4cf3409f6885b4c8f7a858d0b52121
+      internalID: 676195103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 9996
+        y: 2160
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2ab068f17c1434da27527868b703b6
+      internalID: -1045142329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 12495
+        y: 2160
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7c13f92d5142049b9a2d0db5c115d1
+      internalID: -1378134012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00248b1721c798442aff81620da57eca
+      internalID: -479938696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 1080
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e17a8f87d5a4e647944168aa71d8b07
+      internalID: 256587466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 4998
+        y: 1080
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7563fa5a19f2f71489323ea43dc89f3c
+      internalID: -1470216591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 7497
+        y: 1080
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96133ca4c4e9b02429c8e287707d7507
+      internalID: 2016746604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 9996
+        y: 1080
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9081ade35a9519142bca67c6bc1397ee
+      internalID: 460611313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 12495
+        y: 1080
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2361d1fd8670b542b4aa7b80621d2df
+      internalID: -176966787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c43ad800a26714fb7b78c7b5e7379c
+      internalID: 961882002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 0
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7985298e63914d04e83d90897b304287
+      internalID: -572288196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 4998
+        y: 0
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14b8458810b0a141974c667df012406
+      internalID: -1311408133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 7497
+        y: 0
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4204226664bb654796d38f978fd268f
+      internalID: -1509734490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 9996
+        y: 0
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8662b56fd6b1f46b91d78c6e510da5
+      internalID: -84050969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lanaSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 12495
+        y: 0
+        width: 2499.8333
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65775924e6be5f04aa993a3c9fd73ab0
+      internalID: 215637995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +484,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lanaSpriteSheet_0: -1723819304
+      lanaSpriteSheet_1: -2061444708
+      lanaSpriteSheet_10: 460611313
+      lanaSpriteSheet_11: -176966787
+      lanaSpriteSheet_12: 961882002
+      lanaSpriteSheet_13: -572288196
+      lanaSpriteSheet_14: -1311408133
+      lanaSpriteSheet_15: -1509734490
+      lanaSpriteSheet_16: -84050969
+      lanaSpriteSheet_17: 215637995
+      lanaSpriteSheet_2: -717735610
+      lanaSpriteSheet_3: 676195103
+      lanaSpriteSheet_4: -1045142329
+      lanaSpriteSheet_5: -1378134012
+      lanaSpriteSheet_6: -479938696
+      lanaSpriteSheet_7: 256587466
+      lanaSpriteSheet_8: -1470216591
+      lanaSpriteSheet_9: 2016746604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

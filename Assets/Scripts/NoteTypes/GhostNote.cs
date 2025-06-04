@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GhostNote : NoteLogic
 {
-    bool itStoped = false;
     public override void OnBeatMove()
     {
         if (base.actualBox.GetBoxRow() == SongManager.Instance.boxGrid.GetLength(0) - 1)
