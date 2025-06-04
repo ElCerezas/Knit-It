@@ -10,9 +10,10 @@ public class ButtonManagerLevel : MonoBehaviour
         {
             SceneController.Instance.LoadScene(scene);
         }
-        else
-        {
-            SceneController.Instance.ReloadCurrentScene();
-        }
+
+    }
+    public void OnRestartLevel()
+    {
+        SceneController.Instance.ReloadCurrentScene();
     }
 }
