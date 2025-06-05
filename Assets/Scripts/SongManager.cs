@@ -119,7 +119,7 @@ public class SongManager : MonoBehaviour
                     NoteType type = beatMap[noteIndex].type;
                     boxGrid[0, col].SpawnNote(type, beatIndex, col);
 
-                    //Debug.Log($"Beat: {beatIndex} - Col: {col} - Type: {type}");
+                    Debug.Log($"Beat: {beatIndex-spawnOffsetBeats} - Col: {col} - Type: {type}");
 
                     noteIndex++;
                 }
@@ -201,37 +201,77 @@ public class SongManager : MonoBehaviour
     private void LoadOverrides()
     {
         string path = Path.Combine(Application.streamingAssetsPath, fileLocation + "_overrides.json");
-        if (!File.Exists(path)) return;
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning("[Override] Archivo de overrides no encontrado.");
+            return;
+        }
 
         string json = File.ReadAllText(path);
         try
         {
             BeatOverrideList wrapper = JsonUtility.FromJson<BeatOverrideList>(json);
+            const float timeTolerance = 0.01f;
+
+            HashSet<(int beatIndex, int? column)> overriddenKeys = new();
+
             foreach (var ovr in wrapper.items)
             {
-                if (!string.IsNullOrEmpty(ovr.type))
+                if (!string.IsNullOrEmpty(ovr.type) && ovr.beatIndex < beatTimes.Count)
                 {
+                    double targetTime = beatTimes[ovr.beatIndex];
+
                     var matches = beatMap
                         .Select((b, i) => new { Beat = b, Index = i })
                         .Where(x =>
-                            Mathf.Approximately((float)x.Beat.time, (float)beatTimes[ovr.beatIndex]) &&
+                            Math.Abs(x.Beat.time - targetTime) < timeTolerance &&
                             (!ovr.column.HasValue || x.Beat.column == ovr.column.Value))
                         .ToList();
 
+                    if (matches.Count == 0)
+                    {
+                        Debug.LogWarning($"[Override] No match for override (beatIndex {ovr.beatIndex}, col {ovr.column}, type {ovr.type})");
+                    }
+
                     foreach (var match in matches)
                     {
-                        var bd = match.Beat;
-                        bd.type = Enum.TryParse<NoteType>(ovr.type, out var parsedType) ? parsedType : bd.type;
-                        beatMap[match.Index] = bd;
+                        if (Enum.TryParse<NoteType>(ovr.type, out var parsedType))
+                        {
+                            var bd = match.Beat;
+                            bd.type = parsedType;
+                            beatMap[match.Index] = bd;
+                            overriddenKeys.Add((ovr.beatIndex, bd.column));
+
+                            Debug.Log($"[Override] Applied type {parsedType} at beatIndex {ovr.beatIndex}, col {bd.column}");
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"[Override] Could not parse type '{ovr.type}'");
+                        }
                     }
                 }
             }
+
+            // Validar que cada nota del beatMap tiene override
+            foreach (var beat in beatMap)
+            {
+                int index = beatTimes.FindIndex(bt => Math.Abs(bt - beat.time) < timeTolerance);
+                var key = (index, beat.column);
+                if (!overriddenKeys.Contains(key))
+                {
+                    Debug.LogError($"[Override] Nota sin override detectada -> BeatIndex: {index}, Column: {beat.column}, DefaultType: {beat.type}");
+                }
+            }
+
+            Debug.Log($"[Override] Overrides aplicados correctamente. Total: {overriddenKeys.Count}");
         }
         catch (Exception ex)
         {
-            Debug.LogError("Error parsing JSON overrides: " + ex.Message);
+            Debug.LogError("[Override] Error al parsear JSON overrides: " + ex.Message);
         }
     }
+
+
 
     public void StartSong()
     {

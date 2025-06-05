@@ -5,7 +5,6 @@ using UnityEngine;
 public class GhostNote : NoteLogic
 {
     [SerializeField] private float fadeDuration = -1;
-    private bool isFading = false;
     public override void OnBeatMove()
     {
         if(fadeDuration == -1)

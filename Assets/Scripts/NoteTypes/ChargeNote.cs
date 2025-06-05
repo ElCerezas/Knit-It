@@ -4,14 +4,16 @@ using System.Collections;
 
 public class ChargeNote : NoteLogic
 {
-    bool itStoped = false;
+    bool itStopped = false;
+
     public override void OnBeatMove()
     {
-        if (!itStoped && base.actualBox.GetBoxRow() == SongManager.Instance.boxGrid.GetLength(0) - 3)
+        if (!itStopped && base.actualBox.GetBoxRow() == SongManager.Instance.boxGrid.GetLength(0) - 3)
         {
-            itStoped = true;
+            itStopped = true;
             animator.SetTrigger("Charge");
-        } else if (itStoped)
+        }
+        else if (itStopped)
         {
             int nextRow = actualBox.GetBoxRow() + 2;
             int col = actualBox.GetBoxCol();
@@ -27,7 +29,7 @@ public class ChargeNote : NoteLogic
                 Destroy(gameObject);
             }
         }
-        else
+        else if (!itStopped)
         {
             base.OnBeatMove();
         }

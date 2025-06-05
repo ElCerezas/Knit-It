@@ -34,7 +34,7 @@ public class NoteLogic : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         selfCollider = GetComponent<Collider2D>();
         jumpHit = GetComponent<NoteJumpHit>();
-
+        animator = GetComponent<Animator>();
         if (spriteRenderer != null)
             spriteRenderer.enabled = false;
 

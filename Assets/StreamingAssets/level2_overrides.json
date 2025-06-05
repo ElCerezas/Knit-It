@@ -1,7 +1,7 @@
 {
 	"items": [
-{ "beatIndex": 17, "column": 0, "type": "Basic" },
-{ "beatIndex": 18, "column": 1, "type": "Basic" },
+{ "beatIndex": 17, "column": 0, "type": "Charge" },
+{ "beatIndex": 18, "column": 1, "type": "Feint" },
 { "beatIndex": 19, "column": 2, "type": "Basic" },
 { "beatIndex": 20, "column": 3, "type": "ZigZagR" },
 
