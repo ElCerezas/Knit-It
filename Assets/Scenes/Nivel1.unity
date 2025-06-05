@@ -16078,7 +16078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &688792830
 Transform:
   m_ObjectHideFlags: 0
@@ -32625,7 +32625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1360982143
 Transform:
   m_ObjectHideFlags: 0
@@ -33037,7 +33037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1389518260
 Transform:
   m_ObjectHideFlags: 0
@@ -34842,7 +34842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1818952656
 Transform:
   m_ObjectHideFlags: 0
@@ -36284,7 +36284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2097767518
 Transform:
   m_ObjectHideFlags: 0
@@ -36654,6 +36654,10 @@ PrefabInstance:
     - target: {fileID: 4051616325772316241, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
       propertyPath: m_Name
       value: GoldMergAura
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051616325772316241, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
