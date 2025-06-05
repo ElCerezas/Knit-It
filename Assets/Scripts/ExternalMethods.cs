@@ -3,24 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum NoteType
+
+[Serializable]
+public class BeatOverrideList
 {
-    Basic, Golden, Gum, Healing, ZigZagR, ZigZagL, Quick, Feint, Ghost, Charge
+    public List<BeatOverrideData> items;
 }
-public struct BeatData
-{
-    public double time;//Cuando aparece la nota (s)
-    public int column;//Columna donde spawnea (0-3)
-    public NoteType type;//Tipo de nota a spawnear
-}
+
 [Serializable]
 public class BeatOverrideData
 {
     public int beatIndex;
-    public int? column;
+    public int column;
     public string type;
 }
 
+public struct BeatData
+{
+    public double time;
+    public int column;
+    public NoteType type;
+}
+public enum NoteType
+{
+    Basic, Golden, Gum, Healing, ZigZagR, ZigZagL, Quick, Feint, Ghost, Charge
+}
 public static class JsonUtilityWrapper
 {
     [System.Serializable]
@@ -46,8 +53,3 @@ public static class JsonUtilityWrapper
     }
 }
 
-[Serializable]
-public class BeatOverrideList
-{
-    public List<BeatOverrideData> items;
-}
