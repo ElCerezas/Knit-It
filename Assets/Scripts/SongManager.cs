@@ -259,7 +259,7 @@ public class SongManager : MonoBehaviour
                 var key = (index, beat.column);
                 if (!overriddenKeys.Contains(key))
                 {
-                    Debug.LogError($"[Override] Nota sin override detectada -> BeatIndex: {index}, Column: {beat.column}, DefaultType: {beat.type}");
+                    //Debug.LogError($"[Override] Nota sin override detectada -> BeatIndex: {index}, Column: {beat.column}, DefaultType: {beat.type}");
                 }
             }
 
