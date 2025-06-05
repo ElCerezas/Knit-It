@@ -27,22 +27,16 @@ public class MuestraStats : MonoBehaviour
     [Header("PelusasPorLevel")]
     [SerializeField] private Image pelusaPlaceholderImage1;
     [SerializeField] private Image pelusaPlaceholderImage2;
-    [SerializeField] private Image pelusaPlaceholderImage3;
-    [SerializeField] private Image pelusaPlaceholderImage4;
-    [SerializeField] private Sprite pelusa1;
     [SerializeField] private Sprite pelusa2;
     [SerializeField] private Sprite pelusa3;
     [SerializeField] private Sprite pelusa4;
     [SerializeField] private Sprite pelusa5;
     [SerializeField] private Sprite pelusa6;
     [SerializeField] private Sprite pelusa7;
-    private Color transparent = Color.white;
-
     void Start()
     {
         if (dropdownPanel != null)
             dropdownPanel.SetActive(false);
-        transparent.a = 0f;
     }
 
     public void ToggleDropdown1()
@@ -52,10 +46,8 @@ public class MuestraStats : MonoBehaviour
         playButton.sceneName = nivel1;
         finalScore = PlayerPrefs.GetInt("Score1");
         HighScore.text = finalScore.ToString();
-        pelusaPlaceholderImage1.sprite = pelusa1;
-        pelusaPlaceholderImage2.sprite = pelusa2;
-        pelusaPlaceholderImage3.sprite = pelusa4;
-        pelusaPlaceholderImage4.color = transparent;
+        pelusaPlaceholderImage1.sprite = pelusa2;
+        pelusaPlaceholderImage2.sprite = pelusa3;
         if (finalScore == 0)
         {
             placeholderImage.sprite = shadowIaia1;
@@ -72,10 +64,8 @@ public class MuestraStats : MonoBehaviour
         playButton.sceneName = nivel2;
         finalScore = PlayerPrefs.GetInt("Score2");
         HighScore.text = finalScore.ToString();
-        pelusaPlaceholderImage1.sprite = pelusa1;
-        pelusaPlaceholderImage2.sprite = pelusa3;
-        pelusaPlaceholderImage3.sprite = pelusa4;
-        pelusaPlaceholderImage4.color = transparent;
+        pelusaPlaceholderImage1.sprite = pelusa4;
+        pelusaPlaceholderImage2.sprite = pelusa5;
         if (finalScore == 0)
         {
             placeholderImage.sprite = shadowIaia2;
@@ -92,11 +82,8 @@ public class MuestraStats : MonoBehaviour
         playButton.sceneName = nivel3;
         finalScore = PlayerPrefs.GetInt("Score3");
         HighScore.text = finalScore.ToString();
-        pelusaPlaceholderImage1.sprite = pelusa1;
-        pelusaPlaceholderImage2.sprite = pelusa5;
-        pelusaPlaceholderImage3.sprite = pelusa6;
-        pelusaPlaceholderImage4.sprite = pelusa7;
-        pelusaPlaceholderImage4.color = Color.white;
+        pelusaPlaceholderImage1.sprite = pelusa6;
+        pelusaPlaceholderImage2.sprite = pelusa7;
         if (finalScore == 0)
         {
             placeholderImage.sprite = shadowIaia3;

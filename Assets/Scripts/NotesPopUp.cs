@@ -6,7 +6,6 @@ public class NotesPopUp : MonoBehaviour
 {
     [SerializeField] private GameObject dropdownPanel;
     [SerializeField] private Animator otherAnim;
-    [SerializeField] private Animator otherAnim2;
     private bool stopRepeat;
 
     private void Start()
@@ -34,7 +33,6 @@ public class NotesPopUp : MonoBehaviour
             PlayerPrefs.SetFloat("Tutorial", 1);
             SoundManager.Instance.PlaySound("Paper");
             otherAnim.SetTrigger("Out");
-            otherAnim2.SetTrigger("Out");
             stopRepeat = true;
             StartCoroutine(Timer());
         }

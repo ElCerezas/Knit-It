@@ -35,16 +35,27 @@ public class MapController : MonoBehaviour
     Color basicColor;
 
     [Header("Ovillos")]
-    public Sprite bronze;
-    public Sprite silver;
-    public Sprite gold;
+    Color bronze;
+    Color silver;
+    Color gold;
     public Image ovilloTemplate1;
     public Image ovilloTemplate2;
     public Image ovilloTemplate3;
 
     private void Start()
     {
-        SoundManager.Instance.PlaySound("MainMenu", true);
+        if (SoundManager.Instance != null) 
+            if(SoundManager.Instance.firstStart == false)
+            {
+                SoundManager.Instance.PlaySound("MainMenu", true);
+            }
+            else
+            {
+                SoundManager.Instance.firstStart = false;
+            }
+        bronze = new Color(0.8f, 0.5f, 0.2f, 1f);
+        silver = new Color(0.75f, 0.75f, 0.75f, 1f);
+        gold = new Color(1.0f, 0.84f, 0.0f, 1f);
         shadowColor = Color.black;
         shadowColor.a = 0.5f;
         basicColor = Color.white;
@@ -52,12 +63,6 @@ public class MapController : MonoBehaviour
         score1 = PlayerPrefs.GetInt("Score1", 0);
         score2 = PlayerPrefs.GetInt("Score2", 0);
         score3 = PlayerPrefs.GetInt("Score3", 0);
-        Level2Unlocked();
-        Level3Unlocked();
-        Trophy3Unlocked();
-    }
-    private void Awake()
-    {
         Level2Unlocked();
         Level3Unlocked();
         Trophy3Unlocked();
@@ -80,21 +85,18 @@ public class MapController : MonoBehaviour
             {
                 newRenderer1.sprite = trophySimple1;
                 newRenderer1.color = basicColor;
-                if(score1 >= 1000 && score1 < 2000)
+                if((score1 >= scoreForThreeStars1 / 3f && score1 < (2f * scoreForThreeStars1) / 3f))
                 {
-                    ovilloTemplate1.color = Color.white;
-                    ovilloTemplate1.sprite = bronze;
+                    ovilloTemplate1.color = bronze;
                 }
-                else if (score1 >= 2000 && score1 < 3000)
+                else if (score1 >= (2f * scoreForThreeStars1) / 3f && score1 < scoreForThreeStars1)
                 {
-                    ovilloTemplate1.color = Color.white;
-                    ovilloTemplate1.sprite = silver;
+                    ovilloTemplate1.color = silver;
                 }
             }
             else if (score1 >= scoreForThreeStars1)
             {
-                ovilloTemplate1.color = Color.white;
-                ovilloTemplate1.sprite = gold;
+                ovilloTemplate1.color = gold;
                 newRenderer1.sprite = trophyPro1;
                 newRenderer1.color = basicColor;
             }
@@ -118,21 +120,18 @@ public class MapController : MonoBehaviour
             {
                 newRenderer2.sprite = trophySimple2;
                 newRenderer2.color = basicColor;
-                if (score2 < scoreForThreeStars2 * 0.5f && score2 >= scoreForThreeStars2 * 0.25f)
+                if ((score2 >= scoreForThreeStars2 / 3f && score2 < (2f * scoreForThreeStars2) / 3f))
                 {
-                    ovilloTemplate2.color = Color.white;
-                    ovilloTemplate2.sprite = bronze;
+                    ovilloTemplate2.color = bronze;
                 }
-                else
+                else if(score2 >= (2f * scoreForThreeStars2) / 3f && score2 < scoreForThreeStars2)
                 {
-                    ovilloTemplate2.color = Color.white;
-                    ovilloTemplate2.sprite = silver;
+                    ovilloTemplate2.color = silver;
                 }
             }
             else if (score2 >= scoreForThreeStars2)
             {
-                ovilloTemplate2.color = Color.white;
-                ovilloTemplate2.sprite = gold;
+                ovilloTemplate2.color = gold;
                 newRenderer2.sprite = trophyPro2;
                 newRenderer2.color = basicColor;
             }
@@ -152,21 +151,18 @@ public class MapController : MonoBehaviour
             {
                 newRenderer3.sprite = trophySimple3;
                 newRenderer3.color = basicColor;
-                if (score3 < scoreForThreeStars3 * 0.5f && score3 >= scoreForThreeStars3 * 0.25f)
+                if ((score3 >= scoreForThreeStars3 / 3f && score3 < (2f * scoreForThreeStars3) / 3f))
                 {
-                    ovilloTemplate3.color = Color.white;
-                    ovilloTemplate3.sprite = bronze;
+                    ovilloTemplate3.color = bronze;
                 }
-                else
+                else if(score3 >= (2f * scoreForThreeStars3) / 3f && score3 < scoreForThreeStars3)
                 {
-                    ovilloTemplate3.color = Color.white;
-                    ovilloTemplate3.sprite = silver;
+                    ovilloTemplate3.color = silver;
                 }
             }
             else if (score3 >= scoreForThreeStars3)
             {
-                ovilloTemplate3.color = Color.white;
-                ovilloTemplate3.sprite = gold;
+                ovilloTemplate3.color = gold;
                 newRenderer3.sprite = trophyPro3;
                 newRenderer3.color = basicColor;
             }

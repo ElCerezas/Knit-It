@@ -2,6 +2,7 @@ using System.Collections;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static GameManager;
 
 public class PressAnyKey : MonoBehaviour
 {
@@ -11,25 +12,30 @@ public class PressAnyKey : MonoBehaviour
     IEnumerator Start()
     {
         yield return null; // Espera un frame
+        SoundManager.Instance.PlaySound("MainMenu", true);
+        SoundManager.Instance.firstStart = true;
         canCheckInput = true;
     }
 
     void Update()
     {
-        if (!canCheckInput || pressed) return;
-
-        foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
+        if (GameManager.Instance.currentState == GameState.Playing)
         {
-            if (Input.GetKeyDown(key) && key != KeyCode.Escape)
+            if (!canCheckInput || pressed) return;
+
+            foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
             {
-                if (Input.GetKey(KeyCode.I))
+                if (Input.GetKeyDown(key) && key != KeyCode.Escape)
                 {
-                    PlayerPrefs.DeleteAll();
+                    if (Input.GetKey(KeyCode.I))
+                    {
+                        PlayerPrefs.DeleteAll();
+                    }
+                    pressed = true;
+                    SoundManager.Instance.PlaySound("EnterGame");
+                    SceneController.Instance.LoadSceneAsync("Menu");
+                    break;
                 }
-                pressed = true;
-                SoundManager.Instance.PlaySound("EnterGame");
-                SceneController.Instance.LoadSceneAsync("Menu");
-                break;
             }
         }
     }

@@ -6,6 +6,7 @@ using static Unity.VisualScripting.Member;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
+    public bool firstStart = false;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     [System.Serializable]

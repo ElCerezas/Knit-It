@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f80c6d2e147adbb428633ef58a3d01da
+guid: b9b0478f38c69db43a80083bb06b2c86
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -95,7 +95,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Polaroid 2_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 227
+        width: 236
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70dafef32e9a6de40bebdf216dbcaebe
+      internalID: 523675015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Polaroid 2_3
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 225
+        width: 318
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eaa1139a56ba9b4cab2440a3cef3717
+      internalID: 1329757620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Polaroid 2_6
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 226
+        width: 182
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d0ee17216bbf64db8c50019ac0af26
+      internalID: -1960921869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +169,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Polaroid 2_0: 523675015
+      Polaroid 2_1: -1423199697
+      Polaroid 2_10: -1984239447
+      Polaroid 2_11: 47204121
+      Polaroid 2_12: 900903195
+      Polaroid 2_13: -755250081
+      Polaroid 2_14: -1788792145
+      Polaroid 2_15: 1880179320
+      Polaroid 2_16: 399457470
+      Polaroid 2_17: 1240193837
+      Polaroid 2_2: -1443916288
+      Polaroid 2_3: 1329757620
+      Polaroid 2_4: -664517733
+      Polaroid 2_5: -342085452
+      Polaroid 2_6: -1960921869
+      Polaroid 2_7: -1213368338
+      Polaroid 2_8: 1248668126
+      Polaroid 2_9: -1345143141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

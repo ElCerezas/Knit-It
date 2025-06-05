@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f80c6d2e147adbb428633ef58a3d01da
+guid: 4c7cdde59d51337428546c92a9ea6ae9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PolaTemp_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 16
+        width: 802
+        height: 966
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa089d33b78a034caef46c44462947a
+      internalID: -364822181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PolaTemp_5
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 12
+        width: 617
+        height: 971
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637fac6b60f951246880c01af9d23f03
+      internalID: 1771470809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +148,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PolaTemp_0: 1993220871
+      PolaTemp_1: 1553235826
+      PolaTemp_2: 1390475160
+      PolaTemp_3: -364822181
+      PolaTemp_4: -1663418040
+      PolaTemp_5: 1771470809
+      PolaTemp_6: -802212507
+      PolaTemp_7: -178067125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

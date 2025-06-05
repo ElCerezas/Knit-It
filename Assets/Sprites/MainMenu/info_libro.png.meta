@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f80c6d2e147adbb428633ef58a3d01da
+guid: fb7068a712bd7c54a8e5b705a018dc9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: info_libro_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 323
+        width: 245
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8274ce515f6b6ab43a2c4f615846e717
+      internalID: -1254048713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: info_libro_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 145
+        width: 149
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add349a99b1722f4cb16fefadf7a56ec
+      internalID: -113380854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +148,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      info_libro_0: -1254048713
+      info_libro_1: 1619267438
+      info_libro_10: 771940983
+      info_libro_2: 2064703406
+      info_libro_3: 912163856
+      info_libro_4: -1963037821
+      info_libro_5: -113380854
+      info_libro_6: -354883322
+      info_libro_7: 1281947439
+      info_libro_8: 1150750022
+      info_libro_9: -161067734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
