@@ -1,30 +1,68 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video; // Asegúrate de tener esto
 
 public class TutorialPopUp : MonoBehaviour
 {
-    [SerializeField] private GameObject dropdownPanel;
+    [SerializeField] private GameObject dropdownPanel, Cinematic1;
     [SerializeField] private Animator otherAnim;
+    private VideoPlayer videoPlayer;
     private float check;
     private bool stopRepeat;
+
     void Start()
     {
         CozyCameraLook cameraLook = FindObjectOfType<CozyCameraLook>();
         cameraLook.SetCameraMove(true);
+
         if (dropdownPanel != null)
             dropdownPanel.SetActive(false);
-        check = PlayerPrefs.GetFloat("Tutorial",0);
+
+        if (Cinematic1 != null)
+            Cinematic1.SetActive(false);
+
+        check = PlayerPrefs.GetFloat("Tutorial", 0);
         stopRepeat = false;
+
         if (check == 0)
         {
             DeactivateParallax();
             cameraLook.SetCameraMove(false);
             SoundManager.Instance.PlaySound("Paper");
-            dropdownPanel.SetActive(true);
-            StartCoroutine(Timer2());
+
+            if (Cinematic1 != null)
+            {
+                Cinematic1.SetActive(true);
+                videoPlayer = Cinematic1.GetComponent<VideoPlayer>();
+                if (videoPlayer != null)
+                {
+                    videoPlayer.loopPointReached += OnVideoFinished;
+                    videoPlayer.Play();
+                }
+                else
+                {
+                    Debug.LogError("VideoPlayer no encontrado en Cinematic1");
+                    ShowDropdownPanel(); // fallback
+                }
+            }
+            else
+            {
+                ShowDropdownPanel(); // fallback
+            }
         }
     }
+
+    void OnVideoFinished(VideoPlayer vp)
+    {
+        Cinematic1.SetActive(false);
+        ShowDropdownPanel();
+    }
+
+    void ShowDropdownPanel()
+    {
+        dropdownPanel.SetActive(true);
+    }
+
     public void HidePopUp()
     {
         if (!stopRepeat)
@@ -38,24 +76,23 @@ public class TutorialPopUp : MonoBehaviour
             StartCoroutine(Timer());
         }
     }
+
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(1f);
         dropdownPanel.SetActive(false);
         ActivateParallax();
     }
-    IEnumerator Timer2()
-    {
-        yield return new WaitForSeconds(1f);
-    }
+
     void ActivateParallax()
     {
         ParallaxLayer[] layers = FindObjectsOfType<ParallaxLayer>();
         foreach (ParallaxLayer layer in layers)
         {
-            layer.SetMove(true); 
+            layer.SetMove(true);
         }
     }
+
     void DeactivateParallax()
     {
         ParallaxLayer[] layers = FindObjectsOfType<ParallaxLayer>();
