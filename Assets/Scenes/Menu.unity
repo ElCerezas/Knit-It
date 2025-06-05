@@ -720,8 +720,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 106902325}
-  - component: {fileID: 106902327}
   - component: {fileID: 106902326}
+  - component: {fileID: 106902327}
   m_Layer: 5
   m_Name: FeintVid
   m_TagString: Untagged
@@ -778,12 +778,14 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -4672,8 +4674,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 962977307}
-  - component: {fileID: 962977309}
   - component: {fileID: 962977308}
+  - component: {fileID: 962977309}
   m_Layer: 5
   m_Name: ChargeVid
   m_TagString: Untagged
@@ -4730,12 +4732,14 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -5421,7 +5425,7 @@ GameObject:
   - component: {fileID: 1107336106}
   - component: {fileID: 1107336105}
   m_Layer: 5
-  m_Name: HealingNoteBackground
+  m_Name: BaitNoteBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7392,7 +7396,7 @@ GameObject:
   - component: {fileID: 1403428348}
   - component: {fileID: 1403428347}
   m_Layer: 5
-  m_Name: HealingVid
+  m_Name: BaitVid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7433,7 +7437,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403428345}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 075ae9bcf3e4e76449d85d3318ee08a7, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6f8935315d8c08145b1f8f9b3401f0b0, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -7447,12 +7451,14 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -7898,7 +7904,7 @@ GameObject:
   - component: {fileID: 1463436308}
   - component: {fileID: 1463436307}
   m_Layer: 5
-  m_Name: HealingNote
+  m_Name: BaitNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11643,7 +11649,7 @@ GameObject:
   - component: {fileID: 2083296658}
   - component: {fileID: 2083296657}
   m_Layer: 5
-  m_Name: HealingRender
+  m_Name: BaitRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

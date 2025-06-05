@@ -20,10 +20,12 @@ public class FinalScoreLogic : MonoBehaviour
     int finalScore = 0;
     [SerializeField] float scoreFor3Stars = 1000;
     bool pressToNext = false;
+    private float check;
 
     // Start is called before the first frame update
     void Start()
     {
+        check = PlayerPrefs.GetFloat("Credits", 0);
         Instance = this;
         finalScore = ScoreSongManager.Instance.GetScore();
         scoreBar.maxValue = scoreFor3Stars;
@@ -35,13 +37,20 @@ public class FinalScoreLogic : MonoBehaviour
 
         StartCoroutine(AnimateScoreText(finalScore, 5f)); // 2 segundos de animación
     }
-    void Update()
+    /*void Update() // En caso de no querer el boton de la ui de final score se puede activar esto
     {
-        if (pressToNext && Keyboard.current.anyKey.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene("Menu");
+        if (pressToNext && Keyboard.current.anyKey.wasPressedThisFrame) {
+            if (check == 0 && PlayerPrefs.GetInt("Score3") > 0)
+            {
+                PlayerPrefs.SetFloat("Credits", 1);
+                SceneManager.LoadSceneAsync("Credits");
+            }
+            else
+            {
+                SceneManager.LoadSceneAsync("Menu");
+            }
         }
-    }
+    }*/
     IEnumerator AnimateScoreText(int targetScore, float duration)
     {
         float elapsed = 0f;

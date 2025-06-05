@@ -82,11 +82,11 @@ public class MapController : MonoBehaviour
             {
                 newRenderer1.sprite = trophySimple1;
                 newRenderer1.color = basicColor;
-                if((score1 >= scoreForThreeStars1 / 3f && score1 < (2f * scoreForThreeStars1) / 3f))
+                if(score1 >= scoreForThreeStars1 * 0.33f && score1 < scoreForThreeStars1 * 0.66f)
                 {
                     ovilloTemplate1.color = bronze;
                 }
-                else if (score1 >= (2f * scoreForThreeStars1) / 3f && score1 < scoreForThreeStars1)
+                else if (score1 >= scoreForThreeStars1 * 0.66f && score1 < scoreForThreeStars1)
                 {
                     ovilloTemplate1.color = silver;
                 }
@@ -117,11 +117,11 @@ public class MapController : MonoBehaviour
             {
                 newRenderer2.sprite = trophySimple2;
                 newRenderer2.color = basicColor;
-                if ((score2 >= scoreForThreeStars2 / 3f && score2 < (2f * scoreForThreeStars2) / 3f))
+                if (score2 >= scoreForThreeStars2 * 0.33f && score2 <  scoreForThreeStars2 * 0.66f)
                 {
                     ovilloTemplate2.color = bronze;
                 }
-                else if(score2 >= (2f * scoreForThreeStars2) / 3f && score2 < scoreForThreeStars2)
+                else if(score2 >= scoreForThreeStars2 * 0.66f && score2 < scoreForThreeStars2)
                 {
                     ovilloTemplate2.color = silver;
                 }
@@ -148,11 +148,11 @@ public class MapController : MonoBehaviour
             {
                 newRenderer3.sprite = trophySimple3;
                 newRenderer3.color = basicColor;
-                if ((score3 >= scoreForThreeStars3 / 3f && score3 < (2f * scoreForThreeStars3) / 3f))
+                if (score3 >= scoreForThreeStars3 * 0.33f && score3 < scoreForThreeStars3 * 0.66f)
                 {
                     ovilloTemplate3.color = bronze;
                 }
-                else if(score3 >= (2f * scoreForThreeStars3) / 3f && score3 < scoreForThreeStars3)
+                else if(score3 >= scoreForThreeStars3 * 0.66f && score3 < scoreForThreeStars3)
                 {
                     ovilloTemplate3.color = silver;
                 }
