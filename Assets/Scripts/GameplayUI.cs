@@ -22,17 +22,9 @@ public class GameplayUI : MonoBehaviour
 
     void UpdateCombo(float c)
     {
-        if(c >= 1.2)
-        {
-            combo.text = $"x{c.ToString("0.#")}";
-            combo.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, Random.Range(-10f, 10f));
+        combo.text = $"x{c.ToString("0.#")}";
+        combo.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, Random.Range(-10f, 10f));
 
-        }
-        else
-        {
-            combo.text = "";
-        }
-        
     }
     void UpdateScore(float s)
     {

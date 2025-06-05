@@ -6,7 +6,7 @@ public class NoteLogic : MonoBehaviour
 {
     protected ScoreSongManager scoreManager;
     protected BoxLogic actualBox, nextBox;
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     private bool spriteActivated = false;
     protected float beatTime;
     protected Collider2D selfCollider;
@@ -75,6 +75,7 @@ public class NoteLogic : MonoBehaviour
 
         scoreManager.AddScore(10);
         jumpHit.StartJump();
+        SoundManager.Instance.PlaySound("NoteRight");
     }
 
     public virtual void OnNoteDespawn()

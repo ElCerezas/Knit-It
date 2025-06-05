@@ -35,9 +35,9 @@ public class MapController : MonoBehaviour
     Color basicColor;
 
     [Header("Ovillos")]
-    Color bronze;
-    Color silver;
-    Color gold;
+    public Color bronze;
+    public Color silver;
+    public Color gold;
     public Image ovilloTemplate1;
     public Image ovilloTemplate2;
     public Image ovilloTemplate3;
@@ -53,9 +53,6 @@ public class MapController : MonoBehaviour
             {
                 SoundManager.Instance.firstStart = false;
             }
-        bronze = new Color(0.8f, 0.5f, 0.2f, 1f);
-        silver = new Color(0.75f, 0.75f, 0.75f, 1f);
-        gold = new Color(1.0f, 0.84f, 0.0f, 1f);
         shadowColor = Color.black;
         shadowColor.a = 0.5f;
         basicColor = Color.white;

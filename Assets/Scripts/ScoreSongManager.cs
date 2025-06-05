@@ -53,6 +53,7 @@ public class ScoreSongManager : MonoBehaviour
     public void AddCombo()
     {
         combo += comboIncrease;
+        combo = Math.Min(combo, 5);
         NotesToCombo = comboNotes;
         OnNewCombo?.Invoke(combo);
     }

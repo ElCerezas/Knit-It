@@ -7,7 +7,7 @@ public class FeintNote : NoteLogic
     bool itStoped = false;
     public override void OnBeatMove()
     {
-        if (!itStoped && base.actualBox.GetBoxRow() == SongManager.Instance.boxGrid.GetLength(0) - 1)
+        if (!itStoped && base.actualBox.GetBoxRow() == SongManager.Instance.boxGrid.GetLength(0) - 2)
         {
             itStoped = true;
         }

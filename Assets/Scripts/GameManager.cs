@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
     {
         check = false;
     }
-
     public void SetGameState(GameState newState)
     {
         currentState = newState;
@@ -68,7 +67,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
     public void PauseResumeGame()
     {
         string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
@@ -105,13 +103,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     public void GameOver()
     {
         currentState = GameState.GameOver;
         Time.timeScale = 0f;
     }
-
     public void victory()
     {
         currentState = GameState.Victory;
@@ -166,6 +162,14 @@ public class GameManager : MonoBehaviour
         foreach (ParallaxLayer layer in layers)
         {
             layer.SetMove(false);
+        }
+    }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus && currentState == GameState.Playing)
+        {
+            PauseResumeGame();
         }
     }
 }

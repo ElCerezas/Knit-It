@@ -31,5 +31,6 @@ public class HealingNote : NoteLogic
         {
             scoreManager.AddLife(5);
         }
+        SoundManager.Instance.PlaySound("NoteRight");
     }
 }

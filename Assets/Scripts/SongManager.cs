@@ -71,6 +71,7 @@ public class SongManager : MonoBehaviour
             if (!wasPaused)
             {
                 wasPaused = true;
+                checkForSound = true;
                 pauseStartDSPTime = AudioSettings.dspTime;
             }
             return;
