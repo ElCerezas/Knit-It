@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91b6790bf4dac964299e568ba421c75c
+guid: d8e0cae77c9453f4dadf6c930b931257
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Polalolas_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 291
+        width: 222
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876d1cc8b9ce4ea40b49db8deb72a9c7
+      internalID: 39210645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Polalolas_1
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 283
+        width: 237
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad42a659ea4db694f9a974c13d6ed8dd
+      internalID: 1890569892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Polalolas_3
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 291
+        width: 241
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e6c2184d3d88a42a509d608f1416e4
+      internalID: 1728281832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +169,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Polalolas_0: 39210645
+      Polalolas_1: 1890569892
+      Polalolas_10: 563774309
+      Polalolas_11: 1155082838
+      Polalolas_12: 2022210341
+      Polalolas_2: -1346129826
+      Polalolas_3: 1728281832
+      Polalolas_4: -1253538179
+      Polalolas_5: 2006267923
+      Polalolas_6: 1149685310
+      Polalolas_7: 1113450268
+      Polalolas_8: 1230725806
+      Polalolas_9: 1105988871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

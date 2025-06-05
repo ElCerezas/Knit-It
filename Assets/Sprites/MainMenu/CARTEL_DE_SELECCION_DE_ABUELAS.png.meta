@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5aede56bc16f1114480c9c2f9730b62b
+guid: 733792f6a6e0654408798ace34a5342d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CARTEL_DE_SELECCION_DE_ABUELAS_0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 541
+        width: 1221
+        height: 1037
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22bbfd0c313d924d936d9942ffed6a8
+      internalID: 190224528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CARTEL_DE_SELECCION_DE_ABUELAS_1
+      rect:
+        serializedVersion: 2
+        x: 1745
+        y: 541
+        width: 1221
+        height: 1037
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a05e853299e2947b6cc69408855e16
+      internalID: 1336614709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CARTEL_DE_SELECCION_DE_ABUELAS_2
+      rect:
+        serializedVersion: 2
+        x: 3356
+        y: 541
+        width: 1224
+        height: 1037
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29158ab2e5bb820479e3098e958fa645
+      internalID: -1028556466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +169,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CARTEL_DE_SELECCION_DE_ABUELAS_0: 190224528
+      CARTEL_DE_SELECCION_DE_ABUELAS_1: 1336614709
+      CARTEL_DE_SELECCION_DE_ABUELAS_2: -1028556466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
