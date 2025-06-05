@@ -16078,7 +16078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &688792830
 Transform:
   m_ObjectHideFlags: 0
@@ -16280,9 +16280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 706480422}
-  level: 1
   songDelaySeconds: 0.5
   fileLocation: level1
+  BPM: 100
+  level: 1
+  spawnOffsetBeats: 5
   flatArray:
   - {fileID: 1653173423}
   - {fileID: 1800853981}
@@ -16304,8 +16306,6 @@ MonoBehaviour:
   - {fileID: 241336123}
   - {fileID: 52358704}
   - {fileID: 1378697094}
-  BPM: 100
-  spawnOffsetBeats: 5
   beatThreshold: 0.05
 --- !u!82 &706480422
 AudioSource:
@@ -32625,7 +32625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1360982143
 Transform:
   m_ObjectHideFlags: 0
@@ -33037,7 +33037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1389518260
 Transform:
   m_ObjectHideFlags: 0
@@ -34842,7 +34842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1818952656
 Transform:
   m_ObjectHideFlags: 0
@@ -36284,7 +36284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2097767518
 Transform:
   m_ObjectHideFlags: 0
@@ -36611,6 +36611,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 144354047}
     m_Modifications:
+    - target: {fileID: 776854105174822974, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
+      propertyPath: m_Color.b
+      value: 0.82075465
+      objectReference: {fileID: 0}
+    - target: {fileID: 776854105174822974, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9177234
+      objectReference: {fileID: 0}
+    - target: {fileID: 776854105174822974, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3784502641326330311, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7321043
@@ -36657,7 +36669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4051616325772316241, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
