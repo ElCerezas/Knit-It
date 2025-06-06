@@ -46,17 +46,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068cd6be3fd131f4fa6732d3b5e06fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstStart: 0
   musicSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
   soundList:
   - name: NoteRight
-    clip: {fileID: 8300000, guid: 8ef0e4174ecf0734d8e74f3bb71e44ee, type: 3}
+    clip: {fileID: 8300000, guid: 9036136c3c822424aaeb135cd46eb79f, type: 3}
     category: 1
-    volume: 1
+    volume: 0.192
   - name: NoteWrong
     clip: {fileID: 8300000, guid: 6c68a38e2eb14b748ac99bb52ee7adcf, type: 3}
     category: 1
+    volume: 0.52
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: a786ac18ae6a24d41b1c59a84ca7db96, type: 3}
+    category: 0
+    volume: 0.794
+  - name: Paper
+    clip: {fileID: 8300000, guid: 02b471961bfb45c4786b7d9523c44506, type: 3}
+    category: 1
     volume: 1
+  - name: UI1
+    clip: {fileID: 8300000, guid: 789458a0bd1b28d49989f5beee05c748, type: 3}
+    category: 1
+    volume: 0.948
+  - name: UI2
+    clip: {fileID: 8300000, guid: 8ee0cf1ad585d0b46be981998398ba93, type: 3}
+    category: 1
+    volume: 0.881
+  - name: UI3
+    clip: {fileID: 8300000, guid: 0d42c32aae5f33247b8238e6f40df487, type: 3}
+    category: 1
+    volume: 0.881
+  - name: UI4
+    clip: {fileID: 8300000, guid: 6da2b663993d56f41a6dd2564035fdea, type: 3}
+    category: 1
+    volume: 0.877
+  - name: Failed
+    clip: {fileID: 8300000, guid: 308ad90145b69eb40bf09dcc234653eb, type: 3}
+    category: 1
+    volume: 1
+  - name: Play
+    clip: {fileID: 8300000, guid: b52a1e63f941cdb4c90e51cddeb960c6, type: 3}
+    category: 1
+    volume: 0.889
+  - name: EnterGame
+    clip: {fileID: 8300000, guid: a01c292d1dee29743b53d84d96d7e1ae, type: 3}
+    category: 1
+    volume: 0.893
+  - name: LevelComplete
+    clip: {fileID: 8300000, guid: 02dd081b12c694545910efb1fc34c80f, type: 3}
+    category: 1
+    volume: 0.877
+  - name: Medal
+    clip: {fileID: 8300000, guid: 7375de612aaa85349bd41b8bb6070fee, type: 3}
+    category: 1
+    volume: 0.877
+  - name: Cheer2
+    clip: {fileID: 8300000, guid: 534299ece3cdd0b4092e4e8cf4f7448d, type: 3}
+    category: 1
+    volume: 0.222
+  - name: Boo1
+    clip: {fileID: 8300000, guid: ffcb5db8da9bab14b8081d7cfa4d1c4e, type: 3}
+    category: 1
+    volume: 0.248
+  - name: Boo2
+    clip: {fileID: 8300000, guid: a3f96b405c5d2804da0b58cedf9b4c5e, type: 3}
+    category: 1
+    volume: 0.222
 --- !u!114 &-6573952161750157313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +128,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   blockingPanel: {fileID: 0}
+  returnMenu: {fileID: 0}
+  restartMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
+  noteTuto: {fileID: 0}
+  pause: {fileID: 0}
   countdownText: {fileID: 0}
   countdownTime: 3
 --- !u!114 &1543008571865839359

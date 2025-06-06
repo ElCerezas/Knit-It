@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9573c8f4a1a953e4b9d4a94408d50cc9
+guid: d8e0cae77c9453f4dadf6c930b931257
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,10 +100,10 @@ TextureImporter:
       name: Polalolas_0
       rect:
         serializedVersion: 2
-        x: 372
-        y: 283
-        width: 238
-        height: 278
+        x: 15
+        y: 291
+        width: 222
+        height: 268
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50187199bfcec7542bee7d68e8ccf26a
-      internalID: 1864088270
+      spriteID: 876d1cc8b9ce4ea40b49db8deb72a9c7
+      internalID: 39210645
       vertices: []
       indices: 
       edges: []
@@ -121,10 +121,10 @@ TextureImporter:
       name: Polalolas_1
       rect:
         serializedVersion: 2
-        x: 754
-        y: 285
-        width: 244
-        height: 281
+        x: 372
+        y: 283
+        width: 237
+        height: 276
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8751c3bbd9d2b364ba20ef9db58dc983
-      internalID: -2005301063
+      spriteID: ad42a659ea4db694f9a974c13d6ed8dd
+      internalID: 1890569892
       vertices: []
       indices: 
       edges: []
@@ -142,10 +142,10 @@ TextureImporter:
       name: Polalolas_3
       rect:
         serializedVersion: 2
-        x: 13
-        y: 290
-        width: 226
-        height: 272
+        x: 754
+        y: 291
+        width: 241
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 164e1e10e6d64384d87f2c97cfb84330
-      internalID: -465599778
+      spriteID: 62e6c2184d3d88a42a509d608f1416e4
+      internalID: 1728281832
       vertices: []
       indices: 
       edges: []
@@ -170,19 +170,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Polalolas_0: 1864088270
-      Polalolas_1: -2005301063
-      Polalolas_10: 289319490
-      Polalolas_11: 2085000935
-      Polalolas_12: 1394294017
-      Polalolas_2: 1201409125
-      Polalolas_3: -465599778
-      Polalolas_4: -1586480527
-      Polalolas_5: 1341056432
-      Polalolas_6: 1362942416
-      Polalolas_7: 475412235
-      Polalolas_8: -49697689
-      Polalolas_9: 595494158
+      Polalolas_0: 39210645
+      Polalolas_1: 1890569892
+      Polalolas_10: 563774309
+      Polalolas_11: 1155082838
+      Polalolas_12: 2022210341
+      Polalolas_2: -1346129826
+      Polalolas_3: 1728281832
+      Polalolas_4: -1253538179
+      Polalolas_5: 2006267923
+      Polalolas_6: 1149685310
+      Polalolas_7: 1113450268
+      Polalolas_8: 1230725806
+      Polalolas_9: 1105988871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
