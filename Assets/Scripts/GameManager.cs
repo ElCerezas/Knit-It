@@ -176,8 +176,9 @@ public class GameManager : MonoBehaviour
             layer.SetMove(false);
         }
     }
-    public void VocalsToggleOnOff(bool vocals)
+    public void VocalsToggleOnOff()
     {
+        bool vocals = vocalsToggle.isOn;
         if (vocals)
         {
             PlayerPrefs.SetInt("Vocals", 1);
@@ -185,6 +186,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Vocals", 0);
         }
+        Debug.Log($"{vocals} + {PlayerPrefs.GetInt("Vocals", 2)}");
     }
 
     void OnApplicationFocus(bool hasFocus)
