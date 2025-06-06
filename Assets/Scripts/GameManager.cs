@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public Image blockingPanel;
     public Button returnMenu;
     public Button restartMenu;
-    public Toggle vocalsToggle;
     public Canvas pauseMenu;
     public GameObject noteTuto;
     public GameObject pause;
@@ -83,21 +82,11 @@ public class GameManager : MonoBehaviour
             {
                 returnMenu.gameObject.SetActive(true);
                 restartMenu.gameObject.SetActive(true);
-                vocalsToggle.gameObject.SetActive(false);
             }
             else
             {
                 returnMenu.gameObject.SetActive(false);
                 restartMenu.gameObject.SetActive(false);
-                vocalsToggle.gameObject.SetActive(true);
-                if (PlayerPrefs.GetInt("Vocals", 0) == 0)
-                {
-                    vocalsToggle.isOn = false;
-                }
-                else
-                {
-                    vocalsToggle.isOn = true;
-                }
             }
         }
         else if (currentState == GameState.Paused)
@@ -175,18 +164,6 @@ public class GameManager : MonoBehaviour
         {
             layer.SetMove(false);
         }
-    }
-    public void VocalsToggleOnOff()
-    {
-        bool vocals = vocalsToggle.isOn;
-        if (vocals)
-        {
-            PlayerPrefs.SetInt("Vocals", 1);
-        } else
-        {
-            PlayerPrefs.SetInt("Vocals", 0);
-        }
-        Debug.Log($"{vocals} + {PlayerPrefs.GetInt("Vocals", 2)}");
     }
 
     void OnApplicationFocus(bool hasFocus)

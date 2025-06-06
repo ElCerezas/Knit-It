@@ -45,14 +45,7 @@ public class SongManager : MonoBehaviour
         audioSource.volume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
         boxGrid = ConvertTo2DArray(flatArray);
         beatInterval = 60.0 / BPM;
-        if (PlayerPrefs.GetInt("Vocals", 1) == 1)
-        {
-            audioSource.clip = vocals;
-        }
-        else
-        {
-            audioSource.clip = beat;
-        }
+        audioSource.clip = vocals;
         LoadJSONNotes();
         StartCoroutine(WaitAndStartSong(songDelaySeconds));
     }

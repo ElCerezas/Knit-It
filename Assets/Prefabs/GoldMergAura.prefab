@@ -149,6 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d25a7115c9478499325d441136a708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboMin: 1
-  comboMax: 1.5
+  comboMin: 3
+  comboMax: 5
   material: {fileID: 2100000, guid: 9ccc17b22e7f80042a7b1cd7bd83505f, type: 2}
