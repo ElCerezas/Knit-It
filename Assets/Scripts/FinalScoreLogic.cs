@@ -19,7 +19,6 @@ public class FinalScoreLogic : MonoBehaviour
 
     int finalScore = 0;
     [SerializeField] float scoreFor3Stars = 1000;
-    bool pressToNext = false;
     private float check;
 
     // Start is called before the first frame update
@@ -96,7 +95,6 @@ public class FinalScoreLogic : MonoBehaviour
 
         score.text = targetScore.ToString();
         scoreBar.value = Math.Min(targetScore, (int)scoreFor3Stars);
-        pressToNext = true;
     }
 
     void SetImageAlpha(Image image, float alpha)

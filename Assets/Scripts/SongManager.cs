@@ -12,6 +12,7 @@ public class SongManager : MonoBehaviour
     public AudioSource audioSource;
     public float songDelaySeconds;
     public string fileLocation;
+    [SerializeField] AudioClip vocals, beat;
 
     public static event Action OnBeat, OnHalfBeat;
 
@@ -44,7 +45,14 @@ public class SongManager : MonoBehaviour
         audioSource.volume = SoundManager.Instance.GetCategoryVolume(SoundManager.SoundCategory.Music);
         boxGrid = ConvertTo2DArray(flatArray);
         beatInterval = 60.0 / BPM;
-
+        if (PlayerPrefs.GetInt("Vocals", 1) == 1)
+        {
+            audioSource.clip = vocals;
+        }
+        else
+        {
+            audioSource.clip = beat;
+        }
         LoadJSONNotes();
         StartCoroutine(WaitAndStartSong(songDelaySeconds));
     }

@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Image blockingPanel;
     public Button returnMenu;
     public Button restartMenu;
+    public Toggle vocalsToggle;
     public Canvas pauseMenu;
     public GameObject noteTuto;
     public GameObject pause;
@@ -81,11 +83,21 @@ public class GameManager : MonoBehaviour
             {
                 returnMenu.gameObject.SetActive(true);
                 restartMenu.gameObject.SetActive(true);
+                vocalsToggle.gameObject.SetActive(false);
             }
             else
             {
                 returnMenu.gameObject.SetActive(false);
                 restartMenu.gameObject.SetActive(false);
+                vocalsToggle.gameObject.SetActive(true);
+                if (PlayerPrefs.GetInt("Vocals", 0) == 0)
+                {
+                    vocalsToggle.isOn = false;
+                }
+                else
+                {
+                    vocalsToggle.isOn = true;
+                }
             }
         }
         else if (currentState == GameState.Paused)
@@ -162,6 +174,16 @@ public class GameManager : MonoBehaviour
         foreach (ParallaxLayer layer in layers)
         {
             layer.SetMove(false);
+        }
+    }
+    public void VocalsToggleOnOff(bool vocals)
+    {
+        if (vocals)
+        {
+            PlayerPrefs.SetInt("Vocals", 1);
+        } else
+        {
+            PlayerPrefs.SetInt("Vocals", 0);
         }
     }
 
