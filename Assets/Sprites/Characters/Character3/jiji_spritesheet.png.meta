@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,637 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: jiji_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1738.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4875da11e52d1784588a17342bcd0c68
+      internalID: -399525367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1738.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96543706d9952d4681e33830d584844
+      internalID: 1789331339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1738.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c06ad42e984ab84b8e55677e3fc20cf
+      internalID: 1424912783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 1738.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d550684c555ff4e98201200e37b9e7
+      internalID: 322041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 1738.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b852cefbd6c992d40a32a2802796d9e9
+      internalID: 640108128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 1738.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4e6f28e33f53f4c883bfe8b67c85c3
+      internalID: 298460648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1304.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab96cddbd262b684e9640215de7e1df4
+      internalID: -519520764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1304.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767100633a027e64a94546987f2a6002
+      internalID: -2089971507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1304.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a82151a209bda0478d3fc8fc5acbcec
+      internalID: 657821660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 1304.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6555c8042ea74c0409ce29c2128b129b
+      internalID: -289047987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 1304.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1115996d1beb914fb3e88928459f945
+      internalID: 1353314281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 1304.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d460856c6499ca4aaa868e02c551ea5
+      internalID: 1759955350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 870.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ccc9e21173166478bc7d0fa5d24de1
+      internalID: 687489092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 870.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9134991f2ccb343884548fedd73781
+      internalID: -1372423858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 870.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27595a508f4a50441adfbc2232e5fead
+      internalID: 1761404812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 870.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9a21589b5c4794983b5b4685174dbc
+      internalID: 20621009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 870.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0217f79a0f1ec146a514316f405e2c2
+      internalID: 1056671220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 870.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea660ea3e7f007748a11906ae0d9caa7
+      internalID: 1186237358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 436.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f237208968b477d4d9357e37d0b3b6c1
+      internalID: -1512485119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 436.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68a17e095b40a24b9f113f66ea608db
+      internalID: 199310953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 436.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bcc3425d64bf44f8740fcc2986304c
+      internalID: -1863937033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 436.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c1f0cfaf3e23f4ba22a6fd105ac1f1
+      internalID: -1875894204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 436.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84271e32d98dea24ca6820815b87ad88
+      internalID: -1476878132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 436.4
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7c2308f7786bc49a67e213399ddab4
+      internalID: -1451469826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.399994
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ac5abf4820b57479eb08a20b8ae0f8
+      internalID: 1580288412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 2.399994
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8b5435536b3c449b4dd457fa65edcf
+      internalID: 1790424186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2.399994
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2f89b72887e8a47997917d906cab8e
+      internalID: -1663638470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 2.399994
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f044814da1cfc084795887274a8fbdb0
+      internalID: -305542450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 2.399994
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692553a09759e73469f306a0250987bc
+      internalID: -2092735973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 2.399994
+        width: 334.33334
+        height: 434.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f2119de0692d14bbd71891c3511887
+      internalID: 250504317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +736,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jiji_spritesheet_0: -399525367
+      jiji_spritesheet_1: 1789331339
+      jiji_spritesheet_10: 1353314281
+      jiji_spritesheet_11: 1759955350
+      jiji_spritesheet_12: 687489092
+      jiji_spritesheet_13: -1372423858
+      jiji_spritesheet_14: 1761404812
+      jiji_spritesheet_15: 20621009
+      jiji_spritesheet_16: 1056671220
+      jiji_spritesheet_17: 1186237358
+      jiji_spritesheet_18: -1512485119
+      jiji_spritesheet_19: 199310953
+      jiji_spritesheet_2: 1424912783
+      jiji_spritesheet_20: -1863937033
+      jiji_spritesheet_21: -1875894204
+      jiji_spritesheet_22: -1476878132
+      jiji_spritesheet_23: -1451469826
+      jiji_spritesheet_24: 1580288412
+      jiji_spritesheet_25: 1790424186
+      jiji_spritesheet_26: -1663638470
+      jiji_spritesheet_27: -305542450
+      jiji_spritesheet_28: -2092735973
+      jiji_spritesheet_29: 250504317
+      jiji_spritesheet_3: 322041
+      jiji_spritesheet_4: 640108128
+      jiji_spritesheet_5: 298460648
+      jiji_spritesheet_6: -519520764
+      jiji_spritesheet_7: -2089971507
+      jiji_spritesheet_8: 657821660
+      jiji_spritesheet_9: -289047987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
