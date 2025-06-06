@@ -1,6 +1,19 @@
 {
 	"items": [
-		{ "beatIndex": 34, "column": 0, "type": "Basic" },
+
+{ "beatIndex": 16, "column": 0, "type": "Basic" },
+{ "beatIndex": 18, "column": 2, "type": "Basic" },
+{ "beatIndex": 19, "column": 1, "type": "Basic" },
+
+{ "beatIndex": 23, "column": 0, "type": "Quick" },
+{ "beatIndex": 23, "column": 2, "type": "Basic" },
+{ "beatIndex": 24, "column": 1, "type": "Basic" },
+
+{ "beatIndex": 26, "column": 0, "type": "Gum" },
+{ "beatIndex": 28, "column": 2, "type": "Basic" },
+{ "beatIndex": 29, "column": 1, "type": "Basic" },
+
+{ "beatIndex": 34, "column": 0, "type": "Basic" },
 { "beatIndex": 36, "column": 3, "type": "Basic" },
 
 { "beatIndex": 38, "column": 0, "type": "Basic" },
@@ -108,6 +121,18 @@
 { "beatIndex": 128, "column": 1, "type": "Basic" },
 { "beatIndex": 128, "column": 2, "type": "Basic" },
 { "beatIndex": 129, "column": 2, "type": "Quick" },
+
+{ "beatIndex": 144, "column": 0, "type": "Basic" },
+{ "beatIndex": 146, "column": 2, "type": "Basic" },
+{ "beatIndex": 147, "column": 1, "type": "Basic" },
+
+{ "beatIndex": 151, "column": 0, "type": "Quick" },
+{ "beatIndex": 151, "column": 2, "type": "Basic" },
+{ "beatIndex": 152, "column": 1, "type": "Basic" },
+
+{ "beatIndex": 154, "column": 0, "type": "Gum" },
+{ "beatIndex": 156, "column": 2, "type": "Basic" },
+{ "beatIndex": 157, "column": 1, "type": "Basic" },
 
 { "beatIndex": 162, "column": 3, "type": "Basic" },
 { "beatIndex": 162, "column": 0, "type": "Basic" },
