@@ -15383,6 +15383,7 @@ GameObject:
   - component: {fileID: 592743345}
   - component: {fileID: 592743346}
   - component: {fileID: 592743347}
+  - component: {fileID: 592743348}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15707,6 +15708,26 @@ MonoBehaviour:
   flashImage: {fileID: 1107864614}
   flashDuration: 0.4
   flashColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &592743348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592743339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed35e85348424da4b8fd53eb577331a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cheering:
+  - Cheer1
+  - Cheer2
+  - Cheer3
+  booing:
+  - Boo1
+  - Boo2
+  - Boo3
 --- !u!1 &594308940
 GameObject:
   m_ObjectHideFlags: 0
@@ -32798,7 +32819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b37df7fa3c8fe469f448256997da70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBreaks: 1
+  maxBreaks: 2
   triggerChance: 5
   idleDuration: 1
 --- !u!1 &1378697093
