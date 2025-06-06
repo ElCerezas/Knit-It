@@ -15721,13 +15721,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheering:
-  - Cheer1
   - Cheer2
-  - Cheer3
   booing:
   - Boo1
   - Boo2
-  - Boo3
 --- !u!1 &594308940
 GameObject:
   m_ObjectHideFlags: 0

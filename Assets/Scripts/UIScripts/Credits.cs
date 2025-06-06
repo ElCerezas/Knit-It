@@ -20,6 +20,7 @@ public class Credits : MonoBehaviour
         {
             // Espera al final del video
             videoPlayer.loopPointReached += OnVideoFinished;
+            SoundManager.Instance.PlaySound("Cheer2");
         }
         else
         {
