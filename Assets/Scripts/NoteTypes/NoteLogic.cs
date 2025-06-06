@@ -76,6 +76,7 @@ public class NoteLogic : MonoBehaviour
         scoreManager.AddScore(10);
         jumpHit.StartJump();
         SoundManager.Instance.PlaySound("NoteRight");
+        StopAllCoroutines();
     }
 
     public virtual void OnNoteDespawn()

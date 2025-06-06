@@ -15,6 +15,7 @@ public class GoldenNote : NoteLogic
         {
             scoreManager.AddCombo();
         }
+        StopAllCoroutines();
         scoreManager.AddScore(50);
         jumpHit.StartJump();
         SoundManager.Instance.PlaySound("NoteRight");

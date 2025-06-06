@@ -29,6 +29,7 @@ public class TeclaLogic : MonoBehaviour
             }
             else
             {
+                nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
                 if (perfectNote)
                 {
                     particlesPerf?.Play();
@@ -39,7 +40,7 @@ public class TeclaLogic : MonoBehaviour
                     particlesHit?.Play();
                     VolumeEffect.Instance?.TriggerHitEffect(false);
                 }
-                nota.GetComponent<NoteLogic>().OnNoteHit(perfectNote);
+                
             }
         }
     }
