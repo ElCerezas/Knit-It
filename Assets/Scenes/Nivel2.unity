@@ -16337,9 +16337,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 706480422}
-  level: 2
   songDelaySeconds: 0.5
   fileLocation: level2
+  BPM: 100
+  level: 2
+  spawnOffsetBeats: 5
   flatArray:
   - {fileID: 1653173423}
   - {fileID: 1800853981}
@@ -16361,8 +16363,6 @@ MonoBehaviour:
   - {fileID: 241336123}
   - {fileID: 52358704}
   - {fileID: 1378697094}
-  BPM: 100
-  spawnOffsetBeats: 5
   beatThreshold: 0.05
 --- !u!82 &706480422
 AudioSource:
@@ -35227,7 +35227,7 @@ MonoBehaviour:
   star1: {fileID: 1266662076}
   star2: {fileID: 476013286}
   star3: {fileID: 427327182}
-  scoreFor3Stars: 18000
+  scoreFor3Stars: 15000
 --- !u!1 &1865689859
 GameObject:
   m_ObjectHideFlags: 0

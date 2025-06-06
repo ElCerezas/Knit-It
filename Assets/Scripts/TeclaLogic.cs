@@ -16,7 +16,7 @@ public class TeclaLogic : MonoBehaviour
     }
     public void TeclaPulsada(InputAction.CallbackContext Context)
     {
-        if (Context.performed)
+        if (Context.performed && GameManager.Instance.currentState == GameManager.GameState.Playing)
         {
             if (nota == null)
             {
