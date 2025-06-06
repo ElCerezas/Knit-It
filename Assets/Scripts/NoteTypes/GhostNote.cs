@@ -5,20 +5,25 @@ using UnityEngine;
 public class GhostNote : NoteLogic
 {
     [SerializeField] private float fadeDuration = -1;
+    bool ghosting = false;
     public override void OnBeatMove()
     {
-        if(fadeDuration == -1)
+        if (!ghosting)
         {
-            fadeDuration = beatTime / 4f;
-        }
-        if (base.actualBox.GetBoxRow() == SongManager.Instance.boxGrid.GetLength(0) - 2)
-        {
-            SongManager.OnHalfBeat -= OnBeatMove;
-            StartCoroutine(FadeAndAscend());
-        }
-        else
-        {
-            base.OnBeatMove();
+            if (fadeDuration == -1)
+            {
+                fadeDuration = beatTime / 4f;
+            }
+            if (base.actualBox.GetBoxRow() == SongManager.Instance.boxGrid.GetLength(0) - 2)
+            {
+                SongManager.OnHalfBeat -= OnBeatMove;
+                ghosting = true;
+                StartCoroutine(FadeAndAscend());
+            }
+            else
+            {
+                base.OnBeatMove();
+            }
         }
     }
 
