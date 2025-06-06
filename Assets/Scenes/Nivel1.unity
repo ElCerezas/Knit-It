@@ -16282,6 +16282,8 @@ MonoBehaviour:
   audioSource: {fileID: 706480422}
   songDelaySeconds: 0.5
   fileLocation: level1
+  vocals: {fileID: 8300000, guid: e5bd46859a8920e42ba14ca7943acd0a, type: 3}
+  beat: {fileID: 8300000, guid: f4b5b405472bd364380775c16b3fea46, type: 3}
   BPM: 100
   level: 1
   spawnOffsetBeats: 5
