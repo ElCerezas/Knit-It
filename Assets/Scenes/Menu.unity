@@ -6447,9 +6447,9 @@ MonoBehaviour:
   lvl3Unlocked: 0
   level2: {fileID: 1557079827}
   level3: {fileID: 1515285141}
-  scoreForThreeStars1: 10000
-  scoreForThreeStars2: 15000
-  scoreForThreeStars3: 17000
+  scoreForThreeStars1: 9000
+  scoreForThreeStars2: 14000
+  scoreForThreeStars3: 16500
   trophySimple1: {fileID: -1280604894, guid: 11fbea82f55c3074abc81366b663c2f5, type: 3}
   trophyPro1: {fileID: 1474041343, guid: 11fbea82f55c3074abc81366b663c2f5, type: 3}
   newRenderer1: {fileID: 1801929397}
@@ -6460,7 +6460,7 @@ MonoBehaviour:
   trophyPro3: {fileID: 1064728992, guid: 11fbea82f55c3074abc81366b663c2f5, type: 3}
   newRenderer3: {fileID: 118108027}
   bronze: {r: 0.6289307, g: 0.36923668, b: 0, a: 1}
-  silver: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+  silver: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   gold: {r: 1, g: 0.75164384, b: 0, a: 1}
   ovilloTemplate1: {fileID: 1095281056}
   ovilloTemplate2: {fileID: 87516957}

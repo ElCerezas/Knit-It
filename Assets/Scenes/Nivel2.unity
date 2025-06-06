@@ -35229,7 +35229,7 @@ MonoBehaviour:
   star1: {fileID: 1266662076}
   star2: {fileID: 476013286}
   star3: {fileID: 427327182}
-  scoreFor3Stars: 15000
+  scoreFor3Stars: 14000
 --- !u!1 &1865689859
 GameObject:
   m_ObjectHideFlags: 0
