@@ -16340,7 +16340,7 @@ MonoBehaviour:
   songDelaySeconds: 0.5
   fileLocation: level2
   vocals: {fileID: 8300000, guid: e706d09f8cfa62f46b379e079b77256b, type: 3}
-  beat: {fileID: 8300000, guid: 4cc5cbc73397e7343b63f76c778f36b9, type: 3}
+  beat: {fileID: 8300000, guid: 0d8839931709bea4f9f7f6bf78a68182, type: 3}
   BPM: 100
   level: 2
   spawnOffsetBeats: 5
