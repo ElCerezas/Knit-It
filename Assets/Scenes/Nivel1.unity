@@ -36613,18 +36613,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 144354047}
     m_Modifications:
-    - target: {fileID: 776854105174822974, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
-      propertyPath: m_Color.b
-      value: 0.82075465
-      objectReference: {fileID: 0}
-    - target: {fileID: 776854105174822974, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9177234
-      objectReference: {fileID: 0}
-    - target: {fileID: 776854105174822974, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3784502641326330311, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7321043
@@ -36668,10 +36656,6 @@ PrefabInstance:
     - target: {fileID: 4051616325772316241, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
       propertyPath: m_Name
       value: GoldMergAura
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051616325772316241, guid: dc763fb1fd4b6c24f8b3cd25cd96d318, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
